@@ -106,8 +106,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "Sonia Joseph"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : 
+  avatar           : /images/avatar.jpg
   bio              : "computational neuroscience"
   location         : "Princeton, NJ"
   email            :
