@@ -107,9 +107,9 @@ analytics:
 # Site Author
 author:
   name             : 
-  avatar           : /images/avatar.jpg
+  avatar           : # /images/avatar.jpg
   bio              : "computational neuroscience"
-  location         : "Princeton, NJ"
+  location         : "princeton, nj"
   email            :
   links:
     - label: "Email"
