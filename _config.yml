@@ -109,7 +109,7 @@ author:
   name             : 
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "computational neuroscience"
-  location         : "princeton, NJ"
+  location         : "Princeton, NJ"
   email            :
   links:
     - label: "Email"
@@ -293,7 +293,7 @@ defaults:
       comments: # true
       share: true
       related: true
-  #_pages
+  # _pages
   - scope:
       path: ""
       type: pages
