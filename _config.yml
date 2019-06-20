@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "sonia joseph"
 title_separator          : "-"
 name                     : "sonia joseph"
-description              : "Computational Neuroscience"
+description              : "Computational neuroscience"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name             : 
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : # "/assets/images/avatar.jpg"
   bio              : "computational neuroscience"
   location         : "Princeton, NJ"
   email            :
