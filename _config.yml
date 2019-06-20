@@ -107,8 +107,9 @@ analytics:
 # Site Author
 author:
   name             : 
-  avatar           : # "/assets/images/avatar.jpg"
-  bio              : "computational neuroscience"
+  avatar           : "/assets/images/avatar.jpg"
+  bio              : "computational neuroscience, machine learning,\ 
+  & related writing"
   location         : "Princeton, NJ"
   email            :
   links:
@@ -293,6 +294,9 @@ defaults:
       comments: # true
       share: true
       related: true
+      header:
+        image: /assets/images/temptations/temptations-6.jpg
+        caption: # "Temptations of Saint Anthony (Dali)"
   # _pages
   - scope:
       path: ""
@@ -300,5 +304,9 @@ defaults:
     values:
       layout: single
       author_profile: true
+      header:
+        image: /assets/images/temptations/temptations-6.jpg
+        caption: # "Temptations of Saint Anthony (Dali)"
+
 
 
