@@ -106,15 +106,16 @@ analytics:
 
 # Site Author
 author:
-  name             : 
+  name             : ""
   avatar           : "/assets/images/avatar.jpg"
-  bio              : "artificial intelligence, <br>
-  computational neuroscience, <br> 
-  and anthropology."
-  location         : "Princeton, NJ"
+  bio              : "artificial intelligence and <br>computational neuroscience <br>"
+
+
   email            : "soniamollyjoseph@gmail.com"
   title_separator: "-"
   links:
+    - label: "Essays"
+      url: "https://medium.com/@soniamollyjoseph"
     # - label: "Email"
     #   icon: "fas fa-fw fa-envelope-square"
     #   url: mailto:soniamollyjoseph@gmail.com
@@ -127,14 +128,14 @@ author:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/soniajoseph"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
-    - label: "Medium"
-      url: "https://medium.com/@soniamollyjoseph"
+    # - label: "GitHub"
+    #   icon: "fab fa-fw fa-github"
+    #   # url: "https://github.com/soniajoseph"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   # url: "https://instagram.com/"
+
+  location: "Princeton, NJ"
 
 
 # Site Footer
