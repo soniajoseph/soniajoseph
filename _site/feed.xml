@@ -1,1 +1,193 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-05T23:50:40-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">sonia joseph</title><subtitle>Writings about artificial intelligence, machine learning, computational neuroscience, social neuroscience, and anthropology by Sonia Joseph</subtitle><author><name>{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;/assets/images/avatar.jpg&quot;, &quot;bio&quot;=&gt;&quot;artificial intelligence and &lt;br&gt;computational neuroscience &lt;br&gt;&quot;, &quot;email&quot;=&gt;&quot;soniamollyjoseph@gmail.com&quot;, &quot;title_separator&quot;=&gt;&quot;-&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Essays&quot;, &quot;url&quot;=&gt;&quot;https://medium.com/@soniamollyjoseph&quot;}, {&quot;label&quot;=&gt;&quot;LinkedIn&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/soniamjoseph/&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}], &quot;location&quot;=&gt;&quot;Princeton, NJ&quot;}</name><email>soniamollyjoseph@gmail.com</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-08T18:26:01-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">sonia joseph</title><subtitle>Writings about artificial intelligence, machine learning, computational neuroscience, social neuroscience, and anthropology by Sonia Joseph</subtitle><author><name>{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;/assets/images/avatar.jpg&quot;, &quot;bio&quot;=&gt;&quot;artificial intelligence and &lt;br&gt;computational neuroscience &lt;br&gt;&quot;, &quot;email&quot;=&gt;&quot;soniamollyjoseph@gmail.com&quot;, &quot;title_separator&quot;=&gt;&quot;-&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Essays&quot;, &quot;url&quot;=&gt;&quot;https://medium.com/@soniamollyjoseph&quot;}, {&quot;label&quot;=&gt;&quot;LinkedIn&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/soniamjoseph/&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}], &quot;location&quot;=&gt;&quot;Princeton, NJ&quot;}</name><email>soniamollyjoseph@gmail.com</email></author><entry><title type="html">Neural Dynamics: A Primer (Hopfield Networks)</title><link href="http://localhost:4000/neural-dynamics-primer/" rel="alternate" type="text/html" title="Neural Dynamics: A Primer (Hopfield Networks)" /><published>2019-06-20T00:00:00-04:00</published><updated>2019-06-20T00:00:00-04:00</updated><id>http://localhost:4000/neural-dynamics-primer</id><content type="html" xml:base="http://localhost:4000/neural-dynamics-primer/">&lt;p&gt;&lt;em&gt;For a list of seminal papers in neural dynamics, go &lt;a href=&quot;/dynamics/&quot;&gt;here&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-emergent-behavior-from-simple-parts&quot;&gt;1. Emergent Behavior from Simple Parts&lt;/h2&gt;
+
+&lt;p&gt;Physical systems made out of a large number of simple elements give rise to collective phenomena. For example, flying starlings:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/V4f_1_r80RY&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Each starling follows simple rules: coordinating with seven neighbors, staying near a fixed point, and moving at a fixed speed. The result is emergent complex behavior of the flock.&lt;/p&gt;
+
+&lt;p&gt;The brain is similar: Each neuron follows a simple set of rules, and collectively, the neurons yield complex higher-order behavior, from keeping track of time to singing a tune. Granted, real neurons are highly varied and do not all follow the same set of rules, but we often assume that our model neurons do in order to keep things simple.&lt;/p&gt;
+
+&lt;p&gt;Although &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/16022600&quot;&gt;many types of these models exist&lt;/a&gt;, I will use Hopfield networks from &lt;a href=&quot;https://www.pnas.org/content/79/8/2554&quot;&gt;this seminal paper&lt;/a&gt; to demonstrate some general properties. Hopfield networks were originally used to model human associative memory, in which a network of simple units converges into stable state, in a process that I will describe below.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-the-units-of-the-model&quot;&gt;2. The Units of the Model&lt;/h2&gt;
+
+&lt;p&gt;Following the paradigm described above, each neuron of the network abides by a simple set of rules. Each neuron is similar to a perceptron, a binary single neuron model. (There are some minor differences between perceptrons and Hopfield’s units, which have nondirectionality, direct stimulus input, and time constants, but I’ll not go into detail here.)&lt;/p&gt;
+
+&lt;p&gt;For each neuron, the inputs are signals from the incoming neurons &lt;script type=&quot;math/tex&quot;&gt;[x_1.... x_n]&lt;/script&gt;, which are multipled by the strengths of their connections &lt;script type=&quot;math/tex&quot;&gt;[w_1.... w_n]&lt;/script&gt;, also called weights.&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+ &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/8c/Perceptron_moj.png&quot; alt=&quot;Rosenblatt's Perceptron, taken from Wikipedia&quot; /&gt;
+ &lt;figcaption&gt;
+ Rosenblatt's Perceptron, taken from Wikipedia
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Once the signals and weights are multipled together, the values are summed. If the total sum is greater than or equal to the threshold &lt;script type=&quot;math/tex&quot;&gt;-b&lt;/script&gt;, then the output value is &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;, which means that the neuron fires. If the sum is less than the threshold, then the output is &lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt;, which means that the neuron does not fire.&lt;/p&gt;
+
+&lt;p&gt;The rules above are modeled by the equation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{equation}
+    f(x)= 
+\begin{cases}
+    1,&amp; \text{if}\ \sum_{k=1}^{n} w_k * x_k \geq -b\\
+    0, &amp; \text{otherwise}
+\end{cases}
+\end{equation} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;A Hopfield network consists of these neurons linked together without directionality. The strength of synaptic connectivity &lt;script type=&quot;math/tex&quot;&gt;w_{ij}&lt;/script&gt; between neurons &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;j&lt;/script&gt; follows the Hebbian learning rule, in which &lt;em&gt;neurons that fire together wire together, and neurons that fire out of sync, fail to link&lt;/em&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;w_{ij} = (2V_i - 1)(2V_j - 1)&lt;/script&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;V_{i}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;V_{j}&lt;/script&gt;, the states of neurons &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;j&lt;/script&gt;, are either &lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt; (inactive) or &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt; (active). As we can see by the equation, if both neurons are &lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt;, or if both neurons are &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;w_{ij} = 1&lt;/script&gt;. If one neuron is &lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt;, and the other is &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;w_{ij} = -1&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-state-space&quot;&gt;3. State Space&lt;/h2&gt;
+
+&lt;p&gt;An important concept in Hopfield networks, and in dynamical systems more broadly, is &lt;em&gt;state space&lt;/em&gt;, sometimes called the &lt;em&gt;energy landscape&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The total Hopfield network has the value &lt;script type=&quot;math/tex&quot;&gt;E&lt;/script&gt; associated with the total energy of the network, which is basically a sum of the activity of all the units. The network will tend towards lower energy states. We can think about this idea as represented by an energy landscape, seen below:&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+ &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Energy_landscape.png/1280px-Energy_landscape.png&quot; alt=&quot;Energy landscape of a Hopfield network, taken from Wikipedia&quot; /&gt;
+ &lt;figcaption&gt;
+Energy landscape of a Hopfield network, taken from Wikipedia.
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The y-axis represents the energy of the system &lt;script type=&quot;math/tex&quot;&gt;E&lt;/script&gt;, and the x-axis represents all the possible states that the system could be in. Out of all the possible energy states, the system will converge to a &lt;em&gt;local minima&lt;/em&gt;, also called an &lt;em&gt;attractor state&lt;/em&gt;, in which the energy of the total system is the locally the lowest. Imagine a ball rolling around the hilly energy landscape, and getting caught in an attractor state.&lt;/p&gt;
+
+&lt;p&gt;While the above graph represents state space in one dimension, we can generalize the representation of state space to &lt;em&gt;n&lt;/em&gt; dimensions.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-training-and-running-the-hopfield-network&quot;&gt;4. Training and Running the Hopfield Network&lt;/h2&gt;
+
+&lt;p&gt;Let’s walk through the Hopfield network in action, and how it could model human memory.&lt;/p&gt;
+
+&lt;p&gt;We train and initialize the network by updating the weights based on the Hebbian learning rules, and then by setting the values of the neurons to a desired start pattern. The network runs according to the rules in the previous sections, with the value of each neuron changing depending on the values of its input neurons. Eventually, the network converges to an attractor state, the lowest energy value of the system.&lt;/p&gt;
+
+&lt;p&gt;Attractor states are “memories” that the network should “remember.” During training, we update the weights in order to set the memories as the attractor states. The network can therefore act as a content addressable (“associative”) memory system, which recovers memories based on similarity. For example, if we train a four-neuron network so that state (-1, -1, -1, 1) is an attractor state, the network will converge to the attractor state given a starting state. For example, (-1, -1, -1, -1) will converge to (-1, -1, -1, 1).&lt;/p&gt;
+
+&lt;p&gt;So how do Hopfield networks relate to human memory?&lt;/p&gt;
+
+&lt;p&gt;Say you bite into a mint chocolate chip ice cream cone. That ice cream cone could be represented as a vector (-1, -1, -1, -1). Now say that for some reason, there is a deeply memorable mint chocolate chip ice cream cone from childhood– perhaps you were eating it with your parents annd the memory has strong emotional saliency– represented by (-1, -1, -1, 1). As you bite into today’s ice cream cone, you find yourself thinking of the mint chocolate chip ice cream cone from years’ past. What happened? The starting point memory (-1, -1, -1, -1) converged to the system’s attractor state (-1, -1, -1, 1).&lt;/p&gt;
+
+&lt;figure style=&quot;width: 300px&quot; class=&quot;align-left&quot;&gt;
+  &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Recette_pour_la_Madeleine.jpg/1024px-Recette_pour_la_Madeleine.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption&gt;Proust's mind is converging on Combray right now. &lt;i&gt;From Wikipedia&lt;/i&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This idea can be generalized: some neuroscientists hypothesize that our perception of shades of color converges to an attractor state shade of that color. It’s also fun to think of Hopfield networks in the context of Proust’s &lt;a href=&quot;https://www.goodreads.com/quotes/7296965-no-sooner-had-the-warm-liquid-mixed-with-the-crumbs&quot;&gt;famous madeleine passage&lt;/a&gt;, in which the narrator bites into a madeleine and is taken back to childhood. (His starting memory vector of the madeleine converges to the attractor state vector of the childhood madeleine.)&lt;/p&gt;
+
+&lt;p&gt;As a caveat, as with most computational neuroscience models, we are operating on the 3rd level of &lt;a href=&quot;https://en.wikipedia.org/wiki/David_Marr_(neuroscientist)#Levels_of_analysis&quot;&gt;Marr’s levels of analysis&lt;/a&gt;. In other words, we are not sure that the brain physically works like a Hopfield network. The brain could physically work like a Hopfield network, but the biological instantiation of memory is not the point; rather, we are seeking useful mathematical metaphors.&lt;/p&gt;
+
+&lt;p&gt;That concludes this basic primer on neural dynamics, in which we learned about emergence and state space. We did not touch upon many other useful concepts, such as firing rate manifolds and oscillatory and chaotic behavior, which will be the content of a future post. For a list of seminal papers in neural dynamics, go &lt;a href=&quot;/dynamics/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content><author><name>{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;/assets/images/avatar.jpg&quot;, &quot;bio&quot;=&gt;&quot;artificial intelligence and &lt;br&gt;computational neuroscience &lt;br&gt;&quot;, &quot;email&quot;=&gt;&quot;soniamollyjoseph@gmail.com&quot;, &quot;title_separator&quot;=&gt;&quot;-&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Essays&quot;, &quot;url&quot;=&gt;&quot;https://medium.com/@soniamollyjoseph&quot;}, {&quot;label&quot;=&gt;&quot;LinkedIn&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/soniamjoseph/&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}], &quot;location&quot;=&gt;&quot;Princeton, NJ&quot;}</name><email>soniamollyjoseph@gmail.com</email></author><category term="computational neuroscience" /><category term="neuroscience" /><category term="machine learning" /><category term="neural dynamics" /><summary type="html">Basic concepts in neural dynamics explained with Hopfield networks.</summary></entry><entry><title type="html">Paper List for Neural Dynamics</title><link href="http://localhost:4000/dynamics/" rel="alternate" type="text/html" title="Paper List for Neural Dynamics" /><published>2019-06-19T00:00:00-04:00</published><updated>2019-06-19T00:00:00-04:00</updated><id>http://localhost:4000/dynamics</id><content type="html" xml:base="http://localhost:4000/dynamics/">&lt;p&gt;How does higher-order behavior emerge from billions of neurons firing?&lt;/p&gt;
+
+&lt;p&gt;The papers below explore neural dynamics in theoretical and experimental contexts, with a focus on interpreting higher-level behaviors from multiple single-neuron recordings.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This list is originally from the Dynamics in Cognition course taught by &lt;a href=&quot;https://pni.princeton.edu/faculty/david-tank&quot;&gt;David Tank&lt;/a&gt; at Princeton.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-concepts&quot;&gt;Basic Concepts&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/neural-dynamics-primer/&quot;&gt;Neural Dynamics: A Primer (Hopfield Networks)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;persistent-activity-and-attractors&quot;&gt;Persistent Activity and Attractors&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;J.J. Hopfield. &lt;a href=&quot;http://www.pnas.org/content/79/8/2554&quot;&gt;Neural networks and physical systems with emergent collective computational abilities.&lt;/a&gt; 1982. Notes &lt;a href=&quot;/neural-dynamics-primer/&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;H.S. Seung. &lt;a href=&quot;https://www.pnas.org/content/93/23/13339&quot;&gt;How the brain keeps the eyes still.&lt;/a&gt; 1996.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;attractors-and-path-integration&quot;&gt;Attractors and Path Integration&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;A. Samsonovich and B. L. McNaughton. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/9221787&quot;&gt;Path integration and cognitive mapping in a continuous attractor neural network model.&lt;/a&gt; 1997.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;attractors-and-grid-cells&quot;&gt;Attractors and Grid Cells&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Torkel Hafting, Marianne Fyhn, Sturla Molden, May-Britt Moser, and Edvard I. Moser. &lt;a href=&quot;https://www.nature.com/nature/
+journal/v436/n7052/full/nature03721.html&quot;&gt;Microstructure of a spatial map in the entorhinal cortex.&lt;/a&gt; 2005.&lt;/li&gt;
+  &lt;li&gt;KiJung Yoon, Michael A. Buice, Caswell Barry, Robin Hayman, Neil Burgess, and Ila R.
+Fiete. &lt;a href=&quot;http://www.nature.com/neuro/journal/v16/n8/full/nn.3450.html&quot;&gt;Specific evidence of low-dimensional continuous attractor dynamics in grid cells.&lt;/a&gt; 2013.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;attractors-and-head-direction-cells&quot;&gt;Attractors and Head Direction Cells&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;William E. Skaggs, James J. Knierim, Hemant S. Kudrimoti, and Bruce L. McNaughton. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/11539168&quot;&gt;A
+Model of the Neural Basis of the Rat’s Sense of Direction.&lt;/a&gt; 1995.&lt;/li&gt;
+  &lt;li&gt;K. Zhang. &lt;a href=&quot;http://www.jneurosci.org/content/16/6/2112&quot;&gt;Representation of spatial orientation by the intrinsic dynamics of the head-direction cell ensemble: a theory.&lt;/a&gt; 1996.&lt;/li&gt;
+  &lt;li&gt;Sung Soo Kim, Herve Rouault, Shaul Druckmann, and Vivek Jayaraman. &lt;a href=&quot;http://science.sciencemag.org/content/early/
+2017/05/03/science.aal4835&quot;&gt;Ring attractor dynamics in the Drosophila central brain.&lt;/a&gt; 2017.&lt;/li&gt;
+  &lt;li&gt;Adrien Peyrache, Marie M. Lacroix, Peter C. Petersen, and György Buzsáki. &lt;a href=&quot;http://www.nature.com/neuro/journal/
+v18/n4/full/nn.3968.html&quot;&gt;Internally organized mechanisms of the head direction sense.&lt;/a&gt; 2015.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;attractors-and-decision-making&quot;&gt;Attractors and Decision-Making&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Valerio Mante, David Sussillo, Krishna V. Shenoy, and William T. Newsome. &lt;a href=&quot;https://www.nature.com/
+nature/journal/v503/n7474/full/nature12742.html&quot;&gt;Context-dependent computation by recurrent dynamics in prefrontal cortex.&lt;/a&gt; 2013.&lt;/li&gt;
+  &lt;li&gt;R. Romo, C. D. Brody, A. Hernández, and L. Lemus. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/10365959&quot;&gt;Neuronal correlates of parametric working memory in the prefrontal cortex.&lt;/a&gt; 1999.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sequences&quot;&gt;Sequences&lt;/h2&gt;
+
+&lt;h3 id=&quot;sequences-in-songbirds&quot;&gt;Sequences in Songbirds&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Richard H. R. Hahnloser, Alexay A. Kozhevnikov, and Michale S. Fee. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/12214232&quot;&gt;An ultra-sparse code underlies the generation of neural sequences in a songbird.&lt;/a&gt; 2002.&lt;/li&gt;
+  &lt;li&gt;Michael A Long and Michale S Fee. &lt;a href=&quot;https://www.nature.com/articles/nature07448&quot;&gt;Using temperature to analyse temporal dynamics in the songbird motor pathway.&lt;/a&gt; 2008.&lt;/li&gt;
+  &lt;li&gt;Ila R. Fiete, Walter Senn, Claude Z. H. Wang, and Richard H. R. Hahnloser. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/20188660&quot;&gt;Spike-timedependent plasticity and heterosynaptic competition organize networks to produce long scalefree sequences of neural activity.&lt;/a&gt; 2010.&lt;/li&gt;
+  &lt;li&gt;Tatsuo S. Okubo, Emily L. Mackevicius, Hannah L. Payne, Galen F. Lynch, and Michale S. Fee. &lt;a href=&quot;https://www.nature.com/nature/journal/v528/n7582/full/nature15741.html&quot;&gt;Growth and splitting of neural sequences in songbird vocal development.&lt;/a&gt; 2015.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sequences-in-mammals&quot;&gt;Sequences in Mammals&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Christopher D. Harvey, Philip Coen, and David W. Tank. &lt;a href=&quot;https://www.nature.com/articles/nature10918&quot;&gt;Choice-specific sequences in parietal cortex during a virtual-navigation decision task.&lt;/a&gt; 2012.&lt;/li&gt;
+  &lt;li&gt;Vladimir Itskov, Carina Curto, Eva Pastalkova, and Gyorgy Buzsaki. &lt;a href=&quot;http://www.jneurosci.org/content/31/8/2828&quot;&gt;Cell Assembly Sequences Arising from Spike Threshold Adaptation Keep Track of Time in the Hippocampus.&lt;/a&gt; 2011.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;modeling-sequences&quot;&gt;Modeling Sequences&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;D. Kleinfeld and H. Sompolinsky. &lt;a href=&quot;http://www.sciencedirect.com/science/article/pii/S0006349588830418&quot;&gt;Associative neural network model for the generation of temporal patterns. Theory and application to central pattern generators.&lt;/a&gt; 1988.&lt;/li&gt;
+  &lt;li&gt;Mark S Goldman. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2674525/&quot;&gt;Memory without feedback in a neural network.&lt;/a&gt; 2009.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;oscillations&quot;&gt;Oscillations&lt;/h2&gt;
+
+&lt;h3 id=&quot;oscillations-and-binding&quot;&gt;Oscillations and Binding&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;György Buzsáki and Andreas Draguhn. &lt;a href=&quot;http://science.sciencemag.org/content/304/5679/1926&quot;&gt;Neuronal Oscillations
+in Cortical Networks.&lt;/a&gt; 2004.&lt;/li&gt;
+  &lt;li&gt;Michael Wehr and Gilles Laurent. &lt;a href=&quot;https://www.nature.com/nature/journal/v384/n6605/abs/384162a0.html&quot;&gt;Odour encoding by temporal sequences of firing in oscillating neural assemblies.&lt;/a&gt; 1996.&lt;/li&gt;
+  &lt;li&gt;Mark Stopfer and Gilles Laurent. &lt;a href=&quot;https://www.nature.com/nature/journal/v402/n6762/full/402664a0.html&quot;&gt;Short-term memory in olfactory network dynamics.&lt;/a&gt; 1999.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;rotations-in-state-space&quot;&gt;Rotations in State Space&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Mark M. Churchland, John P. Cunningham, Matthew T. Kaufman, Justin D. Foster, Paul Nuyujukian, Stephen I. Ryu, and Krishna V. Shenoy. &lt;a href=&quot;https://www.nature.com/nature/journal/v487/n7405/abs/nature11129.html&quot;&gt;Neural population dynamics during reaching.&lt;/a&gt; 2012.&lt;/li&gt;
+  &lt;li&gt;Sergey D. Stavisky, Jonathan C. Kao, Stephen I. Ryu, and Krishna V. Shenoy. &lt;a href=&quot;http://www.cell.com/neuron/abstract/S0896-6273(17)30461-0&quot;&gt;Motor Cortical Visuomotor Feedback Activity Is Initially Isolated from Downstream Targets in Output Null Neural State Space Dimensions.&lt;/a&gt; 2017.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;representations-in-the-brain&quot;&gt;Representations in the Brain&lt;/h2&gt;
+
+&lt;h3 id=&quot;mismatch-negativity-and-predictive-coding&quot;&gt;Mismatch Negativity and Predictive Coding&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jan Homann, Sue Ann Koay, Alistair M. Glidden, David W. Tank, and Michael J. Berry. &lt;a href=&quot;https://www.biorxiv.org/content/early/2017/10/03/197608&quot;&gt;Predictive Coding of Novel versus Familiar Stimuli in the Primary Visual Cortex.&lt;/a&gt; 2017.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;locomotion&quot;&gt;Locomotion&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Saul Kato, Harris S. Kaplan, Tina Schrödel, Susanne Skora, Theodore H. Lindsay, Eviatar Yemini, Shawn Lockery, and Manuel Zimmer. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/26478179&quot;&gt;Global brain dynamics embed the motor command sequence of Caenorhabditis elegans.&lt;/a&gt; 2015.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;visual-representations&quot;&gt;Visual Representations&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Le Chang and Doris Y. Tsao. &lt;a href=&quot;http://www.cell.com/cell/abstract/S0092-8674(17)30538-X&quot;&gt;The Code for Facial Identity in the Primate Brain.&lt;/a&gt; 2017.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;comparing-artificial-and-biological-neural-nets&quot;&gt;Comparing Artificial and Biological Neural Nets&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Review and critique &lt;a href=&quot;&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Daniel L. K. Yamins, Ha Hong, Charles F. Cadieu, Ethan A. Solomon, Darren Seibert, and James J. DiCarlo. &lt;a href=&quot;http://www.
+pnas.org/content/111/23/8619&quot;&gt;Performance-optimized hierarchical models predict neural responses in higher visual cortex.&lt;/a&gt; 2014.&lt;/li&gt;
+  &lt;li&gt;Daniel L. K. Yamins and James J. DiCarlo. &lt;a href=&quot;http://www.nature.com/neuro/journal/v19/n3/full/nn.4244.html?foxtrotcallback=true&quot;&gt;Using goal-driven deep learning models to understand sensory cortex.&lt;/a&gt; 2016.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;/assets/images/avatar.jpg&quot;, &quot;bio&quot;=&gt;&quot;artificial intelligence and &lt;br&gt;computational neuroscience &lt;br&gt;&quot;, &quot;email&quot;=&gt;&quot;soniamollyjoseph@gmail.com&quot;, &quot;title_separator&quot;=&gt;&quot;-&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Essays&quot;, &quot;url&quot;=&gt;&quot;https://medium.com/@soniamollyjoseph&quot;}, {&quot;label&quot;=&gt;&quot;LinkedIn&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;, &quot;url&quot;=&gt;&quot;https://www.linkedin.com/in/soniamjoseph/&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}], &quot;location&quot;=&gt;&quot;Princeton, NJ&quot;}</name><email>soniamollyjoseph@gmail.com</email></author><category term="computational neuroscience" /><category term="neuroscience" /><category term="literature review" /><category term="neural dynamics" /><category term="deep learning" /><summary type="html">Resources for computational neuroscience</summary></entry></feed>
