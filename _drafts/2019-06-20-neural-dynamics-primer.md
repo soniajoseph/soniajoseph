@@ -8,6 +8,7 @@ tags: [computational neuroscience, neuroscience, machine learning, neural dynami
 excerpt: "A primer on neural dynamics, explained with Hopfield networks."
 toc: true
 mathjax: true
+classes: wide
 ---
  
 *For a list of seminal papers in neural dynamics, go [here](/dynamics/)*.
@@ -91,7 +92,7 @@ Say you bite into a mint chocolate chip ice cream cone. That ice cream cone coul
   <figcaption>Proust's mind is converging on Combray right now. <i>From Wikipedia</i>.</figcaption>
 </figure> 
 
-This idea can be generalized: some neuroscientists hypothesize that our perception of shades of color converges to an attractor state shade of that color. It's also fun to think of Hopfield networks in the context of Proust's [famous madeleine passage](https://www.goodreads.com/quotes/7296965-no-sooner-had-the-warm-liquid-mixed-with-the-crumbs), in which the narrator bites into a madeleine and is taken back to childhood. (His starting memory vector of the madeleine converges to the attractor state vector of the childhood madeleine.)
+We can generalize the idea: some neuroscientists hypothesize that our perception of shades of color converges to an attractor state shade of that color. It's also fun to think of Hopfield networks in the context of Proust's [famous madeleine passage](https://www.goodreads.com/quotes/7296965-no-sooner-had-the-warm-liquid-mixed-with-the-crumbs), in which the narrator bites into a madeleine and is taken back to childhood. (His starting memory vector of the madeleine converges to the attractor state vector of the childhood madeleine.)
 
 As a caveat, as with most computational neuroscience models, we are operating on the 3rd level of [Marr's levels of analysis](https://en.wikipedia.org/wiki/David_Marr_(neuroscientist)#Levels_of_analysis). In other words, we are not sure that the brain physically works like a Hopfield network. The brain *could* physically work like a Hopfield network, but a biological instantiation of memory is not the point; rather, we are seeking useful mathematical metaphors.
 
