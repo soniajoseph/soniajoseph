@@ -8,4 +8,4 @@ var store = [{
         "excerpt":"How does higher-order behavior emerge from billions of neurons firing? This post is a basic introduction to thinking about the brain in the context of dynamical systems, which I have found to be far more useful than more phrenology-like paradigms. I tried to keep this introduction as simple and clear...","categories": ["computational neuroscience"],
         "tags": ["computational neuroscience","neuroscience","machine learning","neural dynamics"],
         "url": "http://localhost:4000/computational%20neuroscience/neural-dynamics-primer/",
-        "teaser":"http://localhost:4000/assets/images/starlings2.jpg"}]
+        "teaser":"http://localhost:4000/assets/images/posts/Perceptron_moj.png"}]

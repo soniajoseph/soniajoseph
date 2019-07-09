@@ -4,7 +4,7 @@ tags: [computational neuroscience, neuroscience, machine learning, neural dynami
 excerpt: "Basic concepts in neural dynamics explained with Hopfield networks."
 categories: [computational neuroscience]
 header:
-  teaser: assets/images/starlings2.jpg
+  teaser: assets/images/posts/Perceptron_moj.png
 toc: true
 mathjax: "true"
 comments: true
