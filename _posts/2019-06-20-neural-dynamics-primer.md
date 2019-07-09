@@ -4,7 +4,7 @@ tags: [computational neuroscience, neuroscience, machine learning, neural dynami
 excerpt: "Basic concepts in neural dynamics explained with Hopfield networks."
 categories: [computational neuroscience]
 toc: true
-mathjax: true
+mathjax: "true"
 comments: true
 ---
 
@@ -31,7 +31,7 @@ Although [many types of these models exist](https://www.ncbi.nlm.nih.gov/pubmed/
 
 Following the paradigm described above, each neuron of the network abides by a simple set of rules. Each neuron is similar to a perceptron, a binary single neuron model. (There are some minor differences between perceptrons and Hopfield's units, which have nondirectionality, direct stimulus input, and time constants, but I'll not go into detail here.) 
 
-For each neuron, the inputs are signals from the incoming neurons $$[x_1.... x_n]$$, which are multipled by the strengths of their connections $$[w_1.... w_n]$$, also called weights. 
+The inputs for each neuron are signals from the incoming neurons $$[x_1.... x_n]$$, which are multipled by the strengths of their connections $$[w_1.... w_n]$$, also called weights. 
 
 <figure align="center">
  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Perceptron_moj.png" alt="Rosenblatt's Perceptron, taken from Wikipedia"/>
