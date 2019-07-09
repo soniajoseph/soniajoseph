@@ -54,7 +54,7 @@ $$ \begin{equation}
 \end{cases}
 \end{equation} $$
 
-A Hopfield network consists of these neurons linked together without directionality. In hierarchical neural nets, the network has a clear input and output direction (e.g. the input is pixel values and the output is a category in image classification). However, in a Hopfield network, all of the units are linked to each other without an input or output layer. We consider the input to be the energy state of all the neurons before running the network, and the output to be the energy state after.
+A Hopfield network consists of these neurons linked together without directionality. In hierarchical neural nets, the network has a directional flow of information (e.g. in Facebook's facial recognition algorithm, the input is pixels and the output is the name of the person). However, in a Hopfield network, all of the units are linked to each other without an input and output layer. We consider the input to be the energy state of all the neurons before running the network, and the output to be the energy state after.
 
  The strength of synaptic connectivity $$w_{ij}$$ between neurons $$i$$ and $$j$$ follows the Hebbian learning rule, in which *neurons that fire together wire together, and neurons that fire out of sync, fail to link*:
 
