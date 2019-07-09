@@ -10,7 +10,7 @@ comments: true
 
 How does higher-order behavior emerge from billions of neurons firing? 
 
-This post is a basic introduction to thinking about the brain in the context of dynamical systems, which I have found to be far more useful than more phrenology-like paradigms. I tried to keep this introduction as simple and clear as possible, and accessible to anyone without strong background in neuroscience or mathematics.
+This post is a basic introduction to thinking about the brain in the context of dynamical systems, which I have found to be far more useful than more phrenology-like paradigms. I tried to keep this introduction as simple and clear as possible, and accessible to anyone without background in neuroscience or mathematics.
  
 *For a list of seminal papers in neural dynamics, go [here](/computational%20neuroscience/dynamics/)*.
 
