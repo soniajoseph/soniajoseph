@@ -34,7 +34,7 @@ Following the paradigm described above, each neuron of the network abides by a s
 For each neuron, the inputs are signals from the incoming neurons $$[x_1.... x_n]$$, which are multipled by the strengths of their connections $$[w_1.... w_n]$$, also called weights. 
 
 <figure align="center">
- <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Perceptron_moj.png" alt="Rosenblatt's Perceptron, taken from Wikipedia"/>
+ <img alt = "perceptron neural dynamics" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Perceptron_moj.png" alt="Rosenblatt's Perceptron, taken from Wikipedia"/>
  <figcaption>
  Rosenblatt's Perceptron, taken from Wikipedia
  </figcaption>
@@ -65,7 +65,7 @@ An important concept in Hopfield networks, and in dynamical systems more broadly
 The total Hopfield network has the value $$ E $$ associated with the total energy of the network, which is basically a sum of the activity of all the units. The network will tend towards lower energy states. We can think about this idea as represented by an energy landscape, seen below:
 
 <figure align="center">
- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Energy_landscape.png/1280px-Energy_landscape.png" alt="Energy landscape of a Hopfield network, taken from Wikipedia"/>
+ <img alt = "neural dynamics energy landscape" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Energy_landscape.png/1280px-Energy_landscape.png" alt="Energy landscape of a Hopfield network, taken from Wikipedia"/>
  <figcaption>
 Energy landscape of a Hopfield network, taken from Wikipedia.
  </figcaption>
@@ -88,7 +88,7 @@ So how do Hopfield networks relate to human memory?
 Say you bite into a mint chocolate chip ice cream cone. That ice cream cone could be represented as a vector (-1, -1, -1, -1). Now say that for some reason, there is a deeply memorable mint chocolate chip ice cream cone from childhood-- perhaps you were eating it with your parents annd the memory has strong emotional saliency-- represented by (-1, -1, -1, 1). As you bite into today's ice cream cone, you find yourself thinking of the mint chocolate chip ice cream cone from years' past. What happened? The starting point memory (-1, -1, -1, -1) converged to the system's attractor state (-1, -1, -1, 1).
 
 <figure style="width: 300px" class="align-left">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Recette_pour_la_Madeleine.jpg/1024px-Recette_pour_la_Madeleine.jpg" alt="">
+  <img alt = "neural dynamics proust" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Recette_pour_la_Madeleine.jpg/1024px-Recette_pour_la_Madeleine.jpg" alt="">
   <figcaption>Proust's mind is converging on Combray right now. <i>From Wikipedia</i>.</figcaption>
 </figure> 
 
