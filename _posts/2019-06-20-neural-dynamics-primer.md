@@ -91,11 +91,13 @@ Say you bite into a mint chocolate chip ice cream cone. That ice cream cone coul
   <figcaption>Proust's mind is converging on Combray right now. <i>From Wikipedia</i>.</figcaption>
 </figure> 
 
-This idea can be generalized: some neuroscientists hypothesize that our perception of shades of color converges to an attractor state shade of that color. It's also fun to think of Hopfield networks in the context of Proust's [famous madeleine passage](https://www.goodreads.com/quotes/7296965-no-sooner-had-the-warm-liquid-mixed-with-the-crumbs), in which the narrator bites into a madeleine and is taken back to childhood. (His starting memory vector of the madeleine converges to the attractor state vector of the childhood madeleine.)
+We can generalize this idea: some neuroscientists hypothesize that our perception of shades of color converges to an attractor state shade of that color. It's also fun to think of Hopfield networks in the context of Proust's [famous madeleine passage](https://www.goodreads.com/quotes/7296965-no-sooner-had-the-warm-liquid-mixed-with-the-crumbs), in which the narrator bites into a madeleine and is taken back to childhood. (His starting memory vector of the madeleine converges to the attractor state vector of the childhood madeleine.)
 
 As a caveat, as with most computational neuroscience models, we are operating on the 3rd level of [Marr's levels of analysis](https://en.wikipedia.org/wiki/David_Marr_(neuroscientist)#Levels_of_analysis). In other words, we are not sure that the brain physically works like a Hopfield network. The brain *could* physically work like a Hopfield network, but the biological instantiation of memory is not the point; rather, we are seeking useful mathematical metaphors.
 
-That concludes this basic primer on neural dynamics, in which we learned about emergence and state space. We did not touch upon many other useful concepts, such as firing rate manifolds and oscillatory and chaotic behavior, which will be the content of a future post. For a list of seminal papers in neural dynamics, go [here](/dynamics/).
+That concludes this basic primer on neural dynamics, in which we learned about emergence and state space. We did not touch upon many other useful concepts, such as firing rate manifolds and oscillatory and chaotic behavior, which will be the content of a future post.
+
+For a list of seminal papers in neural dynamics, go [here](/dynamics/).
 
 
 
