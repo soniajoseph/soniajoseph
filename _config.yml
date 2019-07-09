@@ -313,7 +313,7 @@ defaults:
       author_profile: true
       header:
         image: /assets/images/temptations/temptations-6.jpg
-        teaser: /assets/images/posts/Perceptron.moj.png
+        teaser: /assets/images/posts/Perceptron_moj.png
         caption: # "Temptations of Saint Anthony (Dali)"
 
 
