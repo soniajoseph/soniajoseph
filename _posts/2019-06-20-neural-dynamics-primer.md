@@ -85,7 +85,7 @@ Let's walk through the Hopfield network in action, and how it could model human 
 
 We initialize the network by setting the values of the neurons to a desired start pattern. The network runs according to the rules in the previous sections, with the value of each neuron changing depending on the values of its input neurons. Eventually, the network converges to an attractor state, the lowest energy value of the system. 
 
-Attractor states are "memories" that the network should "remember." Before we initialize the network, we "train" it, a process by which we update the weights in order to set the memories as the attractor states. The network can therefore act as a content addressable ("associative") memory system, which recovers memories based on similarity. For example, if we train a four-neuron network so that state (-1, -1, -1, 1) is an attractor state, the network will converge to the attractor state given a starting state. For example, (-1, -1, -1, -1) will converge to (-1, -1, -1, 1). 
+Attractor states are "memories" that the network should "remember." Before we initialize the network, we "train" it, a process by which we update the weights in order to set the memories as the attractor states. The network can therefore act as a content addressable ("associative") memory system, which recovers memories based on similarity. If we train a four-neuron network so that state (-1, -1, -1, 1) is an attractor state, the network will converge to the attractor state given a starting state. For example, (-1, -1, -1, -1) will converge to (-1, -1, -1, 1). 
 
 So how do Hopfield networks relate to human memory? 
 
