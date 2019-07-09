@@ -12,7 +12,7 @@ How does higher-order behavior emerge from billions of neurons firing?
 
 This post is a basic introduction to thinking about the brain in the context of dynamical systems, which I have found to be far more useful than more phrenology-like paradigms. I tried to keep this introduction as simple and clear as possible, and accessible to anyone without strong background in neuroscience or mathematics.
  
-*For a list of seminal papers in neural dynamics, go [here](/dynamics/)*.
+*For a list of seminal papers in neural dynamics, go [here](/computational%20neuroscience/dynamics/)*.
 
 ## 1. Emergent Behavior from Simple Parts
 
@@ -98,7 +98,7 @@ As a caveat, as with most computational neuroscience models, we are operating on
 
 That concludes this basic primer on neural dynamics, in which we learned about emergence and state space. We did not touch upon many other useful concepts, such as firing rate manifolds and oscillatory and chaotic behavior, which will be the content of a future post.
 
-For a list of seminal papers in neural dynamics, go [here](/dynamics/).
+For a list of seminal papers in neural dynamics, go [here](/computational%20neuroscience/dynamics/).
 
 
 
