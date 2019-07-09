@@ -12,7 +12,7 @@ comments: true
 
 How does higher-order behavior emerge from billions of neurons firing? 
 
-This post is a basic introduction to thinking about the brain in the context of dynamical systems, which I have found to be far more useful than more phrenology-like paradigms. I tried to keep this introduction as simple and clear as possible, and accessible to anyone without background in neuroscience or mathematics.
+This post is a basic introduction to thinking about the brain in the context of dynamical systems, which I have found to be far more useful than more phrenology-like paradigms, which overemphasize the idea that spatially modular areas of the brain encode for specific functions. I tried to keep this introduction as simple and clear as possible, and accessible to anyone without background in neuroscience or mathematics.
  
 *For a list of seminal papers in neural dynamics, go [here](/computational%20neuroscience/dynamics/)*.
 
@@ -54,7 +54,9 @@ $$ \begin{equation}
 \end{cases}
 \end{equation} $$
 
-A Hopfield network consists of these neurons linked together without directionality. The strength of synaptic connectivity $$w_{ij}$$ between neurons $$i$$ and $$j$$ follows the Hebbian learning rule, in which *neurons that fire together wire together, and neurons that fire out of sync, fail to link*:
+A Hopfield network consists of these neurons linked together without directionality. In hierarchical neural nets, the network has a clear input and output direction (e.g. the input is pixel values and the output is a category in image classification). However, in a Hopfield network, all of the units are linked to each other without an input or output layer. We consider the input to be the energy state of all the neurons before running the network, and the output to be the energy state after.
+
+ The strength of synaptic connectivity $$w_{ij}$$ between neurons $$i$$ and $$j$$ follows the Hebbian learning rule, in which *neurons that fire together wire together, and neurons that fire out of sync, fail to link*:
 
 $$ w_{ij} = (2V_i - 1)(2V_j - 1)$$
 
@@ -81,9 +83,9 @@ While the above graph represents state space in one dimension, we can generalize
 
 Let's walk through the Hopfield network in action, and how it could model human memory.
 
-We train and initialize the network by updating the weights based on the Hebbian learning rules, and then by setting the values of the neurons to a desired start pattern. The network runs according to the rules in the previous sections, with the value of each neuron changing depending on the values of its input neurons. Eventually, the network converges to an attractor state, the lowest energy value of the system. 
+We initialize the network by setting the values of the neurons to a desired start pattern. The network runs according to the rules in the previous sections, with the value of each neuron changing depending on the values of its input neurons. Eventually, the network converges to an attractor state, the lowest energy value of the system. 
 
-Attractor states are "memories" that the network should "remember." During training, we update the weights in order to set the memories as the attractor states. The network can therefore act as a content addressable ("associative") memory system, which recovers memories based on similarity. For example, if we train a four-neuron network so that state (-1, -1, -1, 1) is an attractor state, the network will converge to the attractor state given a starting state. For example, (-1, -1, -1, -1) will converge to (-1, -1, -1, 1). 
+Attractor states are "memories" that the network should "remember." Before we initialize the network, we "train" it, a process by which we update the weights in order to set the memories as the attractor states. The network can therefore act as a content addressable ("associative") memory system, which recovers memories based on similarity. For example, if we train a four-neuron network so that state (-1, -1, -1, 1) is an attractor state, the network will converge to the attractor state given a starting state. For example, (-1, -1, -1, -1) will converge to (-1, -1, -1, 1). 
 
 So how do Hopfield networks relate to human memory? 
 
@@ -94,13 +96,14 @@ Say you bite into a mint chocolate chip ice cream cone. That ice cream cone coul
   <figcaption>Proust's mind is converging on Combray right now. <i>From Wikipedia</i>.</figcaption>
 </figure> 
 
-We can generalize this idea: some neuroscientists hypothesize that our perception of shades of color converges to an attractor state shade of that color. It's also fun to think of Hopfield networks in the context of Proust's [famous madeleine passage](https://www.goodreads.com/quotes/7296965-no-sooner-had-the-warm-liquid-mixed-with-the-crumbs), in which the narrator bites into a madeleine and is taken back to childhood. (His starting memory vector of the madeleine converges to the attractor state vector of the childhood madeleine.)
+We can generalize this idea: some neuroscientists hypothesize that our perception of shades of color converges to an attractor state shade of that color. It's also fun to think of Hopfield networks in the context of Proust's [famous madeleine passage](https://www.goodreads.com/quotes/7296965-no-sooner-had-the-warm-liquid-mixed-with-the-crumbs), in which the narrator bites into a madeleine and is taken back to childhood. (His starting memory state of the madeleine converges to the attractor state of the childhood madeleine.)
 
 As a caveat, as with most computational neuroscience models, we are operating on the 3rd level of [Marr's levels of analysis](https://en.wikipedia.org/wiki/David_Marr_(neuroscientist)#Levels_of_analysis). In other words, we are not sure that the brain physically works like a Hopfield network. The brain *could* physically work like a Hopfield network, but the biological instantiation of memory is not the point; rather, we are seeking useful mathematical metaphors.
 
-That concludes this basic primer on neural dynamics, in which we learned about emergence and state space. We did not touch upon many other useful concepts, such as firing rate manifolds and oscillatory and chaotic behavior, which will be the content of a future post.
+That concludes this basic primer on neural dynamics, in which we learned about emergence and state space. Other useful concepts include firing rate manifolds and oscillatory and chaotic behavior, which will be the content of a future post.
 
 For a list of seminal papers in neural dynamics, go [here](/computational%20neuroscience/dynamics/).
 
+*I would always appreciate feedback, so let me know what you think, either in the comments or through email.*
 
 
