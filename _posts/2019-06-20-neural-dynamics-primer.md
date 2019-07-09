@@ -5,6 +5,7 @@ categories: [computational neuroscience]
 excerpt: "Basic concepts in neural dynamics explained with Hopfield networks."
 toc: true
 mathjax: true
+comments: true
 ---
 
 How does higher-order behavior emerge from billions of neurons firing? 
