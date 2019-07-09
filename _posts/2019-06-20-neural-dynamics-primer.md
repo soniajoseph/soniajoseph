@@ -104,6 +104,6 @@ That concludes this basic primer on neural dynamics, in which we learned about e
 
 For a list of seminal papers in neural dynamics, go [here](/computational%20neuroscience/dynamics/).
 
-*I would always appreciate feedback, so let me know what you think, either in the comments or through email.*
+*I always appreciate feedback, so let me know what you think, either in the comments or through email.*
 
 
