@@ -75,7 +75,7 @@ Energy landscape of a Hopfield network, taken from Wikipedia.
  </figcaption>
 </figure>
 
-The y-axis represents the energy of the system $$ E $$, and the x-axis represents all the possible states that the system could be in. Out of all the possible energy states, the system will converge to a *local minima*, also called an *attractor state*, in which the energy of the total system is the locally the lowest. Imagine a ball rolling around the hilly energy landscape, and getting caught in an attractor state.
+The y-axis represents the energy of the system $$ E $$, and the x-axis represents all the possible states that the system could be in. Out of all the possible energy states, the system will converge to a *local minima*, also called an *attractor state*, in which the energy of the total system is locally the lowest. Imagine a ball rolling around the hilly energy landscape, and getting caught in an attractor state.
 
 While the above graph represents state space in one dimension, we can generalize the representation of state space to *n* dimensions.
 
