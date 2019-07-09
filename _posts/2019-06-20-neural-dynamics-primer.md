@@ -6,13 +6,16 @@ toc: true
 mathjax: true
 comments: true
 ---
+
+How does higher-order behavior emerge from billions of neurons firing? 
+
+This post is a basic introduction to thinking about the brain in the context of dynamical systems, which I have found to be far more useful than more phrenology-like paradigms. I tried to keep this introduction as simple and clear as possible, and accessible to anyone without strong background in neuroscience or mathematics.
  
 *For a list of seminal papers in neural dynamics, go [here](/dynamics/)*.
 
 ## 1. Emergent Behavior from Simple Parts
 
 Physical systems made out of a large number of simple elements give rise to collective phenomena. For example, flying starlings:
-
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/V4f_1_r80RY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
@@ -81,7 +84,7 @@ Attractor states are "memories" that the network should "remember." During train
 
 So how do Hopfield networks relate to human memory? 
 
-Say you bite into a mint chocolate chip ice cream cone. That ice cream cone could be represented as a vector (-1, -1, -1, -1). Now say that for some reason, there is a deeply memorable mint chocolate chip ice cream cone from childhood-- perhaps you were eating it with your parents annd the memory has strong emotional saliency-- represented by (-1, -1, -1, 1). As you bite into today's ice cream cone, you find yourself thinking of the mint chocolate chip ice cream cone from years' past. What happened? The starting point memory (-1, -1, -1, -1) converged to the system's attractor state (-1, -1, -1, 1).
+Say you bite into a mint chocolate chip ice cream cone. That ice cream cone could be represented as a vector (-1, -1, -1, -1). Now say that for some reason, there is a deeply memorable mint chocolate chip ice cream cone from childhood-- perhaps you were eating it with your parents and the memory has strong emotional saliency-- represented by (-1, -1, -1, 1). As you bite into today's ice cream cone, you find yourself thinking of the mint chocolate chip ice cream cone from years' past. What happened? The starting point memory (-1, -1, -1, -1) converged to the system's attractor state (-1, -1, -1, 1).
 
 <figure style="width: 300px" class="align-left">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Recette_pour_la_Madeleine.jpg/1024px-Recette_pour_la_Madeleine.jpg" alt="">
@@ -90,7 +93,7 @@ Say you bite into a mint chocolate chip ice cream cone. That ice cream cone coul
 
 This idea can be generalized: some neuroscientists hypothesize that our perception of shades of color converges to an attractor state shade of that color. It's also fun to think of Hopfield networks in the context of Proust's [famous madeleine passage](https://www.goodreads.com/quotes/7296965-no-sooner-had-the-warm-liquid-mixed-with-the-crumbs), in which the narrator bites into a madeleine and is taken back to childhood. (His starting memory vector of the madeleine converges to the attractor state vector of the childhood madeleine.)
 
-As a caveat, as with most computational neuroscience models, we are operating on the 3rd level of [Marr's levels of analysis](https://en.wikipedia.org/wiki/David_Marr_(neuroscientist)#Levels_of_analysis). In other words, we are not sure that the brain physically works like a Hopfield network. The brain could physically work like a Hopfield network, but the biological instantiation of memory is not the point; rather, we are seeking useful mathematical metaphors.
+As a caveat, as with most computational neuroscience models, we are operating on the 3rd level of [Marr's levels of analysis](https://en.wikipedia.org/wiki/David_Marr_(neuroscientist)#Levels_of_analysis). In other words, we are not sure that the brain physically works like a Hopfield network. The brain *could* physically work like a Hopfield network, but the biological instantiation of memory is not the point; rather, we are seeking useful mathematical metaphors.
 
 That concludes this basic primer on neural dynamics, in which we learned about emergence and state space. We did not touch upon many other useful concepts, such as firing rate manifolds and oscillatory and chaotic behavior, which will be the content of a future post. For a list of seminal papers in neural dynamics, go [here](/dynamics/).
 
