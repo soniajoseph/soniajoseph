@@ -27,7 +27,7 @@ Each starling follows simple rules: coordinating with seven neighbors, staying n
 
 The brain is similar: Each neuron follows a simple set of rules, and collectively, the neurons yield complex higher-order behavior, from keeping track of time to singing a tune. Granted, real neurons are highly varied and do not all follow the same set of rules, but we often assume that our model neurons do in order to keep things simple.
 
-Although [many types of these models exist](https://www.ncbi.nlm.nih.gov/pubmed/16022600), I will use Hopfield networks from [this seminal paper](https://www.pnas.org/content/79/8/2554) to demonstrate some general properties. Hopfield networks were originally used to model human associative memory, in which a network of simple units converges into stable state, in a process that I will describe below.
+Although [many types of these models exist](https://www.ncbi.nlm.nih.gov/pubmed/16022600), I will use Hopfield networks from [this seminal paper](https://www.pnas.org/content/79/8/2554) to demonstrate some general properties. Hopfield networks were originally used to model human associative memory, in which a network of simple units converges into a stable state, in a process that I will describe below.
 
 ## 2. The Units of the Model
 
@@ -42,7 +42,7 @@ The inputs for each neuron are signals from the incoming neurons $$[x_1.... x_n]
  </figcaption>
 </figure>
 
-Once the signals and weights are multipled together, the values are summed. If the total sum is greater than or equal to the threshold $$-b$$, then the output value is $$1$$, which means that the neuron fires. If the sum is less than the threshold, then the output is $$0$$, which means that the neuron does not fire.
+Once the signals and weights are multiplied together, the values are summed. If the total sum is greater than or equal to the threshold $$-b$$, then the output value is $$1$$, which means that the neuron fires. If the sum is less than the threshold, then the output is $$0$$, which means that the neuron does not fire.
 
 The rules above are modeled by the equation:
 
