@@ -1,5 +1,5 @@
 ---
-title: "Facial Recognition with Collaborative Representation-based Classification"
+title: "Facial Recognition with Collaborative Representation-Based Classification"
 excerpt: Facial recognition with collaborative representation-based classification.
 categories: [machine learning]
 tags: [machine learning, artificial intelligence, image classification]
@@ -18,6 +18,8 @@ We'll use the YALE face database, consisting of 15 subjects in 11 slightly diffe
     <a href="/assets/images/image-filename-1-large.jpg"><img src="/assets/images/posts/first_11_faces_of_one_subject.png"></a>
 </figure>
 The data points $${x_0... x_n}$$ are arranged in the columns of matrix $$X$$ (size 4096x165) so that the first 11 columns correspond to the 11 images for the first face, the next 11 columns to the second face, and so on.
+
+## Theory
 
 We begin by implementing ordinary least squares regression on $$X$$, in which we find $$w$$ to minimize the residual:
 
@@ -43,6 +45,8 @@ To predict the face for each data point $$x$$, we take the dot product $$\hat{y_
 $$ \begin{equation}
     j = \arg\min_{} \lVert \mathbf{x - \hat{y_i}} \rVert_2
 \end{equation} $$
+
+## Code
 
 The code for the algorithm is as follows:
 
@@ -117,11 +121,13 @@ print(accuracy_list)
 print("accuracy: ", np.mean(accuracy_list))
 ```
 
+## Conclusion
+
 In sum, the vectors of each face category "collaborate" via linear combinations in order to classify new faces (i.e., face category with the closest collaboration to the new face "wins"). We can further modify the algorithm to incorporate sparsity or lasso.
 
 Collaborative representation-based classification is too inefficient to use practically compared to neural nets. Nonetheless, it is an elegant discrete implementation of a continuous algorithm.
 
-*Full code on Github [here]().*
+*Full code on Github [here](https://github.com/soniajoseph/Collaborative-Representation-Based-Classification).*
 
 ## References
 [^1]: Deng Cai, Xiaofei He, Yuxiao Hu, Jiawei Han and Thomas Huang, "Learning a Spatially Smooth Subspace for Face Recognition", CVPR'07. Bibtex source

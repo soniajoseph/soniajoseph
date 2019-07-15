@@ -19,7 +19,7 @@ var store = [{
         "tags": ["machine learning","artificial intelligence","image classification","all audiences"],
         "url": "http://localhost:4000/machine%20learning/facial-recognition-collaborative-representation-draft1/",
         "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"},{
-        "title": "Facial Recognition with Collaborative Representation-based Classification",
+        "title": "Facial Recognition with Collaborative Representation-Based Classification",
         "excerpt":"The following post assumes some prior background in machine learning, such as familiarity with ordinary least squares (OLS). Let’s talk about faces… Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing...","categories": ["machine learning"],
         "tags": ["machine learning","artificial intelligence","image classification"],
         "url": "http://localhost:4000/machine%20learning/collabrepresentationclassification/",
