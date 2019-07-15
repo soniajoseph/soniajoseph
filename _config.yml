@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "sonia joseph"
 title_separator          : "-"
 name                     : "sonia joseph"
-description              : "artificial intelligence, computational neuroscience, and anthropology essays." 
+description              : "machine learning and computational neuroscience essays." 
 url                      : "https://soniajoseph.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "soniajoseph/soniajoseph.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -108,13 +108,13 @@ analytics:
 author:
   name             : ""
   avatar           : "/assets/images/avatar.jpg"
-  bio              : "artificial intelligence and <br>computational neuroscience<br>"
+  bio              : "machine learning and <br>computational neuroscience<br>"
 
 
   email            : "soniamollyjoseph@gmail.com"
   title_separator: "-"
   links:
-    - label: "Essays"
+    - label: "Medium"
       url: "https://medium.com/@soniamollyjoseph"
     # - label: "Email"
     #   icon: "fas fa-fw fa-envelope-square"
