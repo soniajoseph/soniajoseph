@@ -13,7 +13,7 @@ While this post should be accessible to anyone without background in programming
 
 ## Let's talk about faces...
 
-Collaborative representation-based classification is basically using old data points to represent new data points. I like collaborative representation-based classification because of its visual elegance and [Tetris effect](https://en.wikipedia.org/wiki/Tetris_effect) on my thinking.
+Collaborative representation-based classification is a neat way to use linear regression (an algorithm with continuous output) in order to classify new data points discretely. I like collaborative representation-based classification because of its visual elegance and [Tetris effect](https://en.wikipedia.org/wiki/Tetris_effect) on my thinking.
 
 We'll use the YALE face database, consisting of 15 subjects in 11 slightly different poses, for a total of 165 images, which I downloaded [here](http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html) [^1][^2][^3][^4]. 
 
@@ -24,8 +24,7 @@ We'll use the YALE face database, consisting of 15 subjects in 11 slightly diffe
 
 Let's take some faces and plot them on three axes:
 
-Te 
-
+INSERT FACE IMAGES HERE
 
 
 What do these three axes mean? Each axis represents the value of a pixel from 0 (black) to 255 (white). Taken together, the axes represent all possible black-and-white images that consist of just three pixels. 
@@ -36,16 +35,19 @@ Each image has a corresponding vector. For example, this guy:
 
 PHOTO
 
-can be represented by [1, .5, .7]. Again, remember that the vector actually has XXX entries, called *components*, in order to represent its XXX pixels, but we are pretending that there are three components so that we can understand later concepts.
+can be represented by [1.0, 0.5, 0.7]. Again, remember that the vector actually has 1024 entries, called *components*, in order to represent its 1024 pixels, but we are pretending that there are three components so that we can understand later concepts.
 
 Now say we are using this algorithm on social media, and this guy uploads a new photo of himself:
 
-PHOTO
+PHOTO OF GUY
 
-The algorithm has to identify this guy's face out of the library of all his friends faces (which includes the guy's own face) so that it can label the face with the correct name. (I should note that the real  Facebook uses neural nets, which are far more accurate and sophisticated than a linear regression; collaborative representation is way too inefficient. Nonetheless, collaborative representation will work with reasonable accuracy.)
+The algorithm has to identify this guy's face out of the library of all his friends faces (which includes the guy's own face) so that it can label the face with the correct name. (I should note that the real  Facebook uses neural nets, which are far more accurate and sophisticated than collaborative representation, which is way too inefficient. Nonetheless, collaborative representation will work with reasonable accuracy.)
 
+We turn our new
 
-So what does our social media site do? We turn the new image into a vector and compare the vector to all the known face vectors, one at a time. We will find the known face vector closest to the new image vector, and then we will give its label to the new image vector.
+So what does our social media site do? We turn the new face into a vector, and compare the vnew ector to the existing face vectors, one at a time. We find the existing face vector closest to the new face vector, and then we will give the label of the close to the new face vector.
+
+We do this by taking *linear combinations* of the existing face vectors
 
 In the social world, you can use linear combinations of past people to represent new people (note I do not think this is the best way to understand people; it is not the most integrated and holistic, but I found that this was what my mind was doing). Another way to think about this linear combination of past people is a weighted average of past people.
 

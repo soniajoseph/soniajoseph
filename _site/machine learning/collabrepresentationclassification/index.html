@@ -1,0 +1,813 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Facial Recognition with Collaborative Representation-based Classification - sonia joseph</title>
+<meta name="description" content="Facial recognition with collaborative representation-based classification.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="sonia joseph">
+<meta property="og:title" content="Facial Recognition with Collaborative Representation-based Classification">
+<meta property="og:url" content="http://localhost:4000/machine%20learning/collabrepresentationclassification/">
+
+
+  <meta property="og:description" content="Facial recognition with collaborative representation-based classification.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/Perceptron.moj.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2019-07-12T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/machine%20learning/collabrepresentationclassification/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "sonia joseph",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="uJD9m5W7ULL26YeAM52w_INCl_vPQZsy7nheejxsi3w" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sonia joseph Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- matjax -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+        
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">sonia joseph</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" "
+>
+  
+    <img src="/assets/images/temptations/temptations-6.jpg" alt="Facial Recognition with Collaborative Representation-based Classification" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.jpg" alt="" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        machine learning and <br>computational neuroscience<br>
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Princeton, NJ</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://medium.com/@soniamollyjoseph" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Essays</a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/soniamjoseph/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:soniamollyjoseph@gmail.com">
+            <meta itemprop="email" content="soniamollyjoseph@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Facial Recognition with Collaborative Representation-based Classification">
+    <meta itemprop="description" content="Facial recognition with collaborative representation-based classification.">
+    <meta itemprop="datePublished" content="July 12, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+
+          <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+          <h1 id="page-title" class="page__title" itemprop="headline">Facial Recognition with Collaborative Representation-based Classification
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#lets-talk-about-faces">Let’s talk about faces…</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p><em>The following post assumes some prior background in machine learning, such as familiarity with ordinary least squares (OLS).</em></p>
+
+<h2 id="lets-talk-about-faces">Let’s talk about faces…</h2>
+
+<p>Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing about this algorithm because it is elegant, but undertaught.</p>
+
+<p>We’ll use the YALE face database, consisting of 15 subjects in 11 slightly different poses, for a total of 165 64x64 pixel images, which I downloaded <a href="http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html">here</a> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>.</p>
+<figure class="half">
+    <a href="/assets/images/image-filename-2-large.jpg"><img src="/assets/images/posts/first_face_fifteen_subjects.png" /></a>
+    <a href="/assets/images/image-filename-1-large.jpg"><img src="/assets/images/posts/first_11_faces_of_one_subject.png" /></a>
+</figure>
+<p>The data points <script type="math/tex">{x_0... x_n}</script> are arranged in the columns of matrix <script type="math/tex">X</script> (size 4096x165) so that the first 11 columns correspond to the 11 images for the first face, the next 11 columns to the second face, and so on.</p>
+
+<p>We begin by implementing ordinary least squares regression on <script type="math/tex">X</script>, in which we find <script type="math/tex">w</script> to minimize the residual:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+    w* = 
+\arg\min_{w} \lVert \mathbf{Xw - x} \rVert_2^2
+
+\end{equation}</script>
+
+<p>We solve the normal equation to get <script type="math/tex">\begin{equation} w* \end{equation}</script>:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+    w* = (X^TX)^{-1}X^Tx
+
+\end{equation}</script>
+
+<p>The first 11 elements of <script type="math/tex">w</script>, which we will call <script type="math/tex">w_0</script>, represent how much of each column of the first face we need to represent a new data point <script type="math/tex">x</script>; the next 11 elements <script type="math/tex">w_1</script> represent how much of each column of the second face we need to represent <script type="math/tex">x</script>; and so on.</p>
+
+<p>Likewise, <script type="math/tex">w_0</script> corresponds to the first 11 columns of <script type="math/tex">X</script>, which we will call <script type="math/tex">X_0</script>.</p>
+
+<p>To predict the face for each data point <script type="math/tex">x</script>, we take the dot product <script type="math/tex">\hat{y_i}</script> of <script type="math/tex">X_i</script> and <script type="math/tex">w_i</script> for each face <script type="math/tex">i</script>. We calculate the Euclidean distance between <script type="math/tex">x</script> and <script type="math/tex">\hat{y_i}</script>. The face <script type="math/tex">j</script> out of <script type="math/tex">i</script> that yields the lowest distance will determine the label.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+    j = \arg\min_{} \lVert \mathbf{x - \hat{y_i}} \rVert_2
+\end{equation}</script>
+
+<p>The code for the algorithm is as follows:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">collab_rep</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">,</span> <span class="n">lambda_weight</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    
+    <span class="n">num_test_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Y_test</span><span class="p">)</span>
+    <span class="n">num_classifications</span> <span class="o">=</span> <span class="mi">15</span>
+    
+    <span class="c1"># least squares
+</span>    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> 
+    
+    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_test_samples</span><span class="p">,))</span>
+    
+    <span class="c1"># for each new vector
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_test_samples</span><span class="p">):</span>
+        <span class="n">test_ex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">test_ex</span>
+        
+        <span class="c1"># compare the new vector to linear combinations of each face j
+</span>        <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_classifications</span><span class="p">,))</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_classifications</span><span class="p">):</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span><span class="n">j</span><span class="o">*</span><span class="n">num_classifications</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">num_classifications</span><span class="p">]</span>
+            <span class="n">w_j</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="o">*</span><span class="n">num_classifications</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">num_classifications</span><span class="p">]</span>
+            <span class="n">reconstructed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">w_j</span><span class="p">)</span>
+            <span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">reconstructed</span> <span class="o">-</span> <span class="n">test_ex</span><span class="p">)</span>
+        
+        <span class="c1"># classify new vector according to minimum distance between the vector and reconstructed 
+</span>        <span class="n">predicted_label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
+        
+    <span class="c1"># calculate the accuracy
+</span>    <span class="n">test_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">predicted_label</span> <span class="o">-</span> <span class="n">Y_test</span><span class="p">)</span>
+    <span class="n">test_acc</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">test_err</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">test_acc</span>
+</code></pre></div></div>
+
+<p>We can run the code with 50-fold cross-validation to get a <strong>55%</strong> accuracy, far better than chance (&gt;7%).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># load YALE database from http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html
+</span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
+
+<span class="c1"># load data and transpose so that columns are faces
+</span><span class="n">YALE</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="s">'Yale_64x64.mat'</span><span class="p">)</span>
+<span class="n">fea</span> <span class="o">=</span> <span class="n">YALE</span><span class="p">[</span><span class="s">'fea'</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="n">gnd</span> <span class="o">=</span> <span class="n">YALE</span><span class="p">[</span><span class="s">'gnd'</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># scale pixels to be [0,1]
+</span><span class="n">maxValue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">fea</span><span class="p">)</span>
+<span class="n">fea</span> <span class="o">=</span> <span class="n">fea</span> <span class="o">/</span> <span class="n">maxValue</span>
+
+<span class="n">accuracy_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="s">'8Train/'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">'.mat'</span><span class="p">)</span> 
+    <span class="n">trainIdx</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="s">'trainIdx'</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">testIdx</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="s">'testIdx'</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    
+    <span class="c1"># generate training and test data
+</span>    <span class="n">fea_Train</span> <span class="o">=</span> <span class="n">fea</span><span class="p">[:,</span><span class="n">trainIdx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> 
+    <span class="n">fea_Test</span> <span class="o">=</span> <span class="n">fea</span><span class="p">[:,</span><span class="n">testIdx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> 
+
+    <span class="n">gnd_Train</span> <span class="o">=</span> <span class="n">gnd</span><span class="p">[:,</span><span class="n">trainIdx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> 
+    <span class="n">gnd_Test</span> <span class="o">=</span> <span class="n">gnd</span><span class="p">[:,</span><span class="n">testIdx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> 
+    
+    <span class="c1"># get accuracy via collaborative representation
+</span>    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">collab_rep</span><span class="p">(</span><span class="n">fea_Train</span><span class="p">,</span> <span class="n">fea_Test</span><span class="p">,</span> <span class="n">gnd_Train</span><span class="p">,</span> <span class="n">gnd_Test</span><span class="p">,</span> <span class="n">lambda_weight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">accuracy_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">accuracy_list</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"accuracy: "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">accuracy_list</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>In sum, the vectors of each face category “collaborate” via linear combinations in order to classify new faces (i.e., face category with the closest collaboration to the new face “wins”). We can further modify the algorithm to incorporate sparsity or lasso.</p>
+
+<p>Collaborative representation-based classification is too inefficient to use practically compared to neural nets. Nonetheless, it is an elegant discrete implementation of a continuous algorithm.</p>
+
+<p><em>Full code on Github <a href="">here</a>.</em></p>
+
+<h2 id="references">References</h2>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Deng Cai, Xiaofei He, Yuxiao Hu, Jiawei Han and Thomas Huang, “Learning a Spatially Smooth Subspace for Face Recognition”, CVPR’07. Bibtex source <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Deng Cai, Xiaofei He and Jiawei Han, “Spectral Regression for Efficient Regularized Subspace Learning”, ICCV’07.	Bibtex source <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Deng Cai, Xiaofei He, Jiawei Han, and Hong-Jiang Zhang, “Orthogonal Laplacianfaces for Face Recognition”, IEEE TIP 2006. Bibtex source <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Xiaofei He, Shuicheng Yan, Yuxiao Hu, Partha Niyogi, and Hong-Jiang Zhang, “Face Recognition Using Laplacianfaces”, IEEE TPAMI 2005. Bibtex source <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#artificial-intelligence" class="page__taxonomy-item" rel="tag">artificial intelligence</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#image-classification" class="page__taxonomy-item" rel="tag">image classification</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-07-12T00:00:00-05:00">July 12, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Facial+Recognition+with+Collaborative+Representation-based+Classification%20http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fcollabrepresentationclassification%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fcollabrepresentationclassification%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fcollabrepresentationclassification%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/machine%20learning/facial-recognition-collaborative-representation-draft1/" class="pagination--pager" title="Machine Learning for All Audiences: Facial Recognition with Collaborative Representation
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/facial-recognition-collaborative-representation-draft1/" rel="permalink">Machine Learning for All Audiences: Facial Recognition with Collaborative Representation
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> July 12, 2019 <br> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Facial recognition with collaborative representation-based classification for all audiences.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/computational%20neuroscience/comparing-anns-and-bnns/" rel="permalink">Comparing Biological and Artificial Neural Nets
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> July 01, 2019 <br> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Similarities and differences between the brain and artificial neural nets through recent work by Yamins and DiCarlo.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron_moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/computational%20neuroscience/neural-dynamics-primer/" rel="permalink">Neural Dynamics: A Primer (Hopfield Networks)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> June 20, 2019 <br> 
+
+
+
+
+  6 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Basic concepts in neural dynamics explained with Hopfield networks.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/starlings2.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/computational%20neuroscience/dynamics/" rel="permalink">Paper List for Neural Dynamics
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> June 19, 2019 <br> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Resources for computational neuroscience
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 sonia joseph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+
+
+
+
+
+  </body>
+</html>

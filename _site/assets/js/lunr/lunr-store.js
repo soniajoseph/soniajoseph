@@ -17,5 +17,10 @@ var store = [{
         "title": "Machine Learning for All Audiences: Facial Recognition with Collaborative Representation",
         "excerpt":"The fastest way I understand machine learning is visually. I often find that a clever diagram or visualization will unlock my understand far more quickly than staring at equations. In this post, I try to explain collaborative representation-based classification as clearly and as visually as possible. While this post should...","categories": ["machine learning"],
         "tags": ["machine learning","artificial intelligence","image classification","all audiences"],
-        "url": "http://localhost:4000/machine%20learning/facial-recognition-collaborative-representation/",
+        "url": "http://localhost:4000/machine%20learning/facial-recognition-collaborative-representation-draft1/",
+        "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"},{
+        "title": "Facial Recognition with Collaborative Representation-based Classification",
+        "excerpt":"The following post assumes some prior background in machine learning, such as familiarity with ordinary least squares (OLS). Let’s talk about faces… Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing...","categories": ["machine learning"],
+        "tags": ["machine learning","artificial intelligence","image classification"],
+        "url": "http://localhost:4000/machine%20learning/collabrepresentationclassification/",
         "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"}]

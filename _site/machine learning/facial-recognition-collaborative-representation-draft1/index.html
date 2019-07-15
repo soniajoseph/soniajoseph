@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="sonia joseph">
 <meta property="og:title" content="Machine Learning for All Audiences: Facial Recognition with Collaborative Representation">
-<meta property="og:url" content="http://localhost:4000/machine%20learning/facial-recognition-collaborative-representation/">
+<meta property="og:url" content="http://localhost:4000/machine%20learning/facial-recognition-collaborative-representation-draft1/">
 
 
   <meta property="og:description" content="Facial recognition with collaborative representation-based classification for all audiences.">
@@ -42,7 +42,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/machine%20learning/facial-recognition-collaborative-representation/">
+<link rel="canonical" href="http://localhost:4000/machine%20learning/facial-recognition-collaborative-representation-draft1/">
 
 
 
@@ -366,7 +366,7 @@
 
 <h2 id="lets-talk-about-faces">Let’s talk about faces…</h2>
 
-<p>Collaborative representation-based classification is basically using old data points to represent new data points. I like collaborative representation-based classification because of its visual elegance and <a href="https://en.wikipedia.org/wiki/Tetris_effect">Tetris effect</a> on my thinking.</p>
+<p>Collaborative representation-based classification is a neat way to use linear regression (an algorithm with continuous output) in order to classify new data points discretely. I like collaborative representation-based classification because of its visual elegance and <a href="https://en.wikipedia.org/wiki/Tetris_effect">Tetris effect</a> on my thinking.</p>
 
 <p>We’ll use the YALE face database, consisting of 15 subjects in 11 slightly different poses, for a total of 165 images, which I downloaded <a href="http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html">here</a> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>.</p>
 
@@ -377,7 +377,7 @@
 
 <p>Let’s take some faces and plot them on three axes:</p>
 
-<p>Te</p>
+<p>INSERT FACE IMAGES HERE</p>
 
 <p>What do these three axes mean? Each axis represents the value of a pixel from 0 (black) to 255 (white). Taken together, the axes represent all possible black-and-white images that consist of just three pixels.</p>
 
@@ -387,15 +387,19 @@
 
 <p>PHOTO</p>
 
-<p>can be represented by [1, .5, .7]. Again, remember that the vector actually has XXX entries, called <em>components</em>, in order to represent its XXX pixels, but we are pretending that there are three components so that we can understand later concepts.</p>
+<p>can be represented by [1.0, 0.5, 0.7]. Again, remember that the vector actually has 1024 entries, called <em>components</em>, in order to represent its 1024 pixels, but we are pretending that there are three components so that we can understand later concepts.</p>
 
 <p>Now say we are using this algorithm on social media, and this guy uploads a new photo of himself:</p>
 
-<p>PHOTO</p>
+<p>PHOTO OF GUY</p>
 
-<p>The algorithm has to identify this guy’s face out of the library of all his friends faces (which includes the guy’s own face) so that it can label the face with the correct name. (I should note that the real  Facebook uses neural nets, which are far more accurate and sophisticated than a linear regression; collaborative representation is way too inefficient. Nonetheless, collaborative representation will work with reasonable accuracy.)</p>
+<p>The algorithm has to identify this guy’s face out of the library of all his friends faces (which includes the guy’s own face) so that it can label the face with the correct name. (I should note that the real  Facebook uses neural nets, which are far more accurate and sophisticated than collaborative representation, which is way too inefficient. Nonetheless, collaborative representation will work with reasonable accuracy.)</p>
 
-<p>So what does our social media site do? We turn the new image into a vector and compare the vector to all the known face vectors, one at a time. We will find the known face vector closest to the new image vector, and then we will give its label to the new image vector.</p>
+<p>We turn our new</p>
+
+<p>So what does our social media site do? We turn the new face into a vector, and compare the vnew ector to the existing face vectors, one at a time. We find the existing face vector closest to the new face vector, and then we will give the label of the close to the new face vector.</p>
+
+<p>We do this by taking <em>linear combinations</em> of the existing face vectors</p>
 
 <p>In the social world, you can use linear combinations of past people to represent new people (note I do not think this is the best way to understand people; it is not the most integrated and holistic, but I found that this was what my mind was doing). Another way to think about this linear combination of past people is a weighted average of past people.</p>
 
@@ -535,11 +539,11 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Machine+Learning+for+All+Audiences%3A+Facial+Recognition+with+Collaborative+Representation%20http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Ffacial-recognition-collaborative-representation%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Machine+Learning+for+All+Audiences%3A+Facial+Recognition+with+Collaborative+Representation%20http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Ffacial-recognition-collaborative-representation-draft1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Ffacial-recognition-collaborative-representation%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Ffacial-recognition-collaborative-representation-draft1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Ffacial-recognition-collaborative-representation%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Ffacial-recognition-collaborative-representation-draft1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -550,7 +554,8 @@
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/machine%20learning/collabrepresentationclassification/" class="pagination--pager" title="Facial Recognition with Collaborative Representation-based Classification
+">Next</a>
     
   </nav>
 
@@ -564,6 +569,42 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/collabrepresentationclassification/" rel="permalink">Facial Recognition with Collaborative Representation-based Classification
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> July 12, 2019 <br> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Facial recognition with collaborative representation-based classification.
+</p>
+  </article>
+</div>
+
         
           
 
