@@ -9,16 +9,6 @@ var store = [{
         "tags": ["computational neuroscience","neuroscience","machine learning","neural dynamics","all audiences"],
         "url": "http://localhost:4000/computational%20neuroscience/neural-dynamics-primer/",
         "teaser":"http://localhost:4000/assets/images/posts/Perceptron_moj.png"},{
-        "title": "Comparing Biological and Artificial Neural Nets",
-        "excerpt":"1. The Idea   THe   2. Implementation in the Visual Stream      3. Caveats   Marr’s Levels: Many Ways to Get Same Outcome   Overemphasis of Deep Learning Metaphor   deep learning is financially in vogue   4. Further Directions   Prefrontal Cortex   Adversarial Examples   Behavioral Signatures   From the Zoo of Algorithms   Role of Evolution   ","categories": ["computational neuroscience"],
-        "tags": ["computational neuroscience","neuroscience","deep learning","artificial intelligence"],
-        "url": "http://localhost:4000/computational%20neuroscience/comparing-anns-and-bnns/",
-        "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"},{
-        "title": "Machine Learning for All Audiences: Facial Recognition with Collaborative Representation",
-        "excerpt":"The fastest way I understand machine learning is visually. I often find that a clever diagram or visualization will unlock my understand far more quickly than staring at equations. In this post, I try to explain collaborative representation-based classification as clearly and as visually as possible. While this post should...","categories": ["machine learning"],
-        "tags": ["machine learning","artificial intelligence","image classification","all audiences"],
-        "url": "http://localhost:4000/machine%20learning/facial-recognition-collaborative-representation-draft1/",
-        "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"},{
         "title": "Facial Recognition with Collaborative Representation-Based Classification",
         "excerpt":"The following post assumes some prior background in machine learning, such as familiarity with ordinary least squares (OLS). Let’s talk about faces… Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing...","categories": ["machine learning"],
         "tags": ["machine learning","artificial intelligence","image classification"],
