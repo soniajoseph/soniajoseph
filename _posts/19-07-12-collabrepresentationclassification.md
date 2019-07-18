@@ -17,7 +17,7 @@ Collaborative representation-based classification is a neat way to implement ord
 We'll use the YALE face database, consisting of 15 subjects in 11 slightly different poses, for a total of 165 64x64 pixel images, which I downloaded [here](http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html) [^1][^2][^3][^4]. 
 <figure class="half">
     <a href="/assets/images/image-filename-2-large.jpg"><img src="/assets/images/posts/first_face_fifteen_subjects.png"></a>
-    <a href="/assets/images/image-filename-1-large.jpg"><img src="/assets/images/posts/first_11_faces_of_one_subject.png"></a>
+    <a href="/assets/images/image-filename-1-large.jpg"><img src="/assets/images/posts/total_images_one_face.png"></a>
 </figure>
 The data points $${x_0... x_n}$$ are arranged in the columns of matrix $$X$$ (size 4096x165) so that the first 11 columns correspond to the 11 images for the first face, the next 11 columns to the second face, and so on.
 
@@ -53,32 +53,34 @@ $$ \begin{equation}
 The code for the algorithm is as follows:
 
 ```python
-def collab_rep(X_train, X_test, Y_train, Y_test, lambda_weight=0):
+def collab_rep(X_train, X_test, Y_train, Y_test):
     
-    num_test_samples = len(Y_test)
+    num_test_samples = X_test.shape[0]
+    predicted_label = np.zeros((num_test_samples,))
     num_classifications = 15
     
-    # least squares
+    # OLS
     X = np.matrix(X_train)
-    w = np.linalg.pinv(np.dot(X.T,X)) * (X.T) 
-    
-    predicted_label = np.zeros((num_test_samples,))
+    proj = np.linalg.pinv(np.dot(X.T,X)) * (X.T) 
     
     # for each new vector
     for i in range(0,num_test_samples):
-        test_ex = np.matrix(X_test[:,i]).T
-        p = w * test_ex
+        test_ex = np.matrix(X_test[i,:])
+        p = proj.T * test_ex.T
         
-        # compare the new vector to linear combinations of each face j
+        # compare the new vector to linear combinations of existing vectors by face
         dist = np.zeros((num_classifications,))
         for j in range(0,num_classifications):
-            m = X[:,j*num_classifications:(j+1)*num_classifications]
-            w_j = p[j*num_classifications:(j+1)*num_classifications]
-            reconstructed = np.dot(m, w_j)
+            num_in_training = int(X_train.shape[0] / num_classifications)
+            X_subset = X_train[j*num_in_training:(j+1)*num_in_training,:]
+            w_subset = p[j*num_in_training:(j+1)*num_in_training]
+            reconstructed = np.dot(w_subset.T, X_subset)
             dist[j] = np.linalg.norm(reconstructed - test_ex)
         
         # classify new vector according to minimum distance between the vector and reconstructed 
-        predicted_label[i] = np.argmin(dist)
+        predicted_label[i] = np.argmin(dist) + 1
+        
+    predicted_label = predicted_label.reshape(-1,1)
         
     # calculate the accuracy
     test_err = np.count_nonzero(predicted_label - Y_test)
@@ -87,47 +89,13 @@ def collab_rep(X_train, X_test, Y_train, Y_test, lambda_weight=0):
     return test_acc
 ```
 
-We can run the code with 50-fold cross-validation to get a **55%** accuracy, far better than chance (>7%). 
-
-```python
-# load YALE database from http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html
-from sklearn import preprocessing
-
-# load data and transpose so that columns are faces
-YALE = io.loadmat('Yale_64x64.mat')
-fea = YALE['fea'].T
-gnd = YALE['gnd'].T
-
-# scale pixels to be [0,1]
-maxValue = np.amax(fea)
-fea = fea / maxValue
-
-accuracy_list = []
-for i in range(1,51,1):
-    subset = io.loadmat('8Train/' + str(i) + '.mat') 
-    trainIdx = subset['trainIdx'].flatten()
-    testIdx = subset['testIdx'].flatten()
-    
-    # generate training and test data
-    fea_Train = fea[:,trainIdx-1]; 
-    fea_Test = fea[:,testIdx-1]; 
-
-    gnd_Train = gnd[:,trainIdx-1]; 
-    gnd_Test = gnd[:,testIdx-1]; 
-    
-    # get accuracy via collaborative representation
-    accuracy = collab_rep(fea_Train, fea_Test, gnd_Train, gnd_Test, lambda_weight = 0)
-    accuracy_list.append(accuracy)
-
-print(accuracy_list)
-print("accuracy: ", np.mean(accuracy_list))
-```
+We can run the code with 8 training and 3 test images per individual with 50 random splits to get a **96.62% accuracy**.
 
 ## Conclusion
 
 In sum, the vectors of each face category "collaborate" via linear combinations in order to classify new faces (i.e., face category with the closest collaboration to the new face "wins"). We can further modify the algorithm to incorporate sparsity or lasso.
 
-Collaborative representation-based classification is too inefficient to use practically compared to neural nets. Nonetheless, it is an elegant discrete implementation of a continuous algorithm.
+Compared to neural nets, collaborative representation-based classification is too inefficient to use practically. Nonetheless, it is an elegant discrete implementation of a continuous algorithm, with a high accuracy.
 
 *Full code on Github [here](https://github.com/soniajoseph/Collaborative-Representation-Based-Classification).*
 

@@ -340,7 +340,7 @@
 
 
 
-  3 minute read
+  2 minute read
 </p>
           
         </header>
@@ -370,7 +370,7 @@
 <p>We’ll use the YALE face database, consisting of 15 subjects in 11 slightly different poses, for a total of 165 64x64 pixel images, which I downloaded <a href="http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html">here</a> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>.</p>
 <figure class="half">
     <a href="/assets/images/image-filename-2-large.jpg"><img src="/assets/images/posts/first_face_fifteen_subjects.png" /></a>
-    <a href="/assets/images/image-filename-1-large.jpg"><img src="/assets/images/posts/first_11_faces_of_one_subject.png" /></a>
+    <a href="/assets/images/image-filename-1-large.jpg"><img src="/assets/images/posts/total_images_one_face.png" /></a>
 </figure>
 <p>The data points <script type="math/tex">{x_0... x_n}</script> are arranged in the columns of matrix <script type="math/tex">X</script> (size 4096x165) so that the first 11 columns correspond to the 11 images for the first face, the next 11 columns to the second face, and so on.</p>
 
@@ -405,32 +405,34 @@
 
 <p>The code for the algorithm is as follows:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">collab_rep</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">,</span> <span class="n">lambda_weight</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">collab_rep</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">):</span>
     
-    <span class="n">num_test_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Y_test</span><span class="p">)</span>
+    <span class="n">num_test_samples</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_test_samples</span><span class="p">,))</span>
     <span class="n">num_classifications</span> <span class="o">=</span> <span class="mi">15</span>
     
-    <span class="c1"># least squares
+    <span class="c1"># OLS
 </span>    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> 
-    
-    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_test_samples</span><span class="p">,))</span>
+    <span class="n">proj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> 
     
     <span class="c1"># for each new vector
 </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_test_samples</span><span class="p">):</span>
-        <span class="n">test_ex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">test_ex</span>
+        <span class="n">test_ex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">proj</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">test_ex</span><span class="o">.</span><span class="n">T</span>
         
-        <span class="c1"># compare the new vector to linear combinations of each face j
+        <span class="c1"># compare the new vector to linear combinations of existing vectors by face
 </span>        <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_classifications</span><span class="p">,))</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_classifications</span><span class="p">):</span>
-            <span class="n">m</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span><span class="n">j</span><span class="o">*</span><span class="n">num_classifications</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">num_classifications</span><span class="p">]</span>
-            <span class="n">w_j</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="o">*</span><span class="n">num_classifications</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">num_classifications</span><span class="p">]</span>
-            <span class="n">reconstructed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">w_j</span><span class="p">)</span>
+            <span class="n">num_in_training</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">num_classifications</span><span class="p">)</span>
+            <span class="n">X_subset</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="n">j</span><span class="o">*</span><span class="n">num_in_training</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">num_in_training</span><span class="p">,:]</span>
+            <span class="n">w_subset</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="o">*</span><span class="n">num_in_training</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">num_in_training</span><span class="p">]</span>
+            <span class="n">reconstructed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w_subset</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X_subset</span><span class="p">)</span>
             <span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">reconstructed</span> <span class="o">-</span> <span class="n">test_ex</span><span class="p">)</span>
         
         <span class="c1"># classify new vector according to minimum distance between the vector and reconstructed 
-</span>        <span class="n">predicted_label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
+</span>        <span class="n">predicted_label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        
+    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">predicted_label</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
         
     <span class="c1"># calculate the accuracy
 </span>    <span class="n">test_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">predicted_label</span> <span class="o">-</span> <span class="n">Y_test</span><span class="p">)</span>
@@ -439,46 +441,13 @@
     <span class="k">return</span> <span class="n">test_acc</span>
 </code></pre></div></div>
 
-<p>We can run the code with 50-fold cross-validation to get a <strong>55%</strong> accuracy, far better than chance (&gt;7%).</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># load YALE database from http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html
-</span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
-
-<span class="c1"># load data and transpose so that columns are faces
-</span><span class="n">YALE</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="s">'Yale_64x64.mat'</span><span class="p">)</span>
-<span class="n">fea</span> <span class="o">=</span> <span class="n">YALE</span><span class="p">[</span><span class="s">'fea'</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-<span class="n">gnd</span> <span class="o">=</span> <span class="n">YALE</span><span class="p">[</span><span class="s">'gnd'</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-
-<span class="c1"># scale pixels to be [0,1]
-</span><span class="n">maxValue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">fea</span><span class="p">)</span>
-<span class="n">fea</span> <span class="o">=</span> <span class="n">fea</span> <span class="o">/</span> <span class="n">maxValue</span>
-
-<span class="n">accuracy_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">subset</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="s">'8Train/'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">'.mat'</span><span class="p">)</span> 
-    <span class="n">trainIdx</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="s">'trainIdx'</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-    <span class="n">testIdx</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="s">'testIdx'</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-    
-    <span class="c1"># generate training and test data
-</span>    <span class="n">fea_Train</span> <span class="o">=</span> <span class="n">fea</span><span class="p">[:,</span><span class="n">trainIdx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> 
-    <span class="n">fea_Test</span> <span class="o">=</span> <span class="n">fea</span><span class="p">[:,</span><span class="n">testIdx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> 
-
-    <span class="n">gnd_Train</span> <span class="o">=</span> <span class="n">gnd</span><span class="p">[:,</span><span class="n">trainIdx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> 
-    <span class="n">gnd_Test</span> <span class="o">=</span> <span class="n">gnd</span><span class="p">[:,</span><span class="n">testIdx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> 
-    
-    <span class="c1"># get accuracy via collaborative representation
-</span>    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">collab_rep</span><span class="p">(</span><span class="n">fea_Train</span><span class="p">,</span> <span class="n">fea_Test</span><span class="p">,</span> <span class="n">gnd_Train</span><span class="p">,</span> <span class="n">gnd_Test</span><span class="p">,</span> <span class="n">lambda_weight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="n">accuracy_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">accuracy_list</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"accuracy: "</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">accuracy_list</span><span class="p">))</span>
-</code></pre></div></div>
+<p>We can run the code with 8 training and 3 test images per individual with 50 random splits to get a <strong>96.62% accuracy</strong>.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
 <p>In sum, the vectors of each face category “collaborate” via linear combinations in order to classify new faces (i.e., face category with the closest collaboration to the new face “wins”). We can further modify the algorithm to incorporate sparsity or lasso.</p>
 
-<p>Collaborative representation-based classification is too inefficient to use practically compared to neural nets. Nonetheless, it is an elegant discrete implementation of a continuous algorithm.</p>
+<p>Compared to neural nets, collaborative representation-based classification is too inefficient to use practically. Nonetheless, it is an elegant discrete implementation of a continuous algorithm, with a high accuracy.</p>
 
 <p><em>Full code on Github <a href="https://github.com/soniajoseph/Collaborative-Representation-Based-Classification">here</a>.</em></p>
 
