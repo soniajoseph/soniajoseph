@@ -13,7 +13,7 @@ mathjax: "true"
 
 ## Let's talk about faces...
 
-Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing about this algorithm because it is elegant, but undertaught.
+Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing about this algorithm because it is elegant, but undertaught.[^5]
 
 We'll use the YALE face database, consisting of 15 subjects in 11 slightly different poses, for a total of 165 64x64 pixel images, which I downloaded [here](http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html) [^1][^2][^3][^4]. 
 <figure class="half">
@@ -105,3 +105,4 @@ Compared to neural nets, collaborative representation-based classification is to
 [^2]: Deng Cai, Xiaofei He and Jiawei Han, "Spectral Regression for Efficient Regularized Subspace Learning", ICCV'07.	Bibtex source
 [^3]: Deng Cai, Xiaofei He, Jiawei Han, and Hong-Jiang Zhang, "Orthogonal Laplacianfaces for Face Recognition", IEEE TIP 2006. Bibtex source
 [^4]: Xiaofei He, Shuicheng Yan, Yuxiao Hu, Partha Niyogi, and Hong-Jiang Zhang, "Face Recognition Using Laplacianfaces", IEEE TPAMI 2005. Bibtex source
+[^5]: You can read about collaborative representation-based classification in papers like [this one](https://arxiv.org/abs/1204.2358).
