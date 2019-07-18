@@ -6,6 +6,7 @@ tags: [machine learning, artificial intelligence, image classification]
 header:
   teaser: assets/images/posts/first_face_fifteen_subjects_teaser.png
 toc: true
+mathjax: "true"
 ---
 
 *The following post assumes some prior background in machine learning, such as familiarity with ordinary least squares (OLS).*
