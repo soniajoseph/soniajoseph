@@ -8,7 +8,7 @@ var store = [{
         "excerpt":"How does higher-order behavior emerge from billions of neurons firing? This post is a basic introduction to thinking about the brain in the context of dynamical systems. I have found this way of thinking to be far more useful than the phrenology-like paradigms that pop science articles tend to love,...","categories": ["computational neuroscience"],
         "tags": ["computational neuroscience","neuroscience","machine learning","neural dynamics","all audiences"],
         "url": "http://localhost:4000/computational%20neuroscience/neural-dynamics-primer/",
-        "teaser":"http://localhost:4000/assets/images/posts/Perceptron_moj.png"},{
+        "teaser":"http://localhost:4000/assets/images/posts/Perceptron_moj_teaser.jpg"},{
         "title": "Comparing Biological and Artificial Neural Nets",
         "excerpt":"1. The Idea   THe   2. Implementation in the Visual Stream      3. Caveats   Marr’s Levels: Many Ways to Get Same Outcome   Overemphasis of Deep Learning Metaphor   deep learning is financially in vogue   4. Further Directions   Prefrontal Cortex   Adversarial Examples   Behavioral Signatures   From the Zoo of Algorithms   Role of Evolution   ","categories": ["computational neuroscience"],
         "tags": ["computational neuroscience","neuroscience","deep learning","artificial intelligence"],
