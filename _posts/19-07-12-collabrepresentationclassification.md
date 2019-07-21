@@ -56,7 +56,7 @@ The code for the algorithm is as follows:
 ```python
 def collab_rep(X_train, X_test, Y_train, Y_test):
     
-    num_test_samples = X_test.shape[0]
+    num_test_samples = X_test.shape[1]
     predicted_label = np.zeros((num_test_samples,))
     num_classifications = 15
     
@@ -66,16 +66,16 @@ def collab_rep(X_train, X_test, Y_train, Y_test):
     
     # for each new vector
     for i in range(0,num_test_samples):
-        test_ex = np.matrix(X_test[i,:])
-        p = proj.T * test_ex.T
+        test_ex = np.matrix(X_test[:,i])
+        p = proj * test_ex.T
         
         # compare the new vector to linear combinations of existing vectors by face
         dist = np.zeros((num_classifications,))
+        num_in_training = int(X_train.shape[1] / num_classifications)
         for j in range(0,num_classifications):
-            num_in_training = int(X_train.shape[0] / num_classifications)
-            X_subset = X_train[j*num_in_training:(j+1)*num_in_training,:]
+            X_subset = X_train[:,j*num_in_training:(j+1)*num_in_training]
             w_subset = p[j*num_in_training:(j+1)*num_in_training]
-            reconstructed = np.dot(w_subset.T, X_subset)
+            reconstructed = np.dot(X_subset, w_subset)
             dist[j] = np.linalg.norm(reconstructed - test_ex)
         
         # classify new vector according to minimum distance between the vector and reconstructed 
