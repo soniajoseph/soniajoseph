@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "sonia joseph"
 title_separator          : "-"
 name                     : "sonia joseph"
-description              : "machine learning and computational neuroscience essays by sonia joseph"
+description              : "computer science, machine learning, & computational neuroscience posts by sonia joseph"
 url                      : "https://soniajoseph.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "soniajoseph/soniajoseph.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -108,7 +108,7 @@ analytics:
 author:
   name             : ""
   avatar           : "/assets/images/avatar.jpg"
-  bio              : "machine learning and <br>computational neuroscience<br>"
+  bio              : "computer science, <br> machine learning, and <br>computational neuroscience<br>"
 
 
   email            : "soniamollyjoseph@gmail.com"
@@ -359,7 +359,7 @@ defaults:
       share: true
       related: true
       header:
-        image: /assets/images/temptations/temptations-6.jpg
+        image:
         teaser: /assets/images/posts/Perceptron.moj.png
         caption: # "Temptations of Saint Anthony (Dali)"
   # _pages
@@ -370,7 +370,7 @@ defaults:
       layout: single
       author_profile: true
       header:
-        image: /assets/images/temptations/temptations-6.jpg
+        image: 
         teaser: /assets/images/posts/Perceptron_moj.png
         caption: # "Temptations of Saint Anthony (Dali)"
 
