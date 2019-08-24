@@ -347,10 +347,6 @@ compress_html:
   ignore:
     envs: development
 
-collections:
-  - posts
-  - blog
-
 
 # Defaults
 defaults:
@@ -366,7 +362,7 @@ defaults:
       share: true
       related: true
       header:
-        image: /assets/images/temptations/temptations-6.jpg
+        image: 
         teaser: /assets/images/posts/Perceptron.moj.png
         caption: # "Temptations of Saint Anthony (Dali)"
   # _pages
@@ -377,7 +373,7 @@ defaults:
       layout: single
       author_profile: true
       header:
-        image: /assets/images/temptations/temptations-6.jpg
+        image:
         teaser: /assets/images/posts/Perceptron_moj.png
         caption: # "Temptations of Saint Anthony (Dali)"
 

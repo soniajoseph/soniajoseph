@@ -1,7 +1,6 @@
 ---
 title: "Neural Dynamics: A Primer (Hopfield Networks)"
-tags: [computational neuroscience, neuroscience, machine learning, neural dynamics, all audiences]
-books-tags: [hello]
+tags: [computational neuroscience, neuroscience, machine learning, neural dynamics, all audiences, resources]
 excerpt: "Basic concepts in neural dynamics explained with Hopfield networks."
 categories: [notes, computational neuroscience]
 header:

@@ -1,9 +1,8 @@
 ---
 title: "Tags"
-permalink: /tags/neuroscience
-layout: tag
+permalink: /tags/
+layout: tags
 author_profile: true
 toc: true
-taxonomy: neuroscience
 ---
 

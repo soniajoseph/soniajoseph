@@ -9,6 +9,8 @@ Hi, my name is Sonia Joseph. I am a graduate of Princeton University where I stu
 I am interested in human and non-human intelligences, and the principles by which they operate.
 
  -->
-Hi, my name is Sonia Joseph. I studied machine learning, computational neuroscience, and computer science at Princeton University. My senior thesis was on machine learning models for semantic representation in the human brain, advised by Uri Hasson.
+<!-- Hi, my name is Sonia Joseph. I studied machine learning, computational neuroscience, and computer science at Princeton University. My senior thesis was on machine learning models for semantic representation in the human brain, advised by Uri Hasson.
 
-I am interested in generalizable principles of human and non-human intelligence.
+I am interested in generalizable principles of human and non-human intelligence. -->
+
+Coming soon.
