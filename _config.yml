@@ -108,11 +108,8 @@ analytics:
 author:
   name             : ""
   avatar           : "/assets/images/avatar.jpg"
-<<<<<<< HEAD
   bio              : "computer science <br> & artificial intelligence"
-=======
-  bio              : "machine learning and <br>computational neuroscience<br>"
->>>>>>> parent of b28df30... removed images
+
 
 
   email            : "soniamollyjoseph@gmail.com"
