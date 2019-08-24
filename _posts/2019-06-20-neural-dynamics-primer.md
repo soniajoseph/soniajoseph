@@ -1,13 +1,15 @@
 ---
 title: "Neural Dynamics: A Primer (Hopfield Networks)"
 tags: [computational neuroscience, neuroscience, machine learning, neural dynamics, all audiences]
+books-tags: [hello]
 excerpt: "Basic concepts in neural dynamics explained with Hopfield networks."
-categories: [computational neuroscience]
+categories: [notes, computational neuroscience]
 header:
   teaser: assets/images/posts/Perceptron_moj.png
 toc: true
 mathjax: "true"
 comments: true
+collection: posts
 ---
 
 How does higher-order behavior emerge from billions of neurons firing? 

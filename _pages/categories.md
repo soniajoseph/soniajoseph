@@ -1,9 +1,12 @@
 ---
-title: "Categories"
-permalink: /categories/
-layout: categories
-author_profile: true
-entries_layout: grid
-classes: wide
----
+title: "Notes"
+permalink: /books-tags/
+<!-- collection: notes
+layout: tags
+taxonomy: notes
+author_profile: true -->
+layout: books-tags
+toc: true
 
+
+---

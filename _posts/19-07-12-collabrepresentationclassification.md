@@ -2,7 +2,7 @@
 title: "Facial Recognition with Collaborative Representation-Based Classification"
 excerpt: Facial recognition with collaborative representation-based classification.
 categories: [machine learning]
-tags: [machine learning, artificial intelligence, image classification]
+tags: [machine learning, artificial intelligence, image classification, notes]
 header:
   teaser: assets/images/posts/first_face_fifteen_subjects_teaser.png
 toc: true

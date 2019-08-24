@@ -108,7 +108,7 @@ analytics:
 author:
   name             : ""
   avatar           : "/assets/images/avatar.jpg"
-  bio              : "computer science, <br> machine learning, and <br>computational neuroscience<br>"
+  bio              : "computer science <br> & artificial intelligence"
 
 
   email            : "soniamollyjoseph@gmail.com"
@@ -329,12 +329,14 @@ jekyll-archives:
   enabled:
     - categories
     - tags
+    - books-tags
   layouts:
     category: archive-taxonomy
     tag: archive-taxonomy
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
+    books-tags: /books-tags/:name/
 
 
 # HTML Compression
@@ -343,6 +345,10 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+collections:
+  - posts
+  - blog
 
 
 # Defaults
