@@ -1,4 +1,4 @@
----
+<!-- ---
 title: why autodidacting is hard
 excerpt: on building the incentive structure
 categories: 
@@ -7,3 +7,4 @@ classes: wide
 ---
 
 
+ -->
