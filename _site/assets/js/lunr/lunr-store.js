@@ -24,8 +24,8 @@ var store = [{
         "tags": ["projects"],
         "url": "http://localhost:4000/text-generation/",
         "teaser":"http://localhost:4000/assets/images/posts/textgenerator.png"},{
-        "title": "why autodidacting is hard",
+        "title": "Autodidacting",
         "excerpt":" ","categories": [],
-        "tags": ["blog"],
+        "tags": [],
         "url": "http://localhost:4000/autodidacting/",
         "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"}]
