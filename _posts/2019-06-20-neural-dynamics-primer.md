@@ -2,7 +2,7 @@
 title: "Neural Dynamics: A Primer (Hopfield Networks)"
 tags: [computational neuroscience, neuroscience, machine learning, neural dynamics, all audiences, resources]
 excerpt: "Basic concepts in neural dynamics explained with Hopfield networks."
-categories: [notes, computational neuroscience]
+categories: [computational neuroscience]
 header:
   teaser: assets/images/posts/Perceptron_moj.png
 toc: true
