@@ -1,7 +1,6 @@
 ---
-title: "Blog"
+title: "Tags"
 excerpt: 
-permalink: /blog/
-layout: tag
-taxonomy: blog
+permalink: /tags/
+layout: tags
 ---
