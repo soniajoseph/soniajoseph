@@ -4,5 +4,11 @@
 
 @charset "utf-8";
 
+$link-color: black;
+$link-color-hover: MediumBlue;
+$navicon-link-color-hover: MediumBlue;
+$masthead-link-color-hover: MediumBlue;
+$primary-color: MediumBlue;
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials

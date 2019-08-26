@@ -1,13 +1,11 @@
 # main links
 main:
-  - title: "Projects"
-    url: /projects/
+  - title: "All Posts"
+    url: /index/
   - title: "Blog"
     url: /blog/
-  - title: "Resources"
-    url: /resources/
-  - title: "All Posts"
-    url: /tags/
+  - title: "Projects"
+    url: /projects/
   - title: "About"
     url: /about/
   # - title: "About"
