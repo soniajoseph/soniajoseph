@@ -13,4 +13,9 @@ var store = [{
         "excerpt":"The following post assumes some prior background in machine learning, such as familiarity with ordinary least squares (OLS). Let’s talk about faces… Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing...","categories": ["machine learning"],
         "tags": ["machine learning","artificial intelligence","image classification","resources","projects","notes"],
         "url": "http://localhost:4000/machine%20learning/collabrepresentationclassification/",
-        "teaser":"http://localhost:4000/assets/images/posts/first_face_fifteen_subjects_teaser.png"}]
+        "teaser":"http://localhost:4000/assets/images/posts/first_face_fifteen_subjects_teaser.png"},{
+        "title": "why autodidacting is hard",
+        "excerpt":" ","categories": [],
+        "tags": ["blog"],
+        "url": "http://localhost:4000/autodidacting/",
+        "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"}]
