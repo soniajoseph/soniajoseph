@@ -13,4 +13,16 @@ I am interested in human and non-human intelligences, and the principles by whic
 
 I am interested in generalizable principles of human and non-human intelligence. -->
 
-Coming soon.
+Some things about me. I. . .
+
+. . . studied computer science and neuroscience at Princeton.
+
+. . . researched at the Princeton Neuroscience Institute and at Harvard under the Data Science Initiative.
+
+. . . built forecasting models at a top investment firm on Wall Street.
+
+. . . wrote my thesis on machine learning models of semantic representation in the brain, advised by Uri Hasson.
+
+. . . wrote a second thesis in fiction, advised by Aleksandar Hemon, which won a Samuel Shellabarger Memorial Award. 
+
+. . . read avidly, books of every genre.
