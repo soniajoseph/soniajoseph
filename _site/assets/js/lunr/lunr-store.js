@@ -19,11 +19,6 @@ var store = [{
         "tags": ["machine learning","artificial intelligence","image classification","resources","projects","notes"],
         "url": "http://localhost:4000/machine%20learning/collabrepresentationclassification/",
         "teaser":"http://localhost:4000/assets/images/posts/first_face_fifteen_subjects_teaser.png"},{
-        "title": "Text & Lyric Generation with Markov Chains",
-        "excerpt":"Find the text generator here, and the lyric generator here. It fascinates me how simple weighted probabilities can produce semi-comprehensible text. (Playing with text generation, and then writing fiction, I became aware of how my mind also operates like the Markov chain.) Based off an old college assignment, this project...","categories": [],
-        "tags": ["projects"],
-        "url": "http://localhost:4000/text-generation/",
-        "teaser":"http://localhost:4000/assets/images/posts/textgenerator.png"},{
         "title": "why autodidacting is hard",
         "excerpt":" ","categories": [],
         "tags": ["blog"],
@@ -33,4 +28,9 @@ var store = [{
         "excerpt":" ","categories": [],
         "tags": [],
         "url": "http://localhost:4000/autodidacting/",
-        "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"}]
+        "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"},{
+        "title": "Text & Lyric Generation with Markov Chains",
+        "excerpt":"Find the text generator here, and the lyric generator here. It fascinates me how simple weighted probabilities can produce semi-comprehensible text. (Playing with text generation, and then writing fiction, I became aware of how my mind also operates like the Markov chain.) Based off an old college assignment, this project...","categories": [],
+        "tags": ["projects"],
+        "url": "http://localhost:4000/text-generation/",
+        "teaser":"http://localhost:4000/assets/images/posts/textgenerator.png"}]
