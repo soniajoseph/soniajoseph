@@ -33,4 +33,4 @@ var store = [{
         "excerpt":"Find the text generator here, and the lyric generator here. It fascinates me how simple weighted probabilities can produce semi-comprehensible text. (Playing with text generation, and then writing fiction, I became aware of how my mind also operates like the Markov chain.) Based off an old college assignment, this project...","categories": [],
         "tags": ["projects"],
         "url": "http://localhost:4000/text-generation/",
-        "teaser":"http://localhost:4000/assets/images/posts/textgenerator.png"}]
+        "teaser":"http://localhost:4000/assets/images/posts/britney.png"}]

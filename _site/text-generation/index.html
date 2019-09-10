@@ -25,7 +25,7 @@
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/posts/textgenerator.png">
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/britney.png">
 
 
 
@@ -352,11 +352,15 @@
 
 <h2 id="markov-chains">Markov Chains</h2>
 
-<p>The algorithm divides the input text into k-grams, and for each k-gram, forms a frequency table for the following character. When generating text, the algorithm looks at the current k-gram and selects a random character based off the weighted distribution of the frequency table.</p>
+<p>The algorithm divides the input text into k-grams, and for each k-gram, forms a frequency table for the following character.</p>
 
-<p>The algorithm incorporates the character into the next k-gram and repeats the process. This algorithm is called a Markov chain and produces long-strings of semi-believable text.</p>
+<p>When generating text, the algorithm looks at the current k-gram and selects a random character based off the weighted distribution of the frequency table.</p>
 
-<p>Try it out for yourself with <a href="https://generatetext.herokuapp.com/">text</a> or <a href="https://generatelyrics.herokuapp.com/">lyrics</a></p>
+<p>The algorithm incorporates the character into the next k-gram and repeats the process.</p>
+
+<p>This algorithm is called a Markov chain and produces long-strings of semi-believable text.</p>
+
+<p>Try it out for yourself with <a href="https://generatetext.herokuapp.com/">text</a> or <a href="https://generatelyrics.herokuapp.com/">lyrics</a>.</p>
 
 <h2 id="project-design">Project Design</h2>
 

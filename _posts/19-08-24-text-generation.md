@@ -21,11 +21,15 @@ Based off an [old college assignment](https://www.cs.princeton.edu/courses/archi
 
 ## Markov Chains
 
-The algorithm divides the input text into k-grams, and for each k-gram, forms a frequency table for the following character. When generating text, the algorithm looks at the current k-gram and selects a random character based off the weighted distribution of the frequency table.
+The algorithm divides the input text into k-grams, and for each k-gram, forms a frequency table for the following character.
 
-The algorithm incorporates the character into the next k-gram and repeats the process. This algorithm is called a Markov chain and produces long-strings of semi-believable text.
+When generating text, the algorithm looks at the current k-gram and selects a random character based off the weighted distribution of the frequency table.
 
-Try it out for yourself with [text](https://generatetext.herokuapp.com/) or [lyrics](https://generatelyrics.herokuapp.com/)
+The algorithm incorporates the character into the next k-gram and repeats the process.
+
+This algorithm is called a Markov chain and produces long-strings of semi-believable text.
+
+Try it out for yourself with [text](https://generatetext.herokuapp.com/) or [lyrics](https://generatelyrics.herokuapp.com/).
 
 
 ## Project Design
