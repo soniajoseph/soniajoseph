@@ -2,6 +2,7 @@
 title: "About"
 excerpt: "Sonia Joseph's about page."
 permalink: /about/
+classes: wide
 ---
 Some things about me. I. . .
 
