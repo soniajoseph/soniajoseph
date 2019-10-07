@@ -9,40 +9,40 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Autodidacting - sonia joseph</title>
-<meta name="description" content="&lt;!– —title: why autodidacting is hardexcerpt: on building the incentive structurecategories: tags: [blog]classes: wide—">
+<!-- begin _includes/seo.html --><title>goodreads quotes scraper - sonia joseph</title>
+<meta name="description" content="scraping quotes from goodreads and creating a database">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="sonia joseph">
-<meta property="og:title" content="Autodidacting">
-<meta property="og:url" content="http://localhost:4000/autodidacting/">
+<meta property="og:title" content="goodreads quotes scraper">
+<meta property="og:url" content="http://localhost:4000/goodreads-scraper/">
 
 
-  <meta property="og:description" content="&lt;!– —title: why autodidacting is hardexcerpt: on building the incentive structurecategories: tags: [blog]classes: wide—">
-
-
-
-  <meta property="og:image" content="http://localhost:4000/assets/images/posts/Perceptron.moj.png">
+  <meta property="og:description" content="scraping quotes from goodreads and creating a database">
 
 
 
-
-
-  <meta property="article:published_time" content="2019-08-24T00:00:00-04:00">
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/goodreads.png">
 
 
 
 
 
-  
+  <meta property="article:published_time" content="2019-08-31T00:00:00-07:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/autodidacting/">
+
+<link rel="canonical" href="http://localhost:4000/goodreads-scraper/">
 
 
 
@@ -224,6 +224,10 @@
         
           
         
+          
+            <li><a href="https://github.com/soniajoseph" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
       
 
       
@@ -299,9 +303,9 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Autodidacting">
-    <meta itemprop="description" content="&lt;!– —title: why autodidacting is hardexcerpt: on building the incentive structurecategories: tags: [blog]classes: wide—">
-    <meta itemprop="datePublished" content="August 24, 2019">
+    <meta itemprop="headline" content="goodreads quotes scraper">
+    <meta itemprop="description" content="scraping quotes from goodreads and creating a database">
+    <meta itemprop="datePublished" content="August 31, 2019">
     
 
     <div class="page__inner-wrap">
@@ -312,7 +316,7 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
 
 
-          <h1 id="page-title" class="page__title" itemprop="headline">Autodidacting
+          <h1 id="page-title" class="page__title" itemprop="headline">goodreads quotes scraper
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -328,16 +332,26 @@
 
       <section class="page__content" itemprop="text">
         
-        <!-- ---
-title: why autodidacting is hard
-excerpt: on building the incentive structure
-categories: 
-tags: [blog]
-classes: wide
----
+        
+<p><img src="/assets/images/posts/goodreads.png" alt="" srcset="            /assets/resized/480/goodreads.png 480w,            /assets/resized/800/goodreads.png 800w,    " /></p>
 
+<p>Looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes online. Kaggle has datasets for the <a href="https://www.kaggle.com/jealousleopard/goodreadsbooks">other kinds of Goodreads data</a>, but no quotes. The Goodreads API does not allow for quote scraping either.</p>
 
- -->
+<p>Thus I wrote a Python quote scraper which you can find on GitHub <a href="https://github.com/soniajoseph/goodreads-quotes">here</a>, which gets the title, author, tags, and quote content. If you enter the author name, with number of pages of quotes as an optional argument, the scraper will return the quotes from the author in the Terminal.</p>
+
+<p>The command is:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">quotes_by_author</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">page_num</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</code></pre></div></div>
+
+<p>An example…</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">quotes_by_author</span><span class="p">(</span><span class="s">"jk rowling"</span><span class="p">)</span>
+<span class="n">looking</span> <span class="n">through</span> <span class="mi">6244</span> <span class="n">pages</span>
+<span class="n">scraping</span> <span class="n">page</span> <span class="mi">1</span>
+<span class="n">scraping</span> <span class="n">page</span> <span class="mi">2</span>
+<span class="o">...</span>
+</code></pre></div></div>
+
+<p>I fed a list of all the authors on Goodreads into the scraper to build a database of quotes, which I will release on Kaggle soon.</p>
 
         
       </section>
@@ -345,10 +359,33 @@ classes: wide
       <footer class="page__meta">
         
         
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#projects" class="page__taxonomy-item" rel="tag">projects</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#web-scraping" class="page__taxonomy-item" rel="tag">web scraping</a>
+    
+    </span>
+  </p>
+
+
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-08-24T00:00:00-04:00">August 24, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-08-31T00:00:00-07:00">August 31, 2019</time></p>
         
       </footer>
 
@@ -357,23 +394,22 @@ classes: wide
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Autodidacting%20http%3A%2F%2Flocalhost%3A4000%2Fautodidacting%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=goodreads+quotes+scraper%20http%3A%2F%2Flocalhost%3A4000%2Fgoodreads-scraper%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fautodidacting%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgoodreads-scraper%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fautodidacting%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgoodreads-scraper%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/autodidacting-copy/" class="pagination--pager" title="why autodidacting is hard
+      <a href="/text-generation/" class="pagination--pager" title="Text &amp; Lyric Generation with Markov Chains
 ">Previous</a>
     
     
-      <a href="/text-generation/" class="pagination--pager" title="Text &amp; Lyric Generation with Markov Chains
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -434,42 +470,6 @@ classes: wide
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/posts/Perceptron.moj.png"
-          
-          alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/autodidacting-copy/" rel="permalink">why autodidacting is hard
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> August 24, 2019 <br> 
-
-
-
-
-  less than 1 minute read
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">on building the incentive structure
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src=
-          
             "/assets/images/posts/first_face_fifteen_subjects_teaser.png"
           
           alt="">
@@ -506,27 +506,63 @@ classes: wide
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/posts/Perceptron.moj.png"
+            "/assets/images/posts/Perceptron_moj.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/computational%20neuroscience/comparing-anns-and-bnns/" rel="permalink">Comparing Biological and Artificial Neural Nets
+        <a href="/computational%20neuroscience/neural-dynamics-primer/" rel="permalink">Neural Dynamics: A Primer (Hopfield Networks)
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> July 01, 2019 <br> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> June 20, 2019 <br> 
 
 
 
 
-  less than 1 minute read
+  6 minute read
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Similarities and differences between the brain and artificial neural nets through recent work by Yamins and DiCarlo.
+    <p class="archive__item-excerpt" itemprop="description">Basic concepts in neural dynamics explained with Hopfield networks.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/starlings2.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/computational%20neuroscience/dynamics/" rel="permalink">Paper List for Neural Dynamics
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> June 19, 2019 <br> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Resources for computational neuroscience
 </p>
   </article>
 </div>

@@ -1,7 +1,7 @@
 ---
 title: "Text & Lyric Generation with Markov Chains" 
 excerpt: Text and lyric generation with basic natural language processing.
-tags: [projects]
+tags: [projects, generative models]
 header:
   teaser: assets/images/posts/britney.png
 mathjax: "true"
