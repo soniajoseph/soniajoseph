@@ -9,8 +9,6 @@ mathjax: "true"
 
 {% include figure image_path="/assets/images/posts/goodreads.png" alt="Goodreads quote and quote metadata scraper for a given author.</i>" %}
 
-![](assets/images/posts/goodreads.png)
-
 *Find code on GitHub [here](https://github.com/soniajoseph/goodreads-quotes)*
 
 Looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes online. Kaggle has datasets for [other kinds of Goodreads data](https://www.kaggle.com/jealousleopard/goodreadsbooks), but no quotes. The Goodreads API does not allow for quote scraping either.
