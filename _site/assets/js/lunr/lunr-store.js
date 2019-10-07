@@ -20,7 +20,7 @@ var store = [{
         "url": "http://localhost:4000/text-generation/",
         "teaser":"http://localhost:4000/assets/images/posts/britney.png"},{
         "title": "goodreads quotes scraper",
-        "excerpt":"Looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes online. Kaggle has datasets for the other kinds of Goodreads data, but no quotes. The Goodreads API does not allow for quote scraping either. Thus I wrote a Python...","categories": [],
+        "excerpt":"Find code on GitHub here Looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes online. Kaggle has datasets for the other kinds of Goodreads data, but no quotes. The Goodreads API does not allow for quote scraping either....","categories": [],
         "tags": ["projects","web scraping"],
         "url": "http://localhost:4000/goodreads-scraper/",
         "teaser":"http://localhost:4000/assets/images/posts/goodreads.png"}]

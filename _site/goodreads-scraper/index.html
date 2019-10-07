@@ -324,7 +324,7 @@
 
 
 
-  less than 1 minute read
+  1 minute read
 </p>
           
         </header>
@@ -335,9 +335,11 @@
         
 <p><img src="/assets/images/posts/goodreads.png" alt="" srcset="            /assets/resized/480/goodreads.png 480w,            /assets/resized/800/goodreads.png 800w,    " /></p>
 
+<p><em>Find code on GitHub <a href="https://github.com/soniajoseph/goodreads-quotes">here</a></em></p>
+
 <p>Looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes online. Kaggle has datasets for the <a href="https://www.kaggle.com/jealousleopard/goodreadsbooks">other kinds of Goodreads data</a>, but no quotes. The Goodreads API does not allow for quote scraping either.</p>
 
-<p>Thus I wrote a Python quote scraper which you can find on GitHub <a href="https://github.com/soniajoseph/goodreads-quotes">here</a>, which gets the title, author, tags, and quote content. If you enter the author name, with number of pages of quotes as an optional argument, the scraper will return the quotes from the author in the Terminal.</p>
+<p>This Python quote scraper gets the quote text, title, author, tags, and number of likes. If you enter the author name, with number of pages of quotes as an optional argument, the function will both return the results in a list and print the results in the Terminal. If you don’t specify a page number, the scraper will get quotes from all the pages available on Goodreads.</p>
 
 <p>The command is:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">quotes_by_author</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">page_num</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -349,6 +351,37 @@
 <span class="n">scraping</span> <span class="n">page</span> <span class="mi">1</span>
 <span class="n">scraping</span> <span class="n">page</span> <span class="mi">2</span>
 <span class="o">...</span>
+
+<span class="o">...</span>
+
+</code></pre></div></div>
+
+<p>Snippet of results…</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scraping</span> <span class="n">page</span> <span class="mi">1</span>
+<span class="err">“</span><span class="n">If</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">know</span> <span class="n">what</span> <span class="n">a</span> <span class="n">man</span><span class="s">'s like, take a good look at how he treats his inferiors, not his equals.”  </span><span class="err">
+</span><span class="s">  ―</span><span class="err">
+</span><span class="s">J.K. Rowling</span><span class="err">
+</span><span class="s">Harry Potter and the Goblet of Fire</span><span class="err">
+</span><span class="s">None</span><span class="err">
+</span><span class="s">95138</span><span class="err">
+
+</span><span class="s">“It is our choices, Harry, that show what we truly are, far more than our abilities.”</span><span class="err">
+</span><span class="s">J.K. Rowling</span><span class="err">
+</span><span class="s">Harry Potter and the Chamber of Secrets</span><span class="err">
+</span><span class="s">['</span><span class="n">choices</span><span class="s">']</span><span class="err">
+</span><span class="s">49192</span><span class="err">
+
+</span><span class="s">“It does not do to dwell on dreams and forget to live.”</span><span class="err">
+</span><span class="s">J.K. Rowling</span><span class="err">
+</span><span class="s">Harry Potter and the Sorcerer'</span><span class="n">s</span> <span class="n">Stone</span>
+<span class="p">[</span><span class="s">'life'</span><span class="p">]</span>
+<span class="mi">47176</span>
+
+<span class="err">“</span><span class="n">I</span> <span class="n">solemnly</span> <span class="n">swear</span> <span class="n">that</span> <span class="n">I</span> <span class="n">am</span> <span class="n">up</span> <span class="n">to</span> <span class="n">no</span> <span class="n">good</span><span class="o">.</span><span class="err">”</span>
+<span class="n">J</span><span class="o">.</span><span class="n">K</span><span class="o">.</span> <span class="n">Rowling</span>
+<span class="n">Harry</span> <span class="n">Potter</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">Prisoner</span> <span class="n">of</span> <span class="n">Azkaban</span>
+<span class="p">[]</span>
+<span class="mi">37420</span>
 </code></pre></div></div>
 
 <p>I fed a list of all the authors on Goodreads into the scraper to build a database of quotes, which I will release on Kaggle soon.</p>
