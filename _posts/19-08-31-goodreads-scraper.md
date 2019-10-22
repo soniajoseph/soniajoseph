@@ -11,9 +11,9 @@ mathjax: "true"
 
 *Find code on GitHub [here](https://github.com/soniajoseph/goodreads-quotes)*
 
-Looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes online. Kaggle has datasets for [other kinds of Goodreads data](https://www.kaggle.com/jealousleopard/goodreadsbooks), but no quotes. The Goodreads API does not allow for quote scraping either.
+When looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes. Kaggle has datasets for [other kinds of Goodreads data](https://www.kaggle.com/jealousleopard/goodreadsbooks), but no quotes. The Goodreads API does not allow for quote scraping either.
 
-This Python quote scraper gets the quote text, title, author, tags, and number of likes. If you enter the author name, with number of pages of quotes as an optional argument, the function will both return the results in a list and print the results in the Terminal. If you don't specify a page number, the scraper will get quotes from all the pages available on Goodreads.
+Thus I coded a Python quote scraper gets the quote text, title, author, tags, and number of likes. If you enter the author name, with number of pages of quotes as an optional argument, the function will both return the results in a list and print the results in the Terminal. If you don't specify a page number, the scraper will get quotes from all the pages available on Goodreads.
 
 The command is:
 ```python
