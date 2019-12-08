@@ -1,5 +1,5 @@
 ---
-title: "goodreads quotes scraper" 
+title: "Goodreads Quotes Scraper" 
 excerpt: scraping quotes from goodreads and creating a database
 tags: [projects, web scraping]
 header: 

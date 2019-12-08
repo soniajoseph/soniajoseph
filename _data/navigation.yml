@@ -2,10 +2,14 @@
 main:
   - title: "All Posts"
     url: /index
-  - title: "Tags"
-    url: /tags/
   - title: "Projects"
     url: /projects/
+  - title: "Computational Neuroscience"
+    url: /computational-neuroscience/
+  - title: "Algorithms"
+    url: /algorithms/
+  - title: "Tags"
+    url: /tags/
   - title: "About"
     url: /about/
   # - title: "About"

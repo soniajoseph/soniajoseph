@@ -16,11 +16,11 @@ var store = [{
         "teaser":"http://localhost:4000/assets/images/posts/first_face_fifteen_subjects_teaser.png"},{
         "title": "Text & Lyric Generation with Markov Chains",
         "excerpt":"Find the text generator here, and the lyric generator here. It fascinates me how simple weighted probabilities can produce semi-comprehensible text. (Playing with text generation, and then writing fiction, I became aware of how my mind also operates like the Markov chain.) Based off an old college assignment, this project...","categories": [],
-        "tags": ["projects","generative models"],
+        "tags": ["projects","generative models","machine learning"],
         "url": "http://localhost:4000/text-generation/",
         "teaser":"http://localhost:4000/assets/images/posts/britney.png"},{
-        "title": "goodreads quotes scraper",
-        "excerpt":"Find code on GitHub here Looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes online. Kaggle has datasets for other kinds of Goodreads data, but no quotes. The Goodreads API does not allow for quote scraping either. This...","categories": [],
+        "title": "Goodreads Quotes Scraper",
+        "excerpt":"Find code on GitHub here When looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes. Kaggle has datasets for other kinds of Goodreads data, but no quotes. The Goodreads API does not allow for quote scraping either. Thus...","categories": [],
         "tags": ["projects","web scraping"],
         "url": "http://localhost:4000/goodreads-scraper/",
         "teaser":"http://localhost:4000/assets/images/posts/goodreads.png"}]
