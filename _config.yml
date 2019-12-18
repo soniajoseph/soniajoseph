@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name             : ""
-  avatar           : ""
+  avatar           : "assets/images/avatar.png"
   bio              : "computer science <br> & computational neuroscience"
 
 

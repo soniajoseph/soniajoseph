@@ -7,4 +7,4 @@ classes: wide
 
 Hello! My name is Sonia Joseph.
 
-I studied computer science, neuroscience, and literature at Princeton, and wrote my thesis on natural language processing and semantic representation in the human brain. Previously, I held positions at the Princeton Neuroscience Institute, the Harvard Data Science Initiative, and a top fund on Wall Street.
+I studied computer science, neuroscience, and literature at Princeton, and wrote my thesis on natural language processing and semantic representation in the human brain. Previously, I held positions at the Princeton Neuroscience Institute, the Harvard Data Science Initiative, and Ruane, Cunniff, and Goldfarb.
