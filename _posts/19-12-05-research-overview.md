@@ -12,12 +12,13 @@ classes: wide
 
 *In progress.*
 
-This research overview focuses on current researchers with at least two of the following criteria:
+This research overview focuses on current researchers with at least three of the following criteria:
 1. Studying intelligence from both biological and artificial perspectives.
 2. Heavy mathematical/computational focus (including machine learning). 
 3. High level of abstraction on Marr's levels.
 4. Focus on data analysis over collection.
 5. Developing neurotechnology. 
+6. Philosophical bent.
 
 # Cross-Institution Groups #
 1. [Theoretical Frameworks for Intelligence](https://cbmm.mit.edu/research/thrusts/theoretical-frameworks-intelligence)
