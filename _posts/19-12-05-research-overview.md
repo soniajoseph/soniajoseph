@@ -1,5 +1,5 @@
 ---
-title: Computational Neuroscience and Machine Learning Research Overview 
+title: Computational Neuroscience and Artificial Intelligence Research Overview 
 tags: [computational neuroscience, neuroscience, machine learning, neural dynamics, all audiences, resources]
 excerpt: Research overview of artificial/biological intelligence by institution 
 categories: [computational neuroscience]
@@ -60,21 +60,48 @@ This research overview focuses on current researchers with at least three of the
 5. Yael Niv
 6. Jonathan Cohen
 7. Ken Norman
+8. Sebastian Seung
 
 ## University of Pennsylvania ##
-1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - network neuroscience, complex systems
+1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
     1. [On the nature and use of models in network neuroscience](https://www.nature.com/articles/s41583-018-0038-8) (2018)
 
+## University of California, Berkeley ##
+
 ## University of California, Riverside ##
-1. [Fabio Pasqualetti](http://www.fabiopas.it/) - control theory in neuroscience
+1. [Fabio Pasqualetti](http://www.fabiopas.it/) - control theory, complex systems
     1. [Controllability of structural brain networks](http://www.fabiopas.it/papers/SG-FP-MC-SCT-DSB-14.pdf) (2015)
     2. [Optimally controlling the human connectome: the role of network topology](http://www.fabiopas.it/papers/RB-SG-JDM-FP-DSB-16.pdf) (2016)
 
 ## University College London ##
 1. [Karl Friston](https://www.fil.ion.ucl.ac.uk/~karl/) - variational Laplacian procedures, generalized filtering for hierarchical Bayesian model inversion
 
-## DeepMind ##
-1. Andrea Tacchetti 
+## Gatsby Institute, University College, London ## 
+
+## Australian National University ##
+1. [Marcus Hutter] - artificial general intelligence
+    1. [Universal Artificial Intelligence](https://books.google.co.nz/books?id=NP53iZGt4KUC&redir_esc=y) (2004)
+
+## Dalle Molle Institute for Artificial Intelligence Research ##
+1. Jurgen Schmidhuber - artificial general intelligence
+
+## Istituto Italiano di Tecnologia ##
+1. Fabio Anselmi (see MIT)
+
+## MILA ##
+
+## University of Waterloo ##
+
+## OpenAI ##
+
+## Google Brain ##
+1. [On the Expressive Power of Deep Networks](https://arxiv.org/pdf/1606.05336.pdf) (2017)
+2. [Understanding Deep Learning Requires Rethinking Generalization]()
+
+## DeepMind ## 
+1. Andrea Tacchetti
+2. Botvinick 
+
 
 
 
