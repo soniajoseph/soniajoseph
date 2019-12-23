@@ -12,18 +12,20 @@ classes: wide
 
 *In progress.*
 
+## Criteria ##
+
 This research overview focuses on current researchers with at least three of the following criteria:
-1. Studying intelligence from both biological and artificial perspectives.
+1. Researching intelligence from both biological and artificial perspectives.
 2. Heavy mathematical/computational focus (including machine learning). 
-3. High level of abstraction on Marr's levels.
+3. High level of abstraction on Marr's.
 4. Focus on data analysis over collection.
 5. Developing neurotechnology. 
-6. Philosophical bent.
+6. Philosophical and/or AGI bent.
 
-# Cross-Institution Groups #
+## Cross-Institution Groups ##
 1. [Theoretical Frameworks for Intelligence](https://cbmm.mit.edu/research/thrusts/theoretical-frameworks-intelligence)
 
-# MIT #
+## MIT ##
 1. Tomaso Poggio - representation, deep learning, visual cortex, biological/artificial intelligence, learning
     1. [Hierarchical models of object recognition in cortex](https://www.nature.com/articles/nn1199_1019) (1999)
     2. [The Levels of Understanding Framework, Revised](http://cbcl.mit.edu/publications/ps/MIT-CSAIL-TR-2012-014.pdf) (2002)
@@ -42,25 +44,38 @@ This research overview focuses on current researchers with at least three of the
     1. [Training networks to generate hypotheses about how the brain solves hard navigation problems](http://papers.nips.cc/paper/7039-training-recurrent-networks-to-generate-hypotheses-about-how-the-brain-solves-hard-navigation-problems)(2017)
     2. [Flexible representation and memory of higher-dimensional cognitive variables with grid cells](https://www.biorxiv.org/content/10.1101/578641v1.article-info) (2019)
 
-# Georgetown #
+## Georgetown ##
 1. Maximilian Riesenhuber - representation, visual cortex
 
-# Harvard University #
+## Harvard University ##
 1. [Samuel Gershman](https://cbmm.mit.edu/about/people/gershman)
 
-# Princeton University # 
+## Princeton University ##
 1. David Tank - persistent neural activity, neurotechnology
 2. Jonathan Pillow - statistical analysis of neural populations
     1. [Unsupervised identification of the internal states that shape natural behavior](https://www.biorxiv.org/content/10.1101/691196v1) (2019)
-    2. [Capturing the dynamical repertoire of single neurons with generalized linear models](https://pillowlab.princeton.edu/pubs/Weber17_IzhikevichGLM_NC.pdf)(2017)
+    2. [Capturing the dynamical repertoire of single neurons with generalized linear models](https://pillowlab.princeton.edu/pubs/Weber17_IzhikevichGLM_NC.pdf) (2017)
 3. Uri Hasson
 4. Carlos Brody
 5. Yael Niv
-6. Johnathan Cohen
+6. Jonathan Cohen
 7. Ken Norman
 
-# DeepMind # 
+## University of Pennsylvania ##
+1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - network neuroscience, complex systems
+    1. [On the nature and use of models in network neuroscience](https://www.nature.com/articles/s41583-018-0038-8) (2018)
+
+## University of California, Riverside ##
+1. [Fabio Pasqualetti](http://www.fabiopas.it/) - control theory in neuroscience
+    1. [Controllability of structural brain networks](http://www.fabiopas.it/papers/SG-FP-MC-SCT-DSB-14.pdf) (2015)
+    2. [Optimally controlling the human connectome: the role of network topology](http://www.fabiopas.it/papers/RB-SG-JDM-FP-DSB-16.pdf) (2016)
+
+## University College London ##
+1. [Karl Friston](https://www.fil.ion.ucl.ac.uk/~karl/) - variational Laplacian procedures, generalized filtering for hierarchical Bayesian model inversion
+
+## DeepMind ##
 1. Andrea Tacchetti 
+
 
 
 
