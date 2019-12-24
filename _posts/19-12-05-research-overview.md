@@ -67,6 +67,19 @@ This research overview focuses on current researchers with at least three of the
     1. [On the nature and use of models in network neuroscience](https://www.nature.com/articles/s41583-018-0038-8) (2018)
 
 ## University of California, Berkeley ##
+### Computational Neuroscience ###
+1. [Michael Deweese](https://physics.berkeley.edu/people/faculty/michael-deweese) - auditory attention
+2. [Jack Gallant](https://psychology.berkeley.edu/people/jack-l-gallant) - visual neuroscience
+    1. [Identifying natural images from human brain activity.](nature.com/articles/nature06713) (2008)
+    2. [Topographic organization in and near human visual area V4.](https://www.ncbi.nlm.nih.gov/pubmed/17978030) (2007)
+### Machine Learning ###
+1. Pieter Abbeel - deep learning for robotics (reinforcement learning, apprenticeship)
+2. Moritz Hardt - fairness in machine learning
+    1. [Understanding deep learning requires rethinking generalization](https://arxiv.org/pdf/1611.03530.pdf) (2017)
+3. Sergey Levine - machine learning for complex behavioral skills
+    1. [Deep Visual Foresight for Planning Robot Motion](https://arxiv.org/abs/1610.00696) (2016)
+    2. [Deep Learning for Robots: Learning from Large-Scale Interaction](https://ai.googleblog.com/2016/03/deep-learning-for-robots-learning-from.html) (2016)
+4. Stuart Russell 
 
 ## University of California, Riverside ##
 1. [Fabio Pasqualetti](http://www.fabiopas.it/) - control theory, complex systems
@@ -96,7 +109,7 @@ This research overview focuses on current researchers with at least three of the
 
 ## Google Brain ##
 1. [On the Expressive Power of Deep Networks](https://arxiv.org/pdf/1606.05336.pdf) (2017)
-2. [Understanding Deep Learning Requires Rethinking Generalization]()
+2. [Understanding Deep Learning Requires Rethinking Generalization](https://arxiv.org/pdf/1611.03530.pdf) (2017)
 
 ## DeepMind ## 
 1. Andrea Tacchetti
