@@ -63,7 +63,15 @@ This research overview focuses on current researchers with at least three of the
 8. Sebastian Seung
 
 ## Caltech ##
-1. 
+1. [Jehoshua Bruck] - combines distributed information systems with study of biological circuits
+2. [Pietro Perona] - computational vision
+    1. [Non-Parametric Probabilistic Image Segmentation](https://ieeexplore.ieee.org/document/4408968/) (2007)
+    2. [Visipedia](https://sites.google.com/visipedia.org/index/home?authuser=0)
+3. Thanos Siapas - neurotechnology, population recordings
+4. Yaser Abu-Mostafa
+### Machine Learning ###
+1. Anima Anandkumar
+    1. [Tensor Decompositions for Learning Latent Variable Models](http://jmlr.org/papers/volume15/anandkumar14b/anandkumar14b.pdf) (2014)
 
 ## University of Pennsylvania ##
 1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
@@ -149,6 +157,10 @@ This research overview focuses on current researchers with at least three of the
 
 ## Dalle Molle Institute for Artificial Intelligence Research ##
 1. Jurgen Schmidhuber - artificial general intelligence
+    1. [Deep Learning Annus Mirabilis](http://people.idsia.ch/~juergen/deep-learning-miraculous-year-1990-1991.html#Sec.%2021)
+    2. [Metalearning](http://people.idsia.ch/~juergen/metalearner.html)
+    3. [PowerPlay: training an increasingly general problem solver by continually searching for the simplest still unsolvable problem](https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00313/full)
+    4. [Evolutionary principles in self-referential learning](http://people.idsia.ch/~juergen/diploma1987ocr.pdf)
 
 ## Istituto Italiano di Tecnologia ##
 1. Fabio Anselmi (see MIT)
@@ -157,7 +169,12 @@ This research overview focuses on current researchers with at least three of the
 
 ## University of Waterloo ##
 
-## OpenAI ##
+## Microsoft Research ##
+Montreal
+1. Philip Bachman - deep infomax
+Cambridge, UK
+1. Chris Bishop
+
 
 ## Google Brain ##
 1. [On the Expressive Power of Deep Networks](https://arxiv.org/pdf/1606.05336.pdf) (2017)
@@ -165,7 +182,14 @@ This research overview focuses on current researchers with at least three of the
 
 ## DeepMind ## 
 1. Andrea Tacchetti
-2. Botvinick 
+2. Botvinick (prev Princeton  )
+3. Shane Legg
+    1. *Machine Superintelligence*
+
+## OpenAI ##
+
+## Neuralink ##
+1. [An Integrated Brain-Machine Interface Platform with Thousands of Channels](https://www.biorxiv.org/content/10.1101/703801v1.full.pdf)
 
 
 
