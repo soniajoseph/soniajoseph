@@ -115,6 +115,12 @@ This research overview focuses on current researchers with at least three of the
     1. [Incorporating Context into Language Encoding Models for fMRI] (2018)
     2. [The revolution will not be controlled: natural stimuli in speech neuroscience.] (2018)
 
+## University of Washington ##
+1. Fred Rieke - physics imposing limits on sensory processing (photon counting in visual system)
+2. Adrienne Fairhall - adaptation at single neuron level
+    1. [The role of adaptation in neural coding](https://www.sciencedirect.com/science/article/abs/pii/S0959438819300418?dgcid=author)
+    2. [Reconfiguring motor circuits for a joint manual and BCI task.](https://arxiv.org/pdf/1702.07368.pdf)
+
 ## University College London ##
 1. [Karl Friston](https://www.fil.ion.ucl.ac.uk/~karl/) - variational Laplacian procedures, generalized filtering for hierarchical Bayesian model inversion
 
