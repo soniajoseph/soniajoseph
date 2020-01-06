@@ -88,6 +88,7 @@ This research overview focuses on current researchers with at least three of the
 3. [Alison Gopnik](http://alisongopnik.com/Papers_Alison/TheoryAndReviewPapers.htm) - AI inspired by developmental psychology, Bayesian models of child development
 4. [Bruno Olshausen](http://www.rctn.org/bruno/papers/)
     1. Probabilistic Models of the Brain: Perception and Neural Function (textbook)
+
 ### Machine Learning ###
 1. Pieter Abbeel - deep learning for robotics (reinforcement learning, apprenticeship)
 2. Moritz Hardt - fairness in machine learning
@@ -120,6 +121,7 @@ This research overview focuses on current researchers with at least three of the
 2. Adrienne Fairhall - adaptation at single neuron level
     1. [The role of adaptation in neural coding](https://www.sciencedirect.com/science/article/abs/pii/S0959438819300418?dgcid=author)
     2. [Reconfiguring motor circuits for a joint manual and BCI task.](https://arxiv.org/pdf/1702.07368.pdf)
+3. Eberhard E. Fetz - cortical control of movement, bidirectional BCIs, neural modeling 
 
 ## University College London ##
 1. [Karl Friston](https://www.fil.ion.ucl.ac.uk/~karl/) - variational Laplacian procedures, generalized filtering for hierarchical Bayesian model inversion
@@ -142,6 +144,7 @@ This research overview focuses on current researchers with at least three of the
     2. [Synthesizing realistic neural population activity patterns using Generative Adversarial Networks](https://arxiv.org/abs/1803.00338) (2018)
 5. [Barbara Webb] - insect robotics
     1. [The internal maps of insects](https://jeb.biologists.org/content/222/Suppl_1/jeb188094) (2019)
+    
 ### Machine Learning ###
 1. Christopher Bishop 
     1. Machine Learning and Pattern Recognition
@@ -181,16 +184,18 @@ Montreal
 Cambridge, UK
 1. Chris Bishop
 
-
 ## Google Brain ##
 1. [On the Expressive Power of Deep Networks](https://arxiv.org/pdf/1606.05336.pdf) (2017)
 2. [Understanding Deep Learning Requires Rethinking Generalization](https://arxiv.org/pdf/1611.03530.pdf) (2017)
 
 ## DeepMind ## 
 1. Andrea Tacchetti
-2. Botvinick (prev Princeton  )
+2. Botvinick (prev Princeton)
 3. Shane Legg
     1. *Machine Superintelligence*
+
+## UberAI ##
+1. [Deconstructing Lottery Tickets: Zeros, Signs, and the Supermask](https://eng.uber.com/deconstructing-lottery-tickets/)
 
 ## OpenAI ##
 
