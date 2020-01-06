@@ -11,7 +11,7 @@ mathjax: "true"
 
 {% include figure image_path="/assets/images/posts/dropout.png" alt="Neural net before and after dropout from Srivastava, Nitish, et al. 'Dropout: a simple way to prevent neural networks from overfitting', JMLR 2014" %}
 
-*This project was done as a challenge for [for.ai](for.ai), a multi-disciplinary distributed artificial intelligence research collaboration.*
+*This project was done as a challenge for [for.ai](for.ai), a multi-disciplinary distributed artificial intelligence research collaboration. Code on GitHub is [here](https://github.com/soniajoseph/Pruning).* 
 
 Pruning is deleting connections in a neural net in order to improve generalization and reduce computational resources. Two kinds of pruning exist: weight-pruning, in which the largest weights by absolute value are set to zero; and unit-pruning, in which the smallest neurons are set to zero by a vector-wise metric like L2-norm.
 
@@ -341,15 +341,7 @@ plt.ylabel("% Accuracy")
 plt.legend()
 ```
 
-
-
-
-    <matplotlib.legend.Legend at 0x7f74eea0c390>
-
-
-
-
-![png](Pruning_PyTorch_files/Pruning_PyTorch_20_1.png)
+![png](assets/images/posts/pruning_unit_vs_weight.png)
 
 
 ## Discussion (pre-literature review)
