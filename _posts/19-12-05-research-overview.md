@@ -1,7 +1,9 @@
 ---
 title: Computational Neuroscience and Artificial Intelligence Research Overview 
 tags: [computational neuroscience, neuroscience, machine learning, neural dynamics, all audiences, resources]
-excerpt: Research overview of artificial/biological intelligence by institution 
+header: 
+  teaser: assets/images/posts/neuralnet.jpg
+excerpt: Research overview of artificial/biological intelligence by researcher and institution.
 categories: [computational neuroscience]
 toc: true
 mathjax: "true"
@@ -9,6 +11,8 @@ comments: true
 collection: posts
 classes: wide
 ---
+
+{% include figure image_path="/assets/images/posts/neuralnet.jpg" alt="" %}
 
 *In progress.*
 
