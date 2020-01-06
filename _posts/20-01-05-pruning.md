@@ -7,19 +7,6 @@ header:
 mathjax: "true"
 ---
 
-```
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torchvision
-from torchvision import transforms
-import numpy as np
-import matplotlib.pyplot as plt
-from time import time
-import copy
-import pandas as pd 
-```
-
 ## The Unexpected Effects of Pruning Neural Nets
 
 {% include figure image_path="/assets/images/posts/dropout.png" alt="Neural net before and after dropout from Srivastava, Nitish, et al. 'Dropout: a simple way to prevent neural networks from overfitting', JMLR 2014" %}
@@ -32,8 +19,18 @@ Here, I examine the relationship between pruning and accuracy on a vanilla neura
 
 ## First, let's load, normalize, and visualize the MNIST dataset.
 
-
-
+```
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torchvision
+from torchvision import transforms
+import numpy as np
+import matplotlib.pyplot as plt
+from time import time
+import copy
+import pandas as pd 
+```
 
 ```
 def load_MNIST():
