@@ -77,6 +77,11 @@ This research overview focuses on current researchers with at least three of the
 1. Anima Anandkumar
     1. [Tensor Decompositions for Learning Latent Variable Models](http://jmlr.org/papers/volume15/anandkumar14b/anandkumar14b.pdf) (2014)
 
+## Stanford ##
+1. Dan Yamins
+2. [Shaul Druckmann](https://www.druckmannlab.com/)
+3. [Surya Ganguli](https://ganguli-gang.stanford.edu/)
+
 ## University of Pennsylvania ##
 1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
     1. [On the nature and use of models in network neuroscience](https://www.nature.com/articles/s41583-018-0038-8) (2018)
