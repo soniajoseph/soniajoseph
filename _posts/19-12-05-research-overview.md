@@ -16,7 +16,7 @@ classes: wide
 
 *In progress.*
 
-## Criteria ##
+## Criteria 
 
 This research overview focuses on current researchers with at least three of the following criteria:
 1. Researching intelligence from both biological and artificial perspectives.
@@ -26,10 +26,10 @@ This research overview focuses on current researchers with at least three of the
 5. Developing neurotechnology. 
 6. Philosophical and/or AGI bent.
 
-## Cross-Institution Groups ##
+## Cross-Institution Groups 
 1. [Theoretical Frameworks for Intelligence](https://cbmm.mit.edu/research/thrusts/theoretical-frameworks-intelligence)
 
-## MIT ##
+## MIT 
 1. Tomaso Poggio - representation, deep learning, visual cortex, biological/artificial intelligence, learning
     1. [Hierarchical models of object recognition in cortex](https://www.nature.com/articles/nn1199_1019) (1999)
     2. [The Levels of Understanding Framework, Revised](http://cbcl.mit.edu/publications/ps/MIT-CSAIL-TR-2012-014.pdf) (2002)
@@ -48,13 +48,13 @@ This research overview focuses on current researchers with at least three of the
     1. [Training networks to generate hypotheses about how the brain solves hard navigation problems](http://papers.nips.cc/paper/7039-training-recurrent-networks-to-generate-hypotheses-about-how-the-brain-solves-hard-navigation-problems)(2017)
     2. [Flexible representation and memory of higher-dimensional cognitive variables with grid cells](https://www.biorxiv.org/content/10.1101/578641v1.article-info) (2019)
 
-## Georgetown ##
+## Georgetown 
 1. Maximilian Riesenhuber - representation, visual cortex
 
-## Harvard University ##
+## Harvard University 
 1. [Samuel Gershman](https://cbmm.mit.edu/about/people/gershman)
 
-## Princeton University ##
+## Princeton University 
 1. David Tank - persistent neural activity, neurotechnology
 2. Jonathan Pillow - statistical analysis of neural populations
     1. [Unsupervised identification of the internal states that shape natural behavior](https://www.biorxiv.org/content/10.1101/691196v1) (2019)
@@ -66,7 +66,7 @@ This research overview focuses on current researchers with at least three of the
 7. Ken Norman
 8. Sebastian Seung
 
-## Caltech ##
+## Caltech 
 1. [Jehoshua Bruck] - combines distributed information systems with study of biological circuits
 2. [Pietro Perona] - computational vision
     1. [Non-Parametric Probabilistic Image Segmentation](https://ieeexplore.ieee.org/document/4408968/) (2007)
@@ -77,18 +77,18 @@ This research overview focuses on current researchers with at least three of the
 1. Anima Anandkumar
     1. [Tensor Decompositions for Learning Latent Variable Models](http://jmlr.org/papers/volume15/anandkumar14b/anandkumar14b.pdf) (2014)
 
-## Stanford ##
+## Stanford 
 1. Dan Yamins
 2. [Shaul Druckmann](https://www.druckmannlab.com/) - neural circuits, population dynamics
     1. ["Over-complete representations on recurrent neural networks can support persistent precepts"](https://papers.nips.cc/paper/4020-over-complete-representations-on-recurrent-neural-networks-can-support-persistent-percepts.pdf) (2019)
 3. [Surya Ganguli](https://ganguli-gang.stanford.edu/)
 
-## University of Pennsylvania ##
+## University of Pennsylvania 
 1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
     1. [On the nature and use of models in network neuroscience](https://www.nature.com/articles/s41583-018-0038-8) (2018)
 
-## University of California, Berkeley ##
-### Computational Neuroscience ###
+## University of California, Berkeley
+### Computational Neuroscience 
 1. [Michael Deweese](https://physics.berkeley.edu/people/faculty/michael-deweese) - auditory attention
 2. [Jack Gallant](https://psychology.berkeley.edu/people/jack-l-gallant) - visual neuroscience
     1. [Identifying natural images from human brain activity.](nature.com/articles/nature06713) (2008)
@@ -99,7 +99,7 @@ This research overview focuses on current researchers with at least three of the
 4. [Bruno Olshausen](http://www.rctn.org/bruno/papers/)
     1. Probabilistic Models of the Brain: Perception and Neural Function (textbook)
 
-### Machine Learning ###
+### Machine Learning 
 1. Pieter Abbeel - deep learning for robotics (reinforcement learning, apprenticeship)
 2. Moritz Hardt - fairness in machine learning
     1. [Understanding deep learning requires rethinking generalization](https://arxiv.org/pdf/1611.03530.pdf) (2017)
@@ -116,30 +116,30 @@ This research overview focuses on current researchers with at least three of the
     2. [The DeepTune framework for modeling and characterizing neurons in visual cortex area V4](https://www.biorxiv.org/content/10.1101/465534v1) (2018)
     3. [Hierarchical interpretations of neural network predictions](https://arxiv.org/abs/1806.05337) (2018)
 
-## University of California, Riverside ##
+## University of California, Riverside 
 1. [Fabio Pasqualetti](http://www.fabiopas.it/) - control theory, complex systems
     1. [Controllability of structural brain networks](http://www.fabiopas.it/papers/SG-FP-MC-SCT-DSB-14.pdf) (2015)
     2. [Optimally controlling the human connectome: the role of network topology](http://www.fabiopas.it/papers/RB-SG-JDM-FP-DSB-16.pdf) (2016)
 
-## University of Texas at Austin ##
+## University of Texas at Austin 
 1. Alex Huth - representation of language
     1. [Incorporating Context into Language Encoding Models for fMRI] (2018)
     2. [The revolution will not be controlled: natural stimuli in speech neuroscience.] (2018)
 
-## University of Washington ##
+## University of Washington 
 1. Fred Rieke - physics imposing limits on sensory processing (photon counting in visual system)
 2. Adrienne Fairhall - adaptation at single neuron level
     1. [The role of adaptation in neural coding](https://www.sciencedirect.com/science/article/abs/pii/S0959438819300418?dgcid=author)
     2. [Reconfiguring motor circuits for a joint manual and BCI task.](https://arxiv.org/pdf/1702.07368.pdf)
 3. Eberhard E. Fetz - cortical control of movement, bidirectional BCIs, neural modeling 
 
-## University College London ##
+## University College London 
 1. [Karl Friston](https://www.fil.ion.ucl.ac.uk/~karl/) - variational Laplacian procedures, generalized filtering for hierarchical Bayesian model inversion
 
-## Gatsby Institute, University College, London ## 
+## Gatsby Institute, University College, London 
 
-## University of Edinburgh ##
-### Computational Neuroscience ###
+## University of Edinburgh 
+### Computational Neuroscience 
 1. David Willshaw
 2. [Peggie Series](http://homepages.inf.ed.ac.uk/pseries/research.htm) - RL and Bayesian models in computational psychiatry
     1. [Comprehensive Review: Computational Modelling of Schizophrenia. Neuroscience and Biobehavioural Reviews.](http://homepages.inf.ed.ac.uk/pseries/Peg_files/valton2017.pdf) (2017)
@@ -155,7 +155,7 @@ This research overview focuses on current researchers with at least three of the
 5. [Barbara Webb] - insect robotics
     1. [The internal maps of insects](https://jeb.biologists.org/content/222/Suppl_1/jeb188094) (2019)
     
-### Machine Learning ###
+### Machine Learning 
 1. Christopher Bishop 
     1. Machine Learning and Pattern Recognition
 2. [Chris Williams](http://homepages.inf.ed.ac.uk/ckiw/mypages/res.html) - time series, image interpretation
@@ -170,51 +170,50 @@ This research overview focuses on current researchers with at least three of the
 6. Charles Sutton (moved to Google)
     1. [A Survey of Machine Learning for Big Code and Naturalness](https://arxiv.org/pdf/1709.06182.pdf)
 
-## Australian National University ##
+## Australian National University 
 1. [Marcus Hutter] - artificial general intelligence
     1. [Universal Artificial Intelligence](https://books.google.co.nz/books?id=NP53iZGt4KUC&redir_esc=y) (2004)
 
-## Dalle Molle Institute for Artificial Intelligence Research ##
+## Dalle Molle Institute for Artificial Intelligence Research 
 1. Jurgen Schmidhuber - artificial general intelligence
     1. [Deep Learning Annus Mirabilis](http://people.idsia.ch/~juergen/deep-learning-miraculous-year-1990-1991.html#Sec.%2021)
     2. [Metalearning](http://people.idsia.ch/~juergen/metalearner.html)
     3. [PowerPlay: training an increasingly general problem solver by continually searching for the simplest still unsolvable problem](https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00313/full)
     4. [Evolutionary principles in self-referential learning](http://people.idsia.ch/~juergen/diploma1987ocr.pdf)
 
-## Istituto Italiano di Tecnologia ##
+## Istituto Italiano di Tecnologia 
 1. Fabio Anselmi (see MIT)
 
-## MILA ##
+## MILA 
 
-## University of Waterloo ##
+## University of Waterloo 
 
-## Microsoft Research ##
-#### Montreal ####
+## Microsoft Research 
+#### Montreal 
 1. Philip Bachman - deep infomax
 
-#### Cambridge, UK #### 
+#### Cambridge, UK 
 1. Chris Bishop
 
-## Janelia Research Campus (in Virginia) ## 
+## Janelia Research Campus (in Virginia) 
 Focus on mechanistic cognitive neuroscience
 
-
-## Google Brain ##
+## Google Brain 
 1. [On the Expressive Power of Deep Networks](https://arxiv.org/pdf/1606.05336.pdf) (2017)
 2. [Understanding Deep Learning Requires Rethinking Generalization](https://arxiv.org/pdf/1611.03530.pdf) (2017)
 
-## DeepMind ## 
+## DeepMind 
 1. Andrea Tacchetti
 2. Botvinick (prev Princeton)
 3. Shane Legg
     1. *Machine Superintelligence*
 
-## UberAI ##
+## UberAI 
 1. [Deconstructing Lottery Tickets: Zeros, Signs, and the Supermask](https://eng.uber.com/deconstructing-lottery-tickets/)
 
-## OpenAI ##
+## OpenAI 
 
-## Neuralink ##
+## Neuralink 
 1. [An Integrated Brain-Machine Interface Platform with Thousands of Channels](https://www.biorxiv.org/content/10.1101/703801v1.full.pdf)
 
 

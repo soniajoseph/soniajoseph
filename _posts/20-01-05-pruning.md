@@ -11,7 +11,7 @@ mathjax: "true"
 
 {% include figure image_path="/assets/images/posts/dropout.png" alt="Neural net before and after dropout from Srivastava, Nitish, et al. 'Dropout: a simple way to prevent neural networks from overfitting', JMLR 2014" %}
 
-*This project was done as a challenge for [for.ai](for.ai), a multi-disciplinary distributed artificial intelligence research collaboration. Code on GitHub is [here](https://github.com/soniajoseph/Pruning).* 
+*This project was done as a challenge for [for.ai](for.ai), a multi-disciplinary distributed artificial intelligence research collaboration. Therefore, I entered the challenge with minimal background in pruning neural nets and consulted the literature only post-experiment. The full code on GitHub is [here](https://github.com/soniajoseph/Pruning).* 
 
 Pruning is deleting connections in a neural net in order to improve generalization and reduce computational resources. Two kinds of pruning exist: weight-pruning, in which the largest weights by absolute value are set to zero; and unit-pruning, in which the smallest neurons are set to zero by a vector-wise metric like L2-norm.
 
@@ -212,7 +212,7 @@ print("The accuracy of our vanilla NN is", acc, "%")
     The accuracy of our vanilla NN is 97.15 %
 
 
-## A ~96% accuracy for our vanilla NN seems reasonable. Now let's do some weight and unit pruning.
+## A ~97% accuracy for our vanilla NN seems reasonable. Now let's do some weight and unit pruning.
 
 
 ```
