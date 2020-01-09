@@ -79,7 +79,8 @@ This research overview focuses on current researchers with at least three of the
 
 ## Stanford ##
 1. Dan Yamins
-2. [Shaul Druckmann](https://www.druckmannlab.com/)
+2. [Shaul Druckmann](https://www.druckmannlab.com/) - neural circuits, population dynamics
+    1. ["Over-complete representations on recurrent neural networks can support persistent precepts"](https://papers.nips.cc/paper/4020-over-complete-representations-on-recurrent-neural-networks-can-support-persistent-percepts.pdf) (2019)
 3. [Surya Ganguli](https://ganguli-gang.stanford.edu/)
 
 ## University of Pennsylvania ##
@@ -188,10 +189,15 @@ This research overview focuses on current researchers with at least three of the
 ## University of Waterloo ##
 
 ## Microsoft Research ##
-Montreal
+#### Montreal ####
 1. Philip Bachman - deep infomax
-Cambridge, UK
+
+#### Cambridge, UK #### 
 1. Chris Bishop
+
+## Janelia Research Campus (in Virginia) ## 
+Focus on mechanistic cognitive neuroscience
+
 
 ## Google Brain ##
 1. [On the Expressive Power of Deep Networks](https://arxiv.org/pdf/1606.05336.pdf) (2017)

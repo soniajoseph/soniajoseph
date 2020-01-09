@@ -330,6 +330,7 @@ print(df_unit)
     9      0.99     10.12
 
 
+### Let's plot our results 
 
 ```
 plt.figure()
@@ -341,7 +342,7 @@ plt.ylabel("% Accuracy")
 plt.legend()
 ```
 
-![png](assets/images/posts/pruning_unit_vs_weight.png)
+{% include figure image_path="/assets/images/pruning_unit_vs_weight.png" %}
 
 
 ## Discussion (pre-literature review)
