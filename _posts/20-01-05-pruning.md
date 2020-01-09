@@ -6,7 +6,6 @@ header:
   teaser: assets/images/posts/dropout.png
 mathjax: "true"
 ---
-
 ## The Unexpected Effects of Pruning Neural Nets
 
 {% include figure image_path="/assets/images/posts/dropout.png" alt="Neural net before and after dropout from Srivastava, Nitish, et al. 'Dropout: a simple way to prevent neural networks from overfitting', JMLR 2014" %}

@@ -12,8 +12,6 @@ collection: posts
 classes: wide
 ---
 
-{% include figure image_path="/assets/images/posts/neuralnet.jpg" alt="" %}
-
 *In progress.*
 
 ## Criteria 
@@ -80,7 +78,7 @@ This research overview focuses on current researchers with at least three of the
 ## Stanford 
 1. Dan Yamins
 2. [Shaul Druckmann](https://www.druckmannlab.com/) - neural circuits, population dynamics
-    1. ["Over-complete representations on recurrent neural networks can support persistent precepts"](https://papers.nips.cc/paper/4020-over-complete-representations-on-recurrent-neural-networks-can-support-persistent-percepts.pdf) (2019)
+    1. ["Neuronal Circuits Underlying Persistent Representations Despite Time Varying Activity"](https://www.cell.com/current-biology/fulltext/S0960-9822(12)01081-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982212010810%3Fshowall%3Dtrue) (2012)
 3. [Surya Ganguli](https://ganguli-gang.stanford.edu/)
 
 ## University of Pennsylvania 
