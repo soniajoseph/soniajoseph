@@ -27,6 +27,9 @@ This research overview focuses on current researchers with at least three of the
 ## Cross-Institution Groups 
 1. [Theoretical Frameworks for Intelligence](https://cbmm.mit.edu/research/thrusts/theoretical-frameworks-intelligence)
 
+## Datsets
+1. [Collaborative Research in Computational Neuroscience](http://crcns.org/)
+
 ## MIT 
 1. Tomaso Poggio - representation, deep learning, visual cortex, biological/artificial intelligence, learning
     1. [Hierarchical models of object recognition in cortex](https://www.nature.com/articles/nn1199_1019) (1999)
@@ -46,6 +49,11 @@ This research overview focuses on current researchers with at least three of the
     1. [Training networks to generate hypotheses about how the brain solves hard navigation problems](http://papers.nips.cc/paper/7039-training-recurrent-networks-to-generate-hypotheses-about-how-the-brain-solves-hard-navigation-problems)(2017)
     2. [Flexible representation and memory of higher-dimensional cognitive variables with grid cells](https://www.biorxiv.org/content/10.1101/578641v1.article-info) (2019)
 
+## Columbia
+1. L.F. Abbott 
+    1. [Review of his book: Theoretical Neuroscience: Computational and Mathematical Modeling of Neural Systems](http://www.rctn.org/bruno/papers/TN-review.pdf) (2003)
+    2. [The neuronal architecture of the mushroom body provides a logic for associative learning](https://elifesciences.org/articles/04577)
+
 ## Georgetown 
 1. Maximilian Riesenhuber - representation, visual cortex
 
@@ -63,15 +71,18 @@ This research overview focuses on current researchers with at least three of the
 6. Jonathan Cohen
 7. Ken Norman
 8. Sebastian Seung
+    1. [How the brain keeps the eyes still](https://www.pnas.org/content/93/23/13339) (1996)
 
 ## Caltech 
+### Computational Neuroscience 
 1. [Jehoshua Bruck] - combines distributed information systems with study of biological circuits
 2. [Pietro Perona] - computational vision
     1. [Non-Parametric Probabilistic Image Segmentation](https://ieeexplore.ieee.org/document/4408968/) (2007)
     2. [Visipedia](https://sites.google.com/visipedia.org/index/home?authuser=0)
 3. Thanos Siapas - neurotechnology, population recordings
 4. Yaser Abu-Mostafa
-### Machine Learning ###
+
+### Machine Learning
 1. Anima Anandkumar
     1. [Tensor Decompositions for Learning Latent Variable Models](http://jmlr.org/papers/volume15/anandkumar14b/anandkumar14b.pdf) (2014)
 
@@ -79,11 +90,17 @@ This research overview focuses on current researchers with at least three of the
 1. Dan Yamins
 2. [Shaul Druckmann](https://www.druckmannlab.com/) - neural circuits, population dynamics
     1. ["Neuronal Circuits Underlying Persistent Representations Despite Time Varying Activity"](https://www.cell.com/current-biology/fulltext/S0960-9822(12)01081-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982212010810%3Fshowall%3Dtrue) (2012)
+    2. "Robust neuronal dynamics in premotor cortex during motor planning" (2016)
 3. [Surya Ganguli](https://ganguli-gang.stanford.edu/)
 
 ## University of Pennsylvania 
 1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
     1. [On the nature and use of models in network neuroscience](https://www.nature.com/articles/s41583-018-0038-8) (2018)
+2. [Konrad Kording](http://kordinglab.com/)
+    1. [How advances in neural recording affect data analysis](https://www.nature.com/articles/nn.2731?lang=en) (2011)
+3. Lyle Ungar
+4. Vijay Balasubramanian
+
 
 ## University of California, Berkeley
 ### Computational Neuroscience 
@@ -119,6 +136,10 @@ This research overview focuses on current researchers with at least three of the
     1. [Controllability of structural brain networks](http://www.fabiopas.it/papers/SG-FP-MC-SCT-DSB-14.pdf) (2015)
     2. [Optimally controlling the human connectome: the role of network topology](http://www.fabiopas.it/papers/RB-SG-JDM-FP-DSB-16.pdf) (2016)
 
+## University of Connecticut
+1. Ian Stevenson
+    1. [How advances in neural recording affect data analysis](https://www.nature.com/articles/nn.2731?lang=en) (2011)
+
 ## University of Texas at Austin 
 1. Alex Huth - representation of language
     1. [Incorporating Context into Language Encoding Models for fMRI] (2018)
@@ -131,10 +152,18 @@ This research overview focuses on current researchers with at least three of the
     2. [Reconfiguring motor circuits for a joint manual and BCI task.](https://arxiv.org/pdf/1702.07368.pdf)
 3. Eberhard E. Fetz - cortical control of movement, bidirectional BCIs, neural modeling 
 
+
 ## University College London 
 1. [Karl Friston](https://www.fil.ion.ucl.ac.uk/~karl/) - variational Laplacian procedures, generalized filtering for hierarchical Bayesian model inversion
 
 ## Gatsby Institute, University College, London 
+1. Peter Dayan
+    1. [Review of researcher's book: Theoretical Neuroscience: Computational and Mathematical Modeling of Neural Systems](http://www.rctn.org/bruno/papers/TN-review.pdf) (2003)
+
+## University of Oxford
+1. Selen Atasoy - harmonic brain modes framework
+    1. [Human brain networks function in connectome-specific harmonic waves](https://www.nature.com/articles/ncomms10340) (2016)
+    2. [Harmonic Brain Modes: a Unifying Framework for Linking Space and Time](https://journals.sagepub.com/doi/abs/10.1177/1073858417728032?journalCode=nroa) (2017)
 
 ## University of Edinburgh 
 ### Computational Neuroscience 
@@ -205,6 +234,7 @@ Focus on mechanistic cognitive neuroscience
 2. Botvinick (prev Princeton)
 3. Shane Legg
     1. *Machine Superintelligence*
+4. Summer Yue
 
 ## UberAI 
 1. [Deconstructing Lottery Tickets: Zeros, Signs, and the Supermask](https://eng.uber.com/deconstructing-lottery-tickets/)
