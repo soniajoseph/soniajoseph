@@ -342,7 +342,7 @@ plt.ylabel("% Accuracy")
 plt.legend()
 ```
 
-{% include figure image_path="/assets/images/pruning_unit_vs_weight.png" %}
+{% include figure image_path="/assets/images/posts/pruning_unit_vs_weight.png" %}
 
 
 ## Discussion (pre-literature review)
