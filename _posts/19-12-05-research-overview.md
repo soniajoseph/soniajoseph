@@ -90,6 +90,7 @@ This research overview focuses on current researchers with at least three of the
 
 ## Stanford 
 1. Dan Yamins
+    1. [Performance-Optimized Hierarchical Models Predict Neural Responses in Higher Visual Cortex](https://www.pnas.org/content/111/23/8619) (2014)
 2. [Shaul Druckmann](https://www.druckmannlab.com/) - neural circuits, population dynamics
     1. ["Neuronal Circuits Underlying Persistent Representations Despite Time Varying Activity"](https://www.cell.com/current-biology/fulltext/S0960-9822(12)01081-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982212010810%3Fshowall%3Dtrue) (2012)
     2. "Robust neuronal dynamics in premotor cortex during motor planning" (2016)
@@ -102,7 +103,6 @@ This research overview focuses on current researchers with at least three of the
     1. [How advances in neural recording affect data analysis](https://www.nature.com/articles/nn.2731?lang=en) (2011)
 3. Lyle Ungar
 4. Vijay Balasubramanian
-
 
 ## University of California, Berkeley
 ### Computational Neuroscience 
@@ -153,6 +153,7 @@ This research overview focuses on current researchers with at least three of the
     1. [The role of adaptation in neural coding](https://www.sciencedirect.com/science/article/abs/pii/S0959438819300418?dgcid=author)
     2. [Reconfiguring motor circuits for a joint manual and BCI task.](https://arxiv.org/pdf/1702.07368.pdf)
 3. Eberhard E. Fetz - cortical control of movement, bidirectional BCIs, neural modeling 
+
 
 # Universities outside the US
 
@@ -217,6 +218,7 @@ This research overview focuses on current researchers with at least three of the
 ## MILA 
 
 ## University of Waterloo 
+
 
 
 # Other Private Institutions 
