@@ -14,7 +14,7 @@ classes: wide
 
 *In progress.*
 
-## Criteria 
+# Criteria 
 
 This research overview focuses on current researchers with at least three of the following criteria:
 1. Researching intelligence from both biological and artificial perspectives.
@@ -24,11 +24,13 @@ This research overview focuses on current researchers with at least three of the
 5. Developing neurotechnology. 
 6. Philosophical and/or AGI bent.
 
-## Cross-Institution Groups 
+# Cross-Institution Groups 
 1. [Theoretical Frameworks for Intelligence](https://cbmm.mit.edu/research/thrusts/theoretical-frameworks-intelligence)
 
-## Datsets
+# Datsets
 1. [Collaborative Research in Computational Neuroscience](http://crcns.org/)
+
+# US Universities
 
 ## MIT 
 1. Tomaso Poggio - representation, deep learning, visual cortex, biological/artificial intelligence, learning
@@ -152,6 +154,7 @@ This research overview focuses on current researchers with at least three of the
     2. [Reconfiguring motor circuits for a joint manual and BCI task.](https://arxiv.org/pdf/1702.07368.pdf)
 3. Eberhard E. Fetz - cortical control of movement, bidirectional BCIs, neural modeling 
 
+# Universities outside the US
 
 ## University College London 
 1. [Karl Friston](https://www.fil.ion.ucl.ac.uk/~karl/) - variational Laplacian procedures, generalized filtering for hierarchical Bayesian model inversion
@@ -214,6 +217,9 @@ This research overview focuses on current researchers with at least three of the
 ## MILA 
 
 ## University of Waterloo 
+
+
+# Other Private Institutions 
 
 ## Microsoft Research 
 #### Montreal 
