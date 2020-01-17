@@ -91,10 +91,19 @@ This research overview focuses on current researchers with at least three of the
 ## Stanford 
 1. Dan Yamins
     1. [Performance-Optimized Hierarchical Models Predict Neural Responses in Higher Visual Cortex](https://www.pnas.org/content/111/23/8619) (2014)
+    2. [Flexible Neural Representation for Physics Prediction](https://arxiv.org/abs/1806.08047) (2018)
 2. [Shaul Druckmann](https://www.druckmannlab.com/) - neural circuits, population dynamics
     1. ["Neuronal Circuits Underlying Persistent Representations Despite Time Varying Activity"](https://www.cell.com/current-biology/fulltext/S0960-9822(12)01081-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982212010810%3Fshowall%3Dtrue) (2012)
     2. "Robust neuronal dynamics in premotor cortex during motor planning" (2016)
 3. [Surya Ganguli](https://ganguli-gang.stanford.edu/)
+Neural Prosthetics Translational Laboratory (NPTL) @ Stanford
+1. [Krishna Shenoy](https://shenoy.people.stanford.edu/professor-krishna-v-shenoy) - neural prosthetics with brain controlling movement
+
+## Washington University, St Louis
+1. David Michael Kaplan 
+    1. Explanatory Force of Dynamical and Mathematical Models in Neuroscience: A Mechanistic Perspective (2010)
+2. Carl F. Craver
+    1. Explanatory Force of Dynamical and Mathematical Models in Neuroscience: A Mechanistic Perspective (2010)
 
 ## University of Pennsylvania 
 1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
@@ -218,7 +227,10 @@ This research overview focuses on current researchers with at least three of the
 ## MILA 
 
 ## University of Waterloo 
-
+1. [Chris Eliasmith](https://arts.uwaterloo.ca/~celiasmi/) - semantic pointer architecture, SPAUN, Nengo neural simulation, neural engineering
+    1. [A large-scale model of the functioning brain](http://compneuro.uwaterloo.ca/publications/eliasmith2012.html) (2012)
+2. Andreas Stockel - neural engineering
+    1. [Course on simulating neurobiological systems](https://github.com/astoeckel/syde556-w20/blob/master/lectures/lecture_01/syde556_lecture_01_slides_distr.pdf)
 
 
 # Other Private Institutions 
