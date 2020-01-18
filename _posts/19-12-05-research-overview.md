@@ -30,26 +30,33 @@ This research overview focuses on current researchers with at least three of the
 # Datsets
 1. [Collaborative Research in Computational Neuroscience](http://crcns.org/)
 
+# Past Conferences
+1. [NAISys](https://meetings.cshl.edu/meetings.aspx?meet=NAISYS&year=20) (March 2020)
+
+# Books 
+1. Vaina and Passingham. [Computational Theories and their Implementation in the Brain: The legacy of David Marr](https://www.amazon.com/Computational-Theories-their-Implementation-Brain/dp/0198749783) (2017)
+2. Dayan and Abbott. [Theoretical Neuroscience: Computational and Mathematical Modeling of Neural Systems](https://mitpress.mit.edu/books/theoretical-neuroscience) (2005)
+
+# Courses
+1.[Stanford: CS 330: Deep Multi-Task and Meta Learning](http://web.stanford.edu/class/cs330/) (2019)
+
 # US Universities
 
-## MIT 
-1. Tomaso Poggio - representation, deep learning, visual cortex, biological/artificial intelligence, learning
-    1. [Hierarchical models of object recognition in cortex](https://www.nature.com/articles/nn1199_1019) (1999)
-    2. [The Levels of Understanding Framework, Revised](http://cbcl.mit.edu/publications/ps/MIT-CSAIL-TR-2012-014.pdf) (2002)
-    3. [The Mathematics of Learning](http://www.dima.unige.it/~devito/Fmas/poggiosmale.pdf) (2003)
-2. Fabio Anselmi - representation, visual cortex, machine learning (also at Istituto Italiano di Tecnologia)
-    1. [Deep Convolutional Neural Nets and Hierarchical Kernel Machines](https://arxiv.org/pdf/1508.01084v1.pdf)
-    2. [Representation Learning in Sensory Cortex: a Theory](http://cbmm.mit.edu/sites/default/files/publications/CBMM-Memo-026_neuron_ver45.pdf)
-3. Polina Anikeeva - neurotechnologies
-	1. [Editorial overview: neurotechnologies](https://www.rle.mit.edu/bioelectron/wp-content/uploads/2018/08/Anikeeva_EditorialOverview_CurrOpinNeurobio_2018.pdf) (2018)
-4. Ed Boyden - neurotechnologies
-5. James DiCarlo - deep learning and visual stream
-    1. [Performance-Optimized Hierarchical Models Predict Neural Responses in Higher Visual Cortex](https://www.pnas.org/content/111/23/8619) (2014)
-6. Adam Marblestone - integration of deep learning + neuroscience, neurotechnology
-    1. [Toward an Integration of Deep Learning and Neuroscience](https://www.frontiersin.org/articles/10.3389/fncom.2016.00094/full) (2016)
-7. Ila Fiete - neural population dynamics
-    1. [Training networks to generate hypotheses about how the brain solves hard navigation problems](http://papers.nips.cc/paper/7039-training-recurrent-networks-to-generate-hypotheses-about-how-the-brain-solves-hard-navigation-problems)(2017)
-    2. [Flexible representation and memory of higher-dimensional cognitive variables with grid cells](https://www.biorxiv.org/content/10.1101/578641v1.article-info) (2019)
+## Baylor College of Medicine
+1. [Andreas Tolias](https://toliaslab.org/)
+
+## Caltech 
+### Computational Neuroscience 
+1. Jehoshua Bruck - combines distributed information systems with study of biological circuits
+2. Pietro Perona - computational vision
+    1. [Non-Parametric Probabilistic Image Segmentation](https://ieeexplore.ieee.org/document/4408968/) (2007)
+    2. [Visipedia](https://sites.google.com/visipedia.org/index/home?authuser=0)
+3. Thanos Siapas - neurotechnology, population recordings
+4. Yaser Abu-Mostafa
+
+### Machine Learning
+1. Anima Anandkumar
+    1. [Tensor Decompositions for Learning Latent Variable Models](http://jmlr.org/papers/volume15/anandkumar14b/anandkumar14b.pdf) (2014)
 
 ## Columbia
 1. L.F. Abbott 
@@ -62,31 +69,46 @@ This research overview focuses on current researchers with at least three of the
 ## Harvard University 
 1. [Samuel Gershman](https://cbmm.mit.edu/about/people/gershman)
 
+## MIT 
+1. Tomaso Poggio - representation, deep learning, visual cortex, biological/artificial intelligence, learning
+    1. [Hierarchical models of object recognition in cortex](https://www.nature.com/articles/nn1199_1019) (1999)
+    2. [The Levels of Understanding Framework, Revised](http://cbcl.mit.edu/publications/ps/MIT-CSAIL-TR-2012-014.pdf) (2002)
+    3. [The Mathematics of Learning](http://www.dima.unige.it/~devito/Fmas/poggiosmale.pdf) (2003)
+2. Fabio Anselmi - representation, visual cortex, machine learning (also at Istituto Italiano di Tecnologia)
+    1. [Deep Convolutional Neural Nets and Hierarchical Kernel Machines](https://arxiv.org/pdf/1508.01084v1.pdf)
+    2. [Representation Learning in Sensory Cortex: a Theory](http://cbmm.mit.edu/sites/default/files/publications/CBMM-Memo-026_neuron_ver45.pdf)
+3. Polina Anikeeva - neurotechnologies
+    1. [Editorial overview: neurotechnologies](https://www.rle.mit.edu/bioelectron/wp-content/uploads/2018/08/Anikeeva_EditorialOverview_CurrOpinNeurobio_2018.pdf) (2018)
+4. Ed Boyden - neurotechnologies
+5. James DiCarlo - deep learning and visual stream
+    1. [Performance-Optimized Hierarchical Models Predict Neural Responses in Higher Visual Cortex](https://www.pnas.org/content/111/23/8619) (2014)
+6. Adam Marblestone - integration of deep learning + neuroscience, neurotechnology
+    1. [Toward an Integration of Deep Learning and Neuroscience](https://www.frontiersin.org/articles/10.3389/fncom.2016.00094/full) (2016)
+7. Ila Fiete - neural population dynamics
+    1. [Training networks to generate hypotheses about how the brain solves hard navigation problems](http://papers.nips.cc/paper/7039-training-recurrent-networks-to-generate-hypotheses-about-how-the-brain-solves-hard-navigation-problems)(2017)
+    2. [Flexible representation and memory of higher-dimensional cognitive variables with grid cells](https://www.biorxiv.org/content/10.1101/578641v1.article-info) (2019)
+
+## NYU
+1. Dmitri "Mitya" B. Chklovskii - reverse engineer brain at algorithmic level
+2. [Eero Simoncelli](https://www.cns.nyu.edu/~eero/) - analysis and representation of visual information
+3. [Cristina Savin](https://csavin.wixsite.com/savinlab)
+
+### Machine Learning
+1. Yann LeCun
+
 ## Princeton University 
 1. David Tank - persistent neural activity, neurotechnology
 2. Jonathan Pillow - statistical analysis of neural populations
     1. [Unsupervised identification of the internal states that shape natural behavior](https://www.biorxiv.org/content/10.1101/691196v1) (2019)
     2. [Capturing the dynamical repertoire of single neurons with generalized linear models](https://pillowlab.princeton.edu/pubs/Weber17_IzhikevichGLM_NC.pdf) (2017)
 3. Uri Hasson
+    1. [Brain-to-Brain coupling: A mechanism for creating and sharing a social world](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3269540/) (2013)
 4. Carlos Brody
 5. Yael Niv
 6. Jonathan Cohen
 7. Ken Norman
 8. Sebastian Seung
     1. [How the brain keeps the eyes still](https://www.pnas.org/content/93/23/13339) (1996)
-
-## Caltech 
-### Computational Neuroscience 
-1. [Jehoshua Bruck] - combines distributed information systems with study of biological circuits
-2. [Pietro Perona] - computational vision
-    1. [Non-Parametric Probabilistic Image Segmentation](https://ieeexplore.ieee.org/document/4408968/) (2007)
-    2. [Visipedia](https://sites.google.com/visipedia.org/index/home?authuser=0)
-3. Thanos Siapas - neurotechnology, population recordings
-4. Yaser Abu-Mostafa
-
-### Machine Learning
-1. Anima Anandkumar
-    1. [Tensor Decompositions for Learning Latent Variable Models](http://jmlr.org/papers/volume15/anandkumar14b/anandkumar14b.pdf) (2014)
 
 ## Stanford 
 1. Dan Yamins
@@ -95,15 +117,10 @@ This research overview focuses on current researchers with at least three of the
 2. [Shaul Druckmann](https://www.druckmannlab.com/) - neural circuits, population dynamics
     1. ["Neuronal Circuits Underlying Persistent Representations Despite Time Varying Activity"](https://www.cell.com/current-biology/fulltext/S0960-9822(12)01081-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982212010810%3Fshowall%3Dtrue) (2012)
     2. "Robust neuronal dynamics in premotor cortex during motor planning" (2016)
-3. [Surya Ganguli](https://ganguli-gang.stanford.edu/)
-Neural Prosthetics Translational Laboratory (NPTL) @ Stanford
-1. [Krishna Shenoy](https://shenoy.people.stanford.edu/professor-krishna-v-shenoy) - neural prosthetics with brain controlling movement
-
-## Washington University, St Louis
-1. David Michael Kaplan 
-    1. Explanatory Force of Dynamical and Mathematical Models in Neuroscience: A Mechanistic Perspective (2010)
-2. Carl F. Craver
-    1. Explanatory Force of Dynamical and Mathematical Models in Neuroscience: A Mechanistic Perspective (2010)
+3. [Surya Ganguli](https://ganguli-gang.stanford.edu/) 
+4. [Krishna Shenoy](https://shenoy.people.stanford.edu/professor-krishna-v-shenoy) - neural prosthetics with brain controlling movement
+5. [Kwabena Boahen](https://web.stanford.edu/group/brainsinsilicon/boahen.html) - building a neuro-inspired computer
+6. [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) - intelligence through robotic interaction at scale
 
 ## University of Pennsylvania 
 1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
@@ -124,6 +141,7 @@ Neural Prosthetics Translational Laboratory (NPTL) @ Stanford
 3. [Alison Gopnik](http://alisongopnik.com/Papers_Alison/TheoryAndReviewPapers.htm) - AI inspired by developmental psychology, Bayesian models of child development
 4. [Bruno Olshausen](http://www.rctn.org/bruno/papers/)
     1. Probabilistic Models of the Brain: Perception and Neural Function (textbook)
+5. [Fritz Sommer](http://www.rctn.org/wiki/Fritz_Sommer)
 
 ### Machine Learning 
 1. Pieter Abbeel - deep learning for robotics (reinforcement learning, apprenticeship)
@@ -136,7 +154,7 @@ Neural Prosthetics Translational Laboratory (NPTL) @ Stanford
 5. [Joseph E. Gonzalez](https://people.eecs.berkeley.edu/~jegonzal/) - "practical AI", dynamic neural nets for transfer learning, explainable reinforcement learning, frameworks for deep RL and parameter tuning
 6. [Jiantao Jiao](https://people.eecs.berkeley.edu/~jiantao/publication.html) - information theory, applied probability
 7. [Yi Ma](http://people.eecs.berkeley.edu/~yima/Research.html) - mathematical principles of high-dimensional sensorial data
-8. [Gireeja Ranade] - broad AI, control theory
+8. Gireeja Ranade - broad AI, control theory
 9. [Bin Yu](https://www.stat.berkeley.edu/~binyu/Site/Welcome.html) - causal inference
     1. [Interpretable machine learning: definitions, methods, and applications](https://arxiv.org/abs/1901.04592) (2019)
     2. [The DeepTune framework for modeling and characterizing neurons in visual cortex area V4](https://www.biorxiv.org/content/10.1101/465534v1) (2018)
@@ -163,11 +181,19 @@ Neural Prosthetics Translational Laboratory (NPTL) @ Stanford
     2. [Reconfiguring motor circuits for a joint manual and BCI task.](https://arxiv.org/pdf/1702.07368.pdf)
 3. Eberhard E. Fetz - cortical control of movement, bidirectional BCIs, neural modeling 
 
+## Washington University, St Louis
+1. David Michael Kaplan 
+    1. Explanatory Force of Dynamical and Mathematical Models in Neuroscience: A Mechanistic Perspective (2010)
+2. Carl F. Craver
+    1. Explanatory Force of Dynamical and Mathematical Models in Neuroscience: A Mechanistic Perspective (2010)
 
 # Universities outside the US
 
 ## University College London 
 1. [Karl Friston](https://www.fil.ion.ucl.ac.uk/~karl/) - variational Laplacian procedures, generalized filtering for hierarchical Bayesian model inversion
+
+## Imperial College London
+1. [Claudia Clopath](http://www.bg.ic.ac.uk/research/c.clopath/research/)
 
 ## Gatsby Institute, University College, London 
 1. Peter Dayan
@@ -225,6 +251,10 @@ Neural Prosthetics Translational Laboratory (NPTL) @ Stanford
 1. Fabio Anselmi (see MIT)
 
 ## MILA 
+1. Yoshua Bengio
+
+## Ruhr University Bochum
+1. [Asja Fischer](https://scholar.google.com/citations?user=FyZbyIUAAAAJ&hl=de)
 
 ## University of Waterloo 
 1. [Chris Eliasmith](https://arts.uwaterloo.ca/~celiasmi/) - semantic pointer architecture, SPAUN, Nengo neural simulation, neural engineering
@@ -234,6 +264,10 @@ Neural Prosthetics Translational Laboratory (NPTL) @ Stanford
 
 
 # Other Private Institutions 
+
+## Cold Spring Harbor Laboratory
+1. [Anne Churchland](https://www.cshl.edu/research/faculty-staff/anne-churchland/) - neural machinery underlying decision-making
+
 
 ## Microsoft Research 
 #### Montreal 
@@ -245,16 +279,26 @@ Neural Prosthetics Translational Laboratory (NPTL) @ Stanford
 ## Janelia Research Campus (in Virginia) 
 Focus on mechanistic cognitive neuroscience
 
+## The Salk Institute
+1. Terrence J. Sejnowski
+    1. [Spatial Transformations in the Parietl Cortex Using Basis Functions](https://www.mitpressjournals.org/doi/abs/10.1162/jocn.1997.9.2.222)
+
 ## Google Brain 
 1. [On the Expressive Power of Deep Networks](https://arxiv.org/pdf/1606.05336.pdf) (2017)
 2. [Understanding Deep Learning Requires Rethinking Generalization](https://arxiv.org/pdf/1611.03530.pdf) (2017)
+3. [David Sussillo](https://research.google/people/DavidSussillo/)
 
 ## DeepMind 
 1. Andrea Tacchetti
 2. Botvinick (prev Princeton)
+    1. [Reinforcement Learning, Fast and Slow](https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(19)30061-0)) (2019)
 3. Shane Legg
     1. *Machine Superintelligence*
-4. Summer Yue
+4. [Jane Wang](http://www.janexwang.com/)
+5. [Timothy Lillicrap]
+
+## [Numenta](https://numenta.com/)
+1. Jeff Hawkins
 
 ## UberAI 
 1. [Deconstructing Lottery Tickets: Zeros, Signs, and the Supermask](https://eng.uber.com/deconstructing-lottery-tickets/)
@@ -263,6 +307,9 @@ Focus on mechanistic cognitive neuroscience
 
 ## Neuralink 
 1. [An Integrated Brain-Machine Interface Platform with Thousands of Channels](https://www.biorxiv.org/content/10.1101/703801v1.full.pdf)
+
+
+
 
 
 
