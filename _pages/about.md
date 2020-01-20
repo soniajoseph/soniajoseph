@@ -7,7 +7,26 @@ classes: wide
 
 Hello! My name is Sonia Joseph.
 
-I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing and semantic representation in the human brain. Previously, I held positions at the Princeton Neuroscience Institute, the Harvard Data Science Initiative, and Ruane, Cunniff, and Goldfarb. Currently, I am a machine learning engineer in the Bay Area.
+I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing and semantic representation in the human brain. Previously, I held positions at the Princeton Neuroscience Institute, the Harvard Data Science Initiative, and Ruane, Cunniff, and Goldfarb. I am currently a machine learning engineer in the Bay Area.
 
-My primary interest is intelligence from both artificial and biological perspectives.
+My primary interest is intelligence from both artificial and biological perspectives. 
+
+Some past projects include:
+
+Senior Thesis, 2019, Advised by Dr. Uri Hasson
+*“Neural Encoding Models with Word Embeddings of Semantic Representation in the Human Cortex”*
+Thesis written on accurate and interpretable neural encoding models for semantic representation of auditory data in the human cortex, using machine learning and natural language processing models such as GloVe, on a large ECoG dataset of subjects listening to a podcast.
+
+Coursework, 2018, Advised by Dr. David Tank 
+*“Refining Goal-Driven Models through Behavioral Signatures to Understand the Sensory Cortex”*
+Proposal to compare the behavioral signatures of state-of-the-art neural networks (RNNs, HCNNs, ConvRNNs, ResNets) with the behavioral signature of human performance on an image recognition task with the CIFAR10 dataset to assess the biological plausibility of artificial neural nets.
+
+Independent Work, 2018, Advised by Dr. Jonathan Pillow
+*“Using Goal-Driven Convolutional Neural Networks to Understand the Ventrolateral Prefrontal Cortex During Object Categorization”*
+Proposal to apply goal-driven CNNs in predicting neural response of object recognition in the ventrolateral prefrontal cortex of macaques on the CIFAR10 dataset.
+
+Coursework, 2018, Advised by Dr. Jonathan Pillow
+*“Comparing the Performance of Generalized Linear Models (GLMs) and Neural Nets as Single-Neuron Encoding Models”*
+Compares highly interpretable generalized linear models (GLMs) with other, less interpretable machine learning models including vanilla CNNs, ResNets, and autoencoders on a dataset of a single neuron response’s to light.
+
 
