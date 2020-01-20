@@ -31,7 +31,8 @@ This research overview focuses on current researchers with at least three of the
 1. [Collaborative Research in Computational Neuroscience](http://crcns.org/)
 
 # Past Conferences
-1. [NAISys](https://meetings.cshl.edu/meetings.aspx?meet=NAISYS&year=20) (March 2020)
+1. [NAISys](https://meetings.cshl.edu/meetings.aspx?meet=NAISYS&year=20) @ Cold Springs Lab (March 2020)
+2. [Triangulating Intelligence: Melding Neuroscience, Psychology, and AI](https://hai.stanford.edu/events/2020-spring-conference/overview) @ Stanford (April 1, 2020)
 
 # Books 
 1. Vaina and Passingham. [Computational Theories and their Implementation in the Brain: The legacy of David Marr](https://www.amazon.com/Computational-Theories-their-Implementation-Brain/dp/0198749783) (2017)
@@ -121,6 +122,7 @@ This research overview focuses on current researchers with at least three of the
 4. [Krishna Shenoy](https://shenoy.people.stanford.edu/professor-krishna-v-shenoy) - neural prosthetics with brain controlling movement
 5. [Kwabena Boahen](https://web.stanford.edu/group/brainsinsilicon/boahen.html) - building a neuro-inspired computer
 6. [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) - intelligence through robotic interaction at scale
+7. [Daniel Bear](https://massivesci.com/people/daniel-bear/) (post-doc at Yamins lab) - ML-inspired neuroscience
 
 ## University of Pennsylvania 
 1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
@@ -291,11 +293,11 @@ Focus on mechanistic cognitive neuroscience
 ## DeepMind 
 1. Andrea Tacchetti
 2. Botvinick (prev Princeton)
-    1. [Reinforcement Learning, Fast and Slow](https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(19)30061-0)) (2019)
+    1. [Reinforcement Learning, Fast and Slow](https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(19)30061-0) (2019)
 3. Shane Legg
     1. *Machine Superintelligence*
 4. [Jane Wang](http://www.janexwang.com/)
-5. [Timothy Lillicrap]
+5. Timothy Lillicrap
 
 ## [Numenta](https://numenta.com/)
 1. Jeff Hawkins
