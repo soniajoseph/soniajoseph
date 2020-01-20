@@ -173,8 +173,8 @@ This research overview focuses on current researchers with at least three of the
 
 ## University of Texas at Austin 
 1. Alex Huth - representation of language
-    1. [Incorporating Context into Language Encoding Models for fMRI] (2018)
-    2. [The revolution will not be controlled: natural stimuli in speech neuroscience.] (2018)
+    1. Incorporating Context into Language Encoding Models for fMRI (2018)
+    2. The revolution will not be controlled: natural stimuli in speech neuroscience (2018)
 
 ## University of Washington 
 1. Fred Rieke - physics imposing limits on sensory processing (photon counting in visual system)
@@ -283,7 +283,7 @@ Focus on mechanistic cognitive neuroscience
 
 ## The Salk Institute
 1. Terrence J. Sejnowski
-    1. [Spatial Transformations in the Parietl Cortex Using Basis Functions](https://www.mitpressjournals.org/doi/abs/10.1162/jocn.1997.9.2.222)
+    1. [Spatial Transformations in the Parietal Cortex Using Basis Functions](https://www.mitpressjournals.org/doi/abs/10.1162/jocn.1997.9.2.222)
 
 ## Google Brain 
 1. [On the Expressive Power of Deep Networks](https://arxiv.org/pdf/1606.05336.pdf) (2017)
