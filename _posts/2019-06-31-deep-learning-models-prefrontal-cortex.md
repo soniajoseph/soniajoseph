@@ -4,7 +4,7 @@ excerpt: A hypothetical proposal to model object categorization in the prefronta
 categories: [computational neuroscience]
 tags: [notes, computational neuroscience, neuroscience, neural dynamics, deep learning, resources]
 header:
-teaser: assets/images/posts/yamins-dicarlo.jpg
+  teaser: assets/images/posts/yamins-dicarlo.jpg
 toc: true
 classes: wide
 ---
