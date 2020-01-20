@@ -8,7 +8,7 @@ header:
 toc: true
 ---
 
-*A hypothetical proposal in completion for the neuroscience concentration, advised by Dr. Jonathan Pillow.*
+*A hypothetical proposal in completion for the neuroscience concentration written Spring 2018, advised by Dr. Jonathan Pillow.*
 
 ## Abstract
 The ventral stream underlies object recognition and categorization in human and
@@ -203,8 +203,7 @@ provide insight into vlPFC categorization selectivity, which is currently unclea
 representation dissimilarity matrix (RDM), which can compare two representations of a stimulus
 in a task-independent manner. Given neuron response vectors R = r1, ..., rk where rij is the
 response of the jth neuron to the ith stimulus, the RDM is defined as
-RDM(R) ij = 1 − cov(ri, rj )
-√var(ri) var(rj )
+RDM(R) ij = 1 − cov(ri, rj )√var(ri) var(rj )
 
 The RDM, taken over all stimuli, characterizes the layout of images in the
 high-dimensional neural population space. In line with the results of Yamins et al. (2014), we
