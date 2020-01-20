@@ -9,7 +9,7 @@ toc: true
 mathjax: "true"
 comments: true
 collection: posts
-classes: wide
+comments: true
 ---
 
 *In progress.*
