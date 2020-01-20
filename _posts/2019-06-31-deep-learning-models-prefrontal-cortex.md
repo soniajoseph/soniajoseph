@@ -1,6 +1,6 @@
 ---
 title: "Deep Learning Models for the Prefontal Cortex in Object Recognition"
-excerpt: A hypothetical proposal for using the goal-driven neural network paradigm by Yamins and DiCarlo to model object categorization in the prefrontal cortex.
+excerpt: A hypothetical proposal to model object categorization in the prefrontal cortex with the goal-driven neural network paradigm.
 categories: [computational neuroscience]
 tags: [notes, computational neuroscience, neuroscience, neural dynamics, deep learning, resources]
 header:
