@@ -6,6 +6,7 @@ tags: [notes, computational neuroscience, neuroscience, neural dynamics, deep le
 header:
 teaser: assets/images/posts/starlings2.jpg
 toc: true
+classes: wide
 ---
 
 *A hypothetical proposal written in Spring 2018 for the neuroscience concentration, advised by Dr. Jonathan Pillow.*
