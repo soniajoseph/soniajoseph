@@ -4,7 +4,7 @@ excerpt: A hypothetical proposal for using the goal-driven neural network paradi
 categories: [computational neuroscience]
 tags: [notes, computational neuroscience, neuroscience, neural dynamics, deep learning, resources]
 header:
-teaser: assets/images/posts/starlings2.jpg
+teaser: assets/images/posts/yamins-dicarlo.jpg
 toc: true
 classes: wide
 ---
