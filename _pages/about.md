@@ -9,7 +9,7 @@ Hello! My name is Sonia Joseph. My primary interest is intelligence from both ar
 
 I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing models for semantic representation in the human brain. Previously, I held positions at the Princeton Neuroscience Institute, the Harvard Data Science Initiative, and Ruane, Cunniff, and Goldfarb. I am currently a machine learning engineer in the Bay Area.
 
-### Some past projects are:
+### Past work includes:
 
 Senior Thesis, 2019, Advised by Dr. Uri Hasson. *“Neural Encoding Models with Word Embeddings of Semantic Representation in the Human Cortex."* Thesis written on accurate and interpretable neural encoding models for semantic representation of auditory data in the human cortex, using machine learning and natural language processing models such as GloVe, on a large ECoG dataset of subjects listening to a podcast.
 

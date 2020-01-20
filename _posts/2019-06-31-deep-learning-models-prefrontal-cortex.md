@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning Models for the Prefontal Cortex in Object Recognition: A Hypothetical Proposal"
+title: "Deep Learning Models for the Prefontal Cortex in Object Recognition"
 excerpt: A hypothetical proposal for using the goal-driven neural network paradigm by Yamins and DiCarlo to model object categorization in the ventral stream.
 categories: [computational neuroscience]
 tags: [notes, computational neuroscience, neuroscience, neural dynamics, deep learning, resources]
@@ -64,18 +64,58 @@ Overall, we expect our results will suggest that the vlPFC incorporates behavior
 
 ## References
 Carandini, M. (2005). Do We Know What the Early Visual System Does? Journal of Neuroscience,25(46), 10577-10597. doi:10.1523/jneurosci.3726-05.2005
+
 DiCarlo, J., & Maunsell, J. (2000). Inferotemporal representations underlying object recognition in the free viewing monkey. Society for Neuroscience.
+
 Dicarlo, J., Zoccolan, D., & Rust, N. (2012). How Does the Brain Solve Visual Object Recognition? Neuron,73(3), 415-434. doi:10.1016/j.neuron.2012.01.010
+
 Felleman, D. J., & Essen, D. C. (1991). Distributed Hierarchical Processing in the Primate Cerebral Cortex. Cerebral Cortex,1(1), 1-47. doi:10.1093/cercor/1.1.1
+
 Freedman, D. J., Riesenhuber, M., Poggio, T., & Miller, E. K. (2003, June 15). A Comparison of Primate Prefrontal and Inferior Temporal Cortices during Visual Categorization. Retrieved from http://www.jneurosci.org/content/23/12/5235.long
+
 Ganis, G., Schendan, H. E., & Kosslyn, S. M. (2007). Neuroimaging evidence for object model verification theory: Role of prefrontal control in visual object categorization. NeuroImage,34(1), 384-398. doi:10.1016/j.neuroimage.2006.09.008
+
 Guclu, U., & Gerven, M. A. (2015). Deep Neural Networks Reveal a Gradient in the Complexity of Neural Representations across the Ventral Stream. Journal of Neuroscience,35(27), 10005-10014. doi:10.1523/jneurosci.5023-14.2015
+
 Khaligh-Razavi, S., & Kriegeskorte, N. (2014). Deep Supervised, but Not Unsupervised, Models May Explain IT Cortical Representation. PLoS Computational Biology,10(11). doi:10.1371/journal.pcbi.1003915
+
 Kobatake, E., & Tanaka, K. (1994). Neuronal selectivities to complex object features in the ventral visual pathway of the macaque cerebral cortex. Journal of Neurophysiology,71(3), 856-867. doi:10.1152/jn.1994.71.3.856
+
 Kriegeskorte, N., Mur, M., Ruff, D. A., Kiani, R., Bodurka, J., Esteky, H., . . . Bandettini, P. A. (2008). Matching Categorical Object Representations in Inferior Temporal Cortex of Man and Monkey. Neuron,60(6), 1126-1141. doi:10.1016/j.neuron.2008.10.043
+
 Levy, B. J., & Wagner, A. D. (2011). Cognitive control and right ventrolateral prefrontal cortex: Reflexive reorienting, motor inhibition, and action updating. Annals of the New York Academy of Sciences,1224(1), 40-62. doi:10.1111/j.1749-6632.2011.05958.x
+
 Lowe, D. G. (2004). Distinctive Image Features from Scale-Invariant Keypoints. International Journal of Computer Vision,60(2), 91-110. doi:10.1023/b:visi.0000029664.99615.94
+
 Majaj, N., Hong, H., Solomon, E., & DiCarlo, J. (2012). A unified neuronal population code fully explains human object recognition.
+
 Malach, R., Levy, I., & Hasson, U. (2002). The topography of high-order human object areas. Trends in Cognitive Sciences,6(4), 176-184. doi:10.1016/s1364-6613(02)01870-3
+
 Mishkin, M., Ungerleider, L. G., & Macko, K. A. (1983). Object vision and spatial vision: Two cortical pathways. Trends in Neurosciences,6, 414-417. doi:10.1016/0166-2236(83)90190-x
+
 Mutch, J., & Lowe, D. G. (2008). Object Class Recognition and Localization Using Sparse Features with Limited Receptive Fields. International Journal of Computer Vision,80(1), 45-57. doi
+
+Paninski, L., Pillow, J., & Lewi, J. (2007). Statistical models for neural encoding, decoding, and optimal stimulus design. Progress in Brain Research Computational Neuroscience: Theoretical Insights into Brain Function,493-507. doi:10.1016/s0079-6123(06)65031-0
+
+Pinto, N., Cox, D. D., & Dicarlo, J. J. (2008). Why is Real-World Visual Object Recognition Hard? PLoS Computational Biology,4(1). doi:10.1371/journal.pcbi.0040027
+
+Riesenhuber, M., & Poggio, T. (1999). Hierarchical models of object recognition in cortex. Nature Neuroscience,2(11), 1019-1025. doi:10.1038/14819
+
+Safavi, S., Dwarakanath, A., Kapoor, V., Werner, J., Hatsopoulos, N. G., Logothetis, N. K., & Panagiotaropoulos, T. I. (2018). Nonmonotonic spatial structure of interneuronal correlations in prefrontal microcircuits. Proceedings of the National Academy of Sciences,115(15). doi:10.1073/pnas.1802356115
+
+Scalaidhe, S. P. (1999). Face-selective Neurons During Passive Viewing and Working Memory Performance of Rhesus Monkeys: Evidence for Intrinsic Specialization of Neuronal Coding. Cerebral Cortex,9(5), 459-475. doi:10.1093/cercor/9.5.459
+
+Serre, T., Oliva, A., & Poggio, T. (2007). A feedforward architecture accounts for rapid categorization. Proceedings of the National Academy of Sciences,104(15), 6424-6429. doi:10.1073/pnas.0700622104
+
+Sharpee, T. O., Kouh, M., & Reynolds, J. H. (2013, July 09). Trade-off between curvature tuning and position invariance in visual area V4. Retrieved from http://www.pnas.org/content/110/28/11618.short
+
+Tiny ImageNet. (2017). Retrieved from https://www.kaggle.com/c/tiny-imagenet
+Ullman, S. (1997). High-level vision: Object recognition and visual cognition. Cambridge, MA: The MIT Press.
+
+Wistuba, M., Schilling, N., & Schmidt-Thieme, L. (2015). Hyperparameter Search Space Pruning – A New Component for Sequential Model-Based Hyperparameter Optimization. Machine Learning and Knowledge Discovery in Databases Lecture Notes in Computer Science,104-119. doi:10.1007/978-3-319-23525-7_7
+
+Yamins, D. L., Cadieu, C. F., Solomon, E. A., Seibert, D., & DiCarlo, J. J. (2014, June 10). Performance-optimized hierarchical models predict neural responses in higher visual cortex. Retrieved from https://doi.org/10.1073/pnas.1403112111
+
+Yamins, D. L., & Dicarlo, J. J. (2016). Using goal-driven deep learning models to understand sensory cortex. Nature Neuroscience,19(3), 356-365. doi:10.1038/nn.4244
+
+Yau, J. M., Pasupathy, A., Brincat, S. L., & Connor, C. E. (2012). Curvature Processing Dynamics in Macaque Area V4. Cerebral Cortex,23(1), 198-209. doi:10.1093/cercor/bhs004
