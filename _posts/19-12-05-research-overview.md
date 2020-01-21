@@ -10,9 +10,10 @@ mathjax: "true"
 comments: true
 collection: posts
 comments: true
+classes: wide
 ---
 
-*In progress.*
+*In progress. If you have any paper recommendations, feel free to comment below.*
 
 ## Criteria 
 
@@ -272,6 +273,8 @@ This research overview focuses on current researchers with at least three of the
 
 ### Cold Spring Harbor Laboratory
 1. [Anne Churchland](https://www.cshl.edu/research/faculty-staff/anne-churchland/) - neural machinery underlying decision-making
+2. [Anthony Zador](http://zadorlab.labsites.cshl.edu/) - neural circuits and auditory processing, sequencing connectome, AI/neuro bridge
+    1. [A Critique of Pure Learning: What Artificial Neural Networks can Learn from Animal Brains](https://www.biorxiv.org/content/10.1101/582643v1) (2019)
 
 
 ### Microsoft Research 
