@@ -243,7 +243,7 @@ This research overview focuses on current researchers with at least three of the
     1. [A Survey of Machine Learning for Big Code and Naturalness](https://arxiv.org/pdf/1709.06182.pdf)
 
 ### Australian National University 
-1. [Marcus Hutter] - artificial general intelligence
+1. Marcus Hutter - artificial general intelligence
     1. [Universal Artificial Intelligence](https://books.google.co.nz/books?id=NP53iZGt4KUC&redir_esc=y) (2004)
 
 ### Dalle Molle Institute for Artificial Intelligence Research 
@@ -255,6 +255,10 @@ This research overview focuses on current researchers with at least three of the
 
 ### Istituto Italiano di Tecnologia 
 1. Fabio Anselmi (see MIT)
+
+### Maastricht University
+1. Alexander Sack 
+2. Rainer Goebel
 
 ### MILA 
 1. Yoshua Bengio
