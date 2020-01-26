@@ -28,7 +28,15 @@ I want my algorithm to return similar phrases:
 
 > "in 1998 for $2.5 billion" / "for $1.8 billion in 1998"
 
-To perform this operation, I wrote an algorithm with two parts. First, the algorithm sections the sentence into phrases using a dependency parser and tree traversal; and second, the algorithm creates word vector averages for each phrases and matching the phrases with the greatest similarity. I've explained the process in the blog post below, and you can find a Jupyter notebook [here](https://github.com/soniajoseph/phrase-similarity).
+To accomplish this, I wrote an algorithm with the following steps:
+
+1) Parse the sentence into phrases using a statistical dependency parser. 
+
+2) Create a word vector average for each phrase using word2vec embeddings.
+
+3) Match the most similar phrases based off closest Euclidean distance between word vector averages.
+
+I've explained the steps with code in the blog post below, and you can find a Jupyter notebook [here](https://github.com/soniajoseph/phrase-similarity).
 
 ## Load the data
 
