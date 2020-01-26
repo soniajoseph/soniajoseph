@@ -1,6 +1,11 @@
 ---
-title: "Tags"
+title: "Blog"
+permalink: /blog/
 excerpt: 
-permalink: /tags/
-layout: tags
+layout: tag
+entries_layout: grid
+classes: wide
+taxonomy: algorithms
 ---
+
+*Coming soon.*
