@@ -7,24 +7,28 @@ header:
   teaser: assets/images/posts/word2vec.png
 mathjax: "true"
 comments: true
+classes: wide
 ---
 
-In the past, I have used word vector averaging as a way to find similar sentences to a given sentence. The idea is simple: find the word embedding for each word using an algorihtm like word2vec or GloVe, and then average the embeddings together to get a sentence vector.
+Word vector averaging is a way to find semantically similar sentences to a given sentence. The idea is simple: find the word embedding for each word using an algorithm like word2vec or GloVe, and then average the embeddings together to get a sentence vector.
 
 I recently became interested in extending idea to the phrase level. If we have two documents, can we co-locate all the semantically similar phrases? 
 
 For example, if I have the following two sentences:
 
 > Sentence A:  Yucaipa owned Dominick's before selling the chain to Safeway in 1998 for $2.5 billion.
+
 > Sentence B:  Yucaipa bought Dominick's in 1995 for $693 million and sold it to Safeway for $1.8 billion in 1998.
 
 I want my algorithm to return similar phrases:
 
 > "Yucaipa owned Dominick's" / "Yucapia bought Dominick's"
+
 > "selling the chain to Safeway" / "sold it to Safeway"
+
 > "in 1998 for $2.5 billion" / "for $1.8 billion in 1998"
 
-My final algorithm has two parts: first, sectioning the sentence into phrases using a dependency parser and tree traversal; and second, creating word vector averages for each phrases and matching the phrases with the greatest similarity. I've explained the process in the blog post below, and you can find the Jupyter code [here](https://github.com/soniajoseph/phrase-similarity).
+To perform this operation, I wrote an algorithm with two parts. First, the algorithm sections the sentence into phrases using a dependency parser and tree traversal; and second, the algorithm creates word vector averages for each phrases and matching the phrases with the greatest similarity. I've explained the process in the blog post below, and you can find a Jupyter notebook [here](https://github.com/soniajoseph/phrase-similarity).
 
 ## Load the data
 
@@ -82,7 +86,7 @@ def get_model():
 ```
 
 ## Load phrase parser
-The first step in solving this problem is parsing the sentences into phrases. We can use the Stanford Statistical Parser, which we can download[here](https://nlp.stanford.edu/software/lex-parser.shtml) to create a dependency parser that turns our sentences into phrases based off pre-trained probabilistic dependencies.
+The first step in solving this problem is parsing the sentences into phrases. We can use the Stanford Statistical Parser, which we can download [here](https://nlp.stanford.edu/software/lex-parser.shtml) to create a dependency parser that turns our sentences into phrases based off pre-trained probabilistic dependencies.
 
 ```
 def load_parser():
@@ -146,9 +150,11 @@ class Traverse():
     return a
 ```
 
-## Write a function to calculate a semantic measure for the phrase.
+## Let's write a function to calculate a semantic measure for the phrase.
 
-Now we need a metric to calculate the semantic measure of each phrase. Given a phrase, I've chosen to calculate the word vector of each word and then average the words together. I did not normalize the word vectors before averaging because the different lengths give rise to a weighted average, which [Arefyev et al suggests leads to a a more accurate average](https://arxiv.org/pdf/1805.09209.pdf). While research regarding weighted vs unweighted word vector averages is scarce, one theory is that infrequent words are correlated with longer word vectors. Infrequent words may be more poorly represented by the embedding, which is based off distributional frequency, so having a larger value in the total average may make the overall phrase vector more accurate.
+Now we need a metric to calculate the semantic measure of each phrase. Given a phrase, I've chosen to calculate the word vector of each word and then average the words together. I did not normalize the word vectors before averaging because the different lengths give rise to a weighted average, which [Arefyev et al suggests is more accurate](https://arxiv.org/pdf/1805.09209.pdf).
+
+While research regarding weighted vs unweighted word vector averages is scarce, one theory is that infrequent words are correlated with longer word vectors. Infrequent words may be more poorly represented by the embedding, which is based off distributional frequency, so having a larger value in the total average may make the overall phrase vector more accurate.
 
 ```
 def wva(string):
@@ -166,7 +172,7 @@ def wva(string):
     return np.mean(wvs, axis=0) 
  ```
 
-We will feed our sample phrases int othe word vector averages, and then calculate the phrases with the greatest semantic similarity. The most common measures of semantic similarity are cosine similarity and Euclidean distance; perhaps unconventionally, I chose the latter in order to capture the information in the word average lengths, which Arefyez et al. suggest is significant in representing word frequency.
+Now we will calculate the phrases with the greatest semantic similarity. The most common measures of semantic similarity are cosine similarity and Euclidean distance. Perhaps unconventionally, I chose the latter in order to capture the information in the word average lengths, which Arefyez et al. suggest is significant in representing word frequency.
 
 ```
 def match_wv_pair(phrasesA, phrasesB):
@@ -306,6 +312,6 @@ Euclidean Distance:5.162956
 
 To improve the function, we could train a dependency parser on the corpus to extract better phrases. We could also experiment with other ways of traversing the existing tree. We could experiment with other similarity measures, including cosine similarity, Mahalanobis distance, and relaxed word mover's distance.
 
-I am also interested in experimenting with accuracy in normalized vs. unnormalized word vector averages and the relationship between vector length and word frequency.
+I am also interested in future work that experiments with accuracy in normalized vs. unnormalized word vector averages and the relationship between vector length and word frequency.
 
 I hope this tutorial was helpful to you! The full code for this post is available on Github [here](https://github.com/soniajoseph/phrase-similarity).

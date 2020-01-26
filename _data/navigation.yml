@@ -6,8 +6,8 @@ main:
     url: /projects/
   - title: "Computational Neuroscience"
     url: /computational-neuroscience/
-  - title: "Algorithms"
-    url: /algorithms/
+  - title: "Blog"
+    url: /blog/
   - title: "Tags"
     url: /tags/
   - title: "About"
