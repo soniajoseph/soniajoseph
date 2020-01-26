@@ -1,6 +1,5 @@
 ---
 title: "Tags"
-excerpt: 
 permalink: /tags/
-layout: tags
+layout: archive
 ---
