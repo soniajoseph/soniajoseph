@@ -20,7 +20,7 @@ Here, I examine the relationship between pruning and accuracy on a vanilla neura
 
 ## First, let's load, normalize, and visualize the MNIST dataset.
 
-```
+```python
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -33,7 +33,7 @@ import copy
 import pandas as pd 
 ```
 
-```
+```python
 def load_MNIST():
   """Function to load and normalize MNIST data""" 
   train = torchvision.datasets.MNIST(root='./data', download=True, train=True, transform=transforms.Compose([transforms.ToTensor(),
@@ -51,7 +51,7 @@ def load_MNIST():
 ```
 
 
-```
+```python
 def visualize_MNIST(train_loader):
   """Function to visualize data given a DataLoader object"""
   dataiter = iter(train_loader)
@@ -66,7 +66,7 @@ def visualize_MNIST(train_loader):
 ```
 
 
-```
+```python
 # load and visualize MNISt
 train, test, train_loader, test_loader = load_MNIST()
 visualize_MNIST(train_loader)
@@ -87,7 +87,7 @@ visualize_MNIST(train_loader)
 We'll keep things simple and leave out biases, convolutions, and pooling.
 
 
-```
+```python
 class Net(nn.Module):
   """A non-sparse neural network with four hidden fully-connected layers"""
 
@@ -117,7 +117,7 @@ class Net(nn.Module):
 ## Let's train our vanilla neural net.
 
 
-```
+```python
 def train(model, train_loader, epochs=3, learning_rate=0.001):
   """Function to train a neural net"""
 
@@ -150,7 +150,7 @@ def train(model, train_loader, epochs=3, learning_rate=0.001):
 ```
 
 
-```
+```python
 model = Net()
 train(model, train_loader)
 ```
@@ -182,7 +182,7 @@ train(model, train_loader)
 ## Now we'll test our vanilla neural net.
 
 
-```
+```python
 def test(model, test_loader):
   """Test neural net"""
 
@@ -205,7 +205,7 @@ def test(model, test_loader):
 ```
 
 
-```
+```python
 acc = test(model, test_loader)
 print("The accuracy of our vanilla NN is", acc, "%")
 ```
@@ -216,7 +216,7 @@ print("The accuracy of our vanilla NN is", acc, "%")
 ## A ~97% accuracy for our vanilla NN seems reasonable. Now let's do some weight and unit pruning.
 
 
-```
+```python
 
 def sparsify_by_weights(model, k):
   """Function that takes un-sparsified neural net and does weight-pruning
@@ -243,7 +243,7 @@ def sparsify_by_weights(model, k):
 ```
 
 
-```
+```python
 def l2(array):
   return np.sqrt(np.sum([i**2 for i in array]))
 
@@ -267,7 +267,7 @@ def sparsify_by_unit(model, k):
 ```
 
 
-```
+```python
 def get_pruning_accuracies(model, prune_type):
   """ Takes a model and prune type ("weight" or "unit") and returns a DataFrame of pruning accuracies for given sparsities."""
 
@@ -291,7 +291,7 @@ def get_pruning_accuracies(model, prune_type):
 ## Results
 
 
-```
+```python
 df_weight = get_pruning_accuracies(model, "weight")
 df_unit = get_pruning_accuracies(model, "unit")
 
@@ -333,7 +333,7 @@ print(df_unit)
 
 ### Let's plot our results 
 
-```
+```python
 plt.figure()
 plt.title("Accuracy vs Sparsity")
 plt.plot(df_unit["sparsity"], df_unit["accuracy"], label="Unit-pruning")

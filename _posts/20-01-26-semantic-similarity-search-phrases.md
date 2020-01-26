@@ -42,7 +42,7 @@ I've explained the steps with code in the blog post below, and you can find a Ju
 
 Let's test our algorithm on the [Microsoft Research Paraphrase Corpus](https://www.microsoft.com/en-us/download/details.aspx?id=52398), which contains pairs of paraphrased sentences extracted from news articles. We'll create a list of paraphrase lists:
 
-```
+```python
 def load_data(n=5):
   '''
   Function to get spacy model with medium neural net with the constituency parsing extension
@@ -77,7 +77,7 @@ def load_data(n=5):
 
 We'll also load a medium [spaCy model](https://spacy.io/models) pretrained on English text:
 
-```
+```python
 def get_model():
   '''
   Function to get spacy model with medium neural net.
@@ -96,7 +96,7 @@ def get_model():
 ## Load phrase parser
 The first step in solving this problem is parsing the sentences into phrases. We can use the Stanford Statistical Parser, which we can download [here](https://nlp.stanford.edu/software/lex-parser.shtml) to create a dependency parser that turns our sentences into phrases based off pre-trained probabilistic dependencies.
 
-```
+```python
 def load_parser():
   '''
   Function to load Stanford parser,
@@ -124,7 +124,7 @@ def load_parser():
 
 Using the parser, we can create a tree traversal object so that we can load the sentences into the parser and then traverse the  tree to extract relevant phrases. The traversal object gathers both noun and prepositional phrases.
 
-```
+```python
 class Traverse():
   '''
   Traverse object to create trees to find noun phrases.
@@ -165,7 +165,7 @@ Now we need a metric to calculate the semantic measure of each phrase. I calcula
 
 While research regarding weighted vs unweighted word vector averages is scarce, one theory is that infrequent words are correlated with longer word vectors. Infrequent words may be more poorly represented by the embedding, which is based off distributional frequency, and so having a larger value in the total average may make the overall phrase vector more accurate.
 
-```
+```python
 def wva(string):
     '''
     Finds document vector through an average of each word's vector.
@@ -183,7 +183,7 @@ def wva(string):
 
 Now we will calculate the phrases with the greatest semantic similarity. The most common measures of semantic similarity are cosine similarity and Euclidean distance. Perhaps unconventionally, I chose the latter in order to capture the information in the word average lengths, which Arefyez et al. suggest is significant in representing word frequency.
 
-```
+```python
 def match_wv_pair(phrasesA, phrasesB):
   '''
   Takes two lists of phrases from one sentence each and finds the smallest Euclidean distance for each pair's word vector (non-exclusive).
@@ -228,7 +228,7 @@ def match_wv_pair(phrasesA, phrasesB):
 
 Finally, I wrote a function that runs the functions above: take in our data and parser, parse the sentences into phrases, turn the phrases into word vector averages, then match word vector averages based on Euclidean distance. The function prints out semantically similar phrases for each paraphrase-pair of the original dataset.
 
-```
+```python
 def find_similar_phrases(data, parser):
   '''
   Uses Traverse object to create phrase trees of each sentence, then recurses through tree to collect noun phrases.
@@ -271,7 +271,7 @@ def find_similar_phrases(data, parser):
 
 The function returns:
 
-```
+```python
 
 Original sentences:
 Sentence A:  Yucaipa owned Dominick's before selling the chain to Safeway in 1998 for $2.5 billion.
