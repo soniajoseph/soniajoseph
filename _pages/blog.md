@@ -5,7 +5,7 @@ excerpt:
 layout: tag
 entries_layout: grid
 classes: wide
-taxonomy: algorithms
+taxonomy: blog
 ---
 
 *Coming soon.*
