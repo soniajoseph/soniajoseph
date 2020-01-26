@@ -109,12 +109,11 @@ author:
   name             : ""
   avatar           : "assets/images/avatar.png"
   bio              : "computer science <br> & computational neuroscience"
-
-
-
   email            : "soniamollyjoseph@gmail.com"
   title_separator: "-"
   links:
+    - label: "About"
+      url: "https://soniajoseph.github.io/about/"
     - label: "Medium"
       url: "https://medium.com/@soniamollyjoseph"
     # - label: "Email"
