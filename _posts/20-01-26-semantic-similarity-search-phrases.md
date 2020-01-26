@@ -122,7 +122,7 @@ def load_parser():
   return parser
 ```
 
-Using the parser, we can create a a traversal object so that we can load the sentences into the parser and then traverse the resulting tree to extract relevant phrases. The traversal object gathers both noun and prepositional phrases.
+Using the parser, we can create a tree traversal object so that we can load the sentences into the parser and then traverse the  tree to extract relevant phrases. The traversal object gathers both noun and prepositional phrases.
 
 ```
 class Traverse():
@@ -142,6 +142,7 @@ class Traverse():
           else:
               phrases.append(subtree)
 
+  # traverse the tree to gather noun phrases and prepositional phrases
   def traverse_tree(self, tree):
       for subtree in tree:
           if type(subtree) == nltk.tree.Tree:
@@ -160,9 +161,9 @@ class Traverse():
 
 ## Let's write a function to calculate a semantic measure for the phrase.
 
-Now we need a metric to calculate the semantic measure of each phrase. Given a phrase, I've chosen to calculate the word vector of each word and then average the words together. I did not normalize the word vectors before averaging because the different lengths give rise to a weighted average, which [Arefyev et al suggests is more accurate](https://arxiv.org/pdf/1805.09209.pdf).
+Now we need a metric to calculate the semantic measure of each phrase. I calculate the word vector of each word of the phrase and then average the words together. Notably, I did not normalize the word vectors before averaging because the different lengths give rise to a weighted average, which [Arefyev et al suggests is more accurate](https://arxiv.org/pdf/1805.09209.pdf).
 
-While research regarding weighted vs unweighted word vector averages is scarce, one theory is that infrequent words are correlated with longer word vectors. Infrequent words may be more poorly represented by the embedding, which is based off distributional frequency, so having a larger value in the total average may make the overall phrase vector more accurate.
+While research regarding weighted vs unweighted word vector averages is scarce, one theory is that infrequent words are correlated with longer word vectors. Infrequent words may be more poorly represented by the embedding, which is based off distributional frequency, and so having a larger value in the total average may make the overall phrase vector more accurate.
 
 ```
 def wva(string):
@@ -318,7 +319,7 @@ Sentence B: the ship 's owners
 Euclidean Distance:5.162956
 ```
 
-To improve the function, we could train a dependency parser on the corpus to extract better phrases. We could also experiment with other ways of traversing the existing tree. We could experiment with other similarity measures, including cosine similarity, Mahalanobis distance, and relaxed word mover's distance.
+To improve the function, we could train a dependency parser on the corpus to extract better phrases. We could also experiment with other ways of traversing the existing tree and other similarity measures, including cosine similarity, Mahalanobis distance, and relaxed word mover's distance.
 
 I am also interested in future work that experiments with accuracy in normalized vs. unnormalized word vector averages and the relationship between vector length and word frequency.
 
