@@ -10,9 +10,9 @@ comments: true
 classes: wide
 ---
 
-Word vector averaging is a way to find semantically similar sentences to a given sentence. The idea is simple: find the word embedding for each word using an algorithm like word2vec or GloVe, and then average the embeddings together to get a sentence vector.
+Word vector averaging is a way to find semantically similar sentences. The idea is simple: find the word embedding for each word using an algorithm like word2vec or GloVe, average the embeddings together to get a sentence vector, and match sentences with the most similar sentence vectors based off Euclidean distance or cosine similarity.
 
-I recently became interested in extending idea to the phrase level. If we have two documents, can we co-locate all the semantically similar phrases? 
+I recently became interested in extending the idea to the phrase level. If we have two sentences, can we co-locate all the semantically similar phrases from each sentence? 
 
 For example, if I have the following two sentences:
 
