@@ -319,8 +319,8 @@ Sentence B: the ship 's owners
 Euclidean Distance:5.162956
 ```
 
-To improve the function, we could train a dependency parser on the corpus to extract better phrases. We could also experiment with other ways of traversing the existing tree and other similarity measures, including cosine similarity, Mahalanobis distance, and relaxed word mover's distance.
+To improve the function, we could train a dependency parser on the corpus to extract better phrases. We could also experiment with other ways of traversing the existing tree and trying other similarity measures, including cosine similarity, Mahalanobis distance, and relaxed word mover's distance.
 
-I am also interested in future work that experiments with accuracy in normalized vs. unnormalized word vector averages and the relationship between vector length and word frequency.
+I am also interested in experimenting with accuracy in normalized vs. unnormalized word vector averages and the relationship between vector length and word frequency.
 
 I hope this tutorial was helpful to you! The full code for this post is available on Github [here](https://github.com/soniajoseph/phrase-similarity).
