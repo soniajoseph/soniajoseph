@@ -17,15 +17,15 @@ I recently became interested in extending idea to the phrase level. If we have t
 For example, if I have the following two sentences:
 
 > Sentence A:  Yucaipa owned Dominick's before selling the chain to Safeway in 1998 for $2.5 billion.
-
+>
 > Sentence B:  Yucaipa bought Dominick's in 1995 for $693 million and sold it to Safeway for $1.8 billion in 1998.
 
 I want my algorithm to return similar phrases:
 
 > "Yucaipa owned Dominick's" / "Yucapia bought Dominick's"
-
+>
 > "selling the chain to Safeway" / "sold it to Safeway"
-
+>
 > "in 1998 for $2.5 billion" / "for $1.8 billion in 1998"
 
 To accomplish this, I wrote an algorithm with the following steps:
