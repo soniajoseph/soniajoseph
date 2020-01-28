@@ -5,7 +5,7 @@ layout: single
 ---
 
 
-{% for tag in site.tags %}
+<!-- {% for tag in site.tags %}
 	<span> {{ tag }} </span>
 	{% for post in tag %}
 	  <div class="post_info">
@@ -17,3 +17,4 @@ layout: single
 	  {% endfor %}
 {% endfor %}
 
+ -->
