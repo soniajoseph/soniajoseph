@@ -17,8 +17,8 @@ gem "jekyll"
 gem "minimal-mistakes-jekyll"
 gem "jekyll-responsive-image"
 
-source `https://rubygems.org`
-gem `github-pages`
+source 'https://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins
 
 # The following plugins are automatically loaded by the theme-gem:
 #   gem "jekyll-paginate"
