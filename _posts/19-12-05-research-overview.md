@@ -114,6 +114,8 @@ This research overview focuses on current researchers with at least three of the
 7. Ken Norman
 8. Sebastian Seung
     1. [How the brain keeps the eyes still](https://www.pnas.org/content/93/23/13339) (1996)
+9. Asif Ghazanfar
+    1. [Neuroscience Needs Behavior: Correcting a Reductionist Bias](https://linkinghub.elsevier.com/retrieve/pii/S0896-6273(16)31040-6) (2017)
 
 ### Stanford 
 1. Dan Yamins
@@ -309,8 +311,9 @@ Focus on mechanistic cognitive neuroscience
 4. [Jane Wang](http://www.janexwang.com/)
 5. Timothy Lillicrap
 
-### [Numenta](https://numenta.com/)
+### Numenta
 1. Jeff Hawkins
+    1. [A Framework for Intelligence and Cortical Function Based on Grid Cells in the Neocortex](https://www.frontiersin.org/articles/10.3389/fncir.2018.00121/full) (2019)
 
 ### UberAI 
 1. [Deconstructing Lottery Tickets: Zeros, Signs, and the Supermask](https://eng.uber.com/deconstructing-lottery-tickets/)
