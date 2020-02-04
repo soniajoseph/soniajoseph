@@ -128,7 +128,8 @@ This research overview focuses on current researchers with at least three of the
 4. [Krishna Shenoy](https://shenoy.people.stanford.edu/professor-krishna-v-shenoy) - neural prosthetics with brain controlling movement
 5. [Kwabena Boahen](https://web.stanford.edu/group/brainsinsilicon/boahen.html) - building a neuro-inspired computer
 6. [Chelsea Finn](https://ai.stanford.edu/~cbfinn/) - intelligence through robotic interaction at scale
-7. [Daniel Bear](https://massivesci.com/people/daniel-bear/) (post-doc at Yamins lab) - ML-inspired neuroscience
+7. [Scott Linderman](https://web.stanford.edu/~swl1/)
+    1. [Using computational theory to constrain statistical models of neural data](https://www.sciencedirect.com/science/article/abs/pii/S0959438816302641?via%3Dihub)
 
 ### University of Pennsylvania 
 1. [Danielle S. Bassett](https://complexsystemsupenn.com/personal) - networks, complex systems
