@@ -9,7 +9,7 @@ mathjax: "true"
 
 {% include figure image_path="/assets/images/posts/goodreads.png" alt="Goodreads quote and quote metadata scraper for a given author.</i>" %}
 
-*Find code on GitHub [here](https://github.com/soniajoseph/goodreads-quotes)*
+*Find code on GitHub [here](https://github.com/soniajoseph/goodreads-quotes) and the quote data on Kaggle [here](https://www.kaggle.com/faellielupe/goodreads-quotes)*
 
 When looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes. Kaggle has datasets for [other kinds of Goodreads data](https://www.kaggle.com/jealousleopard/goodreadsbooks), but no quotes. The Goodreads API does not allow for quote scraping either.
 
@@ -61,4 +61,4 @@ Harry Potter and the Prisoner of Azkaban
 37420
 ```
 
-I fed a list of all the authors on Goodreads into the scraper to build a database of quotes, which I will release on Kaggle soon.
+I fed a list of all the authors on Goodreads into the scraper to build a database of quotes, which I released on Kaggle [here](https://www.kaggle.com/faellielupe/goodreads-quotes).

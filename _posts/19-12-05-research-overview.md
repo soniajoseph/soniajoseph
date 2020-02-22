@@ -67,6 +67,8 @@ This research overview focuses on current researchers with at least three of the
 1. L.F. Abbott 
     1. [Review of his book: Theoretical Neuroscience: Computational and Mathematical Modeling of Neural Systems](http://www.rctn.org/bruno/papers/TN-review.pdf) (2003)
     2. [The neuronal architecture of the mushroom body provides a logic for associative learning](https://elifesciences.org/articles/04577)
+2. John P Cunningham
+    1. [Structure in neural population recordings: an expected byproduct of simpler phenomena?](https://www.nature.com/articles/nn.4617) (2017)
 
 ### Georgetown 
 1. Maximilian Riesenhuber - representation, visual cortex
