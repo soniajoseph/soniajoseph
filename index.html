@@ -1,36 +1,8 @@
 ---
 title: "All Posts"
 permalink: /index
-excerpt: ""
-layout: single
+layout: posts
+author_profile: true
 classes: wide
 ---
-
-<div align = "right"><a href = "/expanded/" style="text-decoration: none; color:MediumBlue;">Expanded View</a></div>
-
-<ul class="posts">
-{% for post in site.posts %}
-  <div class="post_info">
-    <li>
-    <span>[   {{ post.date | date:"%Y-%m-%d" }}   ]</span>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    </div>
-  {% endfor %}
-</ul>
-
-<style>
-
-
-li{
-  line-height:120%;
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul {
-    padding: 0;
-    list-style-type: none;
-}
-
-</style>
+<!-- <div align="right" ><a href = "/index" style="text-decoration: none; color:MediumBlue;"> List View </a></div> -->
