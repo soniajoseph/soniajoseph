@@ -9,19 +9,13 @@ comments: true
 classes: wide
 ---
 
-This is documentation for Emergence, a library of Hopfield networks. 
+## Welcome to Emergence 
+
+This is a research library to study the emergent properties of undirected neural networks, including Hopfield networks and Boltzmann machines.
 
 **Access the library [here](https://github.com/soniajoseph/Emergence)**
 
 **To read more about Hopfield networks, see the primer I wrote [here](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/).**
-
-
----
-
-
-# Welcome to Emergence # 
-
-This is a research library to study the emergent properties of undirected neural networks, including Hopfield networks and Boltzmann machines.
 
 ## Setup
 
@@ -36,7 +30,7 @@ See /tests for sample use cases.
 
 ## Hopfield Networks
 
-<img src="assets/images/posts/FMNIST.png" width="500" class="center">
+<img src="/assets/images/posts/FMNIST.png" width="500" class="center">
 
 Hopfield networks are fascinating one-shot data-denoisers. We train the network to "remember" the top row of fashion MNIST images using Hebbian learning. The network does not store the actual image, but encodes information of the image in its weights.
 
@@ -47,15 +41,15 @@ Then, we add noise to the image, randomly setting 30% of the pixels to the oppos
 <table style="width:100%">
   <tr>
     <td><b>Original</b></td>
-    <td><img src="assets/images/posts/FMNIST_orig.png" width="100"></td>
+    <td><img src="/assets/images/posts/FMNIST_orig.png" width="100"></td>
   </tr>
   <tr>
     <td><b>Noisy</b></td>
-    <td><<img src="assets/images/posts/FMNIST_test.png" width="100"></td>
+    <td><<img src="/assets/images/posts/FMNIST_test.png" width="100"></td>
   </tr>
   <tr>
     <td><b>Reconstructed</b></td>
-    <td><img src="assets/images/posts/FMNIST_return.png" width="100"></td>
+    <td><img src="/assets/images/posts/FMNIST_return.png" width="100"></td>
   </tr>
 </table>
 
