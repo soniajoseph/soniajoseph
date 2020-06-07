@@ -8,14 +8,13 @@ mathjax: "true"
 comments: true
 classes: wide
 ---
-
 ## Welcome to Emergence 
 
 This is a research library to study the emergent properties of undirected neural networks, including Hopfield networks and Boltzmann machines.
 
-**Access the library [here](https://github.com/soniajoseph/Emergence)**
+*Access the library [here](https://github.com/soniajoseph/Emergence)*.
 
-**To read more about Hopfield networks, see the primer I wrote [here](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/).**
+*To read more about Hopfield networks, see the primer I wrote [here](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/).*
 
 ## Setup
 
