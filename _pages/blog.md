@@ -1,6 +1,6 @@
 ---
-title: "Blog"
-permalink: /blog/
+title: "Essays"
+permalink: /essays/
 excerpt: 
 layout: tag
 entries_layout: grid
