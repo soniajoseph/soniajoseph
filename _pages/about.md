@@ -7,7 +7,7 @@ classes: wide
 
 ## Intro
 
-My primary interest is intelligence from both artificial and biological perspectives. In finding fundamental principles of information processing, I draw inspiration from the brain, our proof-of-concept for general intelligence.
+My primary interest is intelligence from both artificial and biological perspectives. I look for fundamental principles of information processing and draw inspiration from the brain, our proof-of-concept for general intelligence.
 
 Currently, I work as a researcher for the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and as a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/). I sometimes collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group.
 
