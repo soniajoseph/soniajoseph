@@ -7,11 +7,11 @@ classes: wide
 
 Hello! My name is Sonia Joseph. My primary interest is intelligence from both artificial and biological perspectives.
 
+Currently, I work as a researcher for the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and as a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/). 
+
 ## Background 
 
-I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing models for semantic representation in the human brain. Previously, I held positions at the [Princeton Neuroscience Institute](https://pni.princeton.edu/), the [Harvard Data Science Initiative](https://datascience.harvard.edu/), and [Ruane, Cunniff, and Goldfarb](https://en.wikipedia.org/wiki/Ruane,_Cunniff_%26_Goldfarb). I also worked as a machine learning and natural language processing consultant for startups in the Bay Area.
-
-Currently, I work as a researcher for the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and as a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/). Finally, I collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group.
+I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing models for semantic representation in the human brain. Previously, I held positions at the [Princeton Neuroscience Institute](https://pni.princeton.edu/), the [Harvard Data Science Initiative](https://datascience.harvard.edu/), and [Ruane, Cunniff, and Goldfarb](https://en.wikipedia.org/wiki/Ruane,_Cunniff_%26_Goldfarb). I also worked as a machine learning and natural language processing consultant for startups in the Bay Area, and collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group.
 
 
 ## About this website
