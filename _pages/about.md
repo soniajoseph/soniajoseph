@@ -9,7 +9,10 @@ Hello! My name is Sonia Joseph. My primary interest is intelligence from both ar
 
 ## Background 
 
-I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing models for semantic representation in the human brain. Previously, I held positions at the [Princeton Neuroscience Institute](https://pni.princeton.edu/), the [Harvard Data Science Initiative](https://datascience.harvard.edu/), and [Ruane, Cunniff, and Goldfarb](https://en.wikipedia.org/wiki/Ruane,_Cunniff_%26_Goldfarb). I am currently a machine learning engineer in the Bay Area and also collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group.
+I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing models for semantic representation in the human brain. Previously, I held positions at the [Princeton Neuroscience Institute](https://pni.princeton.edu/), the [Harvard Data Science Initiative](https://datascience.harvard.edu/), and [Ruane, Cunniff, and Goldfarb](https://en.wikipedia.org/wiki/Ruane,_Cunniff_%26_Goldfarb). I also worked as a machine learning and natural language processing consultant for startups in the Bay Area.
+
+Currently, I work as a researcher for the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and as a ML/NLP research engineer at the search engine startup [NLMatics](https://www.nlmatics.com/). Finally, I collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group.
+
 
 ## About this website
 
@@ -17,7 +20,7 @@ This website contains literature reviews, essays, projects, and coding experimen
 
 ## Past work
 
-Senior Thesis, 2019, Advised by Dr. Uri Hasson. *“Neural Encoding Models with Word Embeddings of Semantic Representation in the Human Cortex."* Thesis written on accurate and interpretable neural encoding models for semantic representation of auditory data in the human cortex, using machine learning and natural language processing models such as GloVe, on a large ECoG dataset of subjects listening to a podcast.
+Courswork, 2019, Advised by Dr. Uri Hasson. *“Neural Encoding Models with Word Embeddings of Semantic Representation in the Human Cortex."* Thesis written on accurate and interpretable neural encoding models for semantic representation of auditory data in the human cortex, using machine learning and natural language processing models such as GloVe, on a large ECoG dataset of subjects listening to a podcast.
 
 Coursework, 2018, Advised by Dr. David Tank. *“Refining Goal-Driven Models through Behavioral Signatures to Understand the Sensory Cortex.”* Proposal to compare the behavioral signatures of state-of-the-art neural networks (RNNs, HCNNs, ConvRNNs, ResNets) with the behavioral signature of human performance on an image recognition task with the CIFAR10 dataset to assess the biological plausibility of artificial neural nets.
 
