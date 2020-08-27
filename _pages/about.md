@@ -5,6 +5,8 @@ permalink: /about/
 classes: wide
 ---
 
+## Intro
+
 My primary interest is intelligence from both artificial and biological perspectives. In finding fundamental principles of information processing, I draw inspiration from the brain, our proof-of-concept for general intelligence.
 
 Currently, I work as a researcher for the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and as a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/). I sometimes collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group.
@@ -19,6 +21,8 @@ I studied computer science, computational neuroscience, and literature at Prince
 This website contains literature reviews, essays, projects, and coding experiments. Not all the work on here is polished, but I would rather my website be a living laboratory that reflects my latest thoughts, instead of something that is overly sterile, polished, and dated. Some representative posts include my [introduction to Hopfield networks](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/) and [novel coding experiments into the semantic similarity of phrases](https://soniajoseph.github.io/machine%20learning/semantic-similarity-search-phrases/).
 
 ## Past work
+
+### Undergraduate work
 
 Courswork, 2019, Advised by Dr. Uri Hasson. *“Neural Encoding Models with Word Embeddings of Semantic Representation in the Human Cortex."* Thesis written on accurate and interpretable neural encoding models for semantic representation of auditory data in the human cortex, using machine learning and natural language processing models such as GloVe, on a large ECoG dataset of subjects listening to a podcast.
 
