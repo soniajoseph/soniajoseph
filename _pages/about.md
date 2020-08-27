@@ -5,7 +5,7 @@ permalink: /about/
 classes: wide
 ---
 
-Hello! My name is Sonia Joseph. My primary interest is intelligence from both artificial and biological perspectives.
+Hello! My name is Sonia Joseph. My primary interest is intelligence from both artificial and biological perspectives. I'm interested in finding fundamental principles of intelligence, drawing inspiration from the brain, our proof-of-concept for general intelligence.
 
 Currently, I work as a researcher for the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and as a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/). 
 
