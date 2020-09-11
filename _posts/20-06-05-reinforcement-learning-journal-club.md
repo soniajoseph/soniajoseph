@@ -6,7 +6,7 @@ excerpt: "Founding a reinforcement learning journal club, welcome to join!"
 categories: [projects]
 header:
   teaser: assets/images/posts/rl.png
-toc: true
+toc: false
 mathjax: "true"
 comments: true
 collection: posts
