@@ -24,7 +24,7 @@ Attendance required for all 3 meetings.
 
 ### Papers:
 
-*Updated w/ notes after each journal club..*
+*Updated w/ notes after each journal club.*
 
 Seminar 1:
 
