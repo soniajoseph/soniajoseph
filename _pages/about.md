@@ -14,6 +14,8 @@ Currently, I research deep learning models on neural data at the [Stringer Lab](
 
 I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing models for semantic representation in the human brain. Previously, I held positions at the [Princeton Neuroscience Institute](https://pni.princeton.edu/), the [Harvard Data Science Initiative](https://datascience.harvard.edu/), and [Ruane, Cunniff, and Goldfarb](https://en.wikipedia.org/wiki/Ruane,_Cunniff_%26_Goldfarb). I also worked as a machine learning and natural language processing consultant for startups in the Bay Area. Before Janelia, I was a ML/NLP research engineer at the search engine startup [NLMatics](https://www.nlmatics.com/).
 
+I live in Palo Alto, CA, near Stanford's campus. My favorite hobbies are dog training and writing science-fiction.
+
 
 ## About this website
 
