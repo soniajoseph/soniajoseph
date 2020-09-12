@@ -9,20 +9,33 @@ classes: wide
 
 My primary interest is intelligence from both artificial and biological perspectives. I look for fundamental principles of information processing and draw inspiration from the brain, our proof-of-concept for general intelligence.
 
-Currently, I work as a researcher for the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and as a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/). I sometimes collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group.
+Currently, I work as a researcher for the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and sometimes collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group. Previously, I was as a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/).
 
 ## Background 
 
-I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing models for semantic representation in the human brain. Previously, I held positions at the [Princeton Neuroscience Institute](https://pni.princeton.edu/), the [Harvard Data Science Initiative](https://datascience.harvard.edu/), and [Ruane, Cunniff, and Goldfarb](https://en.wikipedia.org/wiki/Ruane,_Cunniff_%26_Goldfarb). I also worked as a machine learning and natural language processing consultant for startups in the Bay Area.
+I studied computer science, computational neuroscience, and literature at Princeton (Class of 2019), and wrote my thesis on natural language processing models for semantic representation in the human brain. Previously, I held positions at the [Princeton Neuroscience Institute](https://pni.princeton.edu/), the [Harvard Data Science Initiative](https://datascience.harvard.edu/), and [Ruane, Cunniff, and Goldfarb](https://en.wikipedia.org/wiki/Ruane,_Cunniff_%26_Goldfarb). I also worked as a machine learning and natural language processing consultant for startups in the Bay Area. Before Janelia, I was a ML/NLP research engineer at the search engine startup [NLMatics](https://www.nlmatics.com/).
 
 
 ## About this website
 
 This website contains literature reviews, essays, projects, and coding experiments. Not all the work on here is polished, but I would rather my website be a living laboratory that reflects my latest thoughts, instead of something that is overly sterile, polished, and dated. Some representative posts include my [introduction to Hopfield networks](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/) and [novel coding experiments into the semantic similarity of phrases](https://soniajoseph.github.io/machine%20learning/semantic-similarity-search-phrases/).
 
-## Past work
+## Sample past work
 
-### Undergraduate work
+### [NLMatics](https://www.nlmatics.com/) (NLP + IR)
+
+#### *Supervised*
+
+Research Project, 2020. Advised Batya Stein. *[Optimizing Transformer Q&A Models for Naturalistic Search](https://blogs.nlmatics.com/2020/08/25/Optimizing-Transformer-Q&A-Models-for-Naturalistic-Search.html)*.
+
+Research Project, 2020. Advised Nicholas Greenspan. *[SQuAD 2.0 and Google Natural Questions: A Comparison and Investigation into Model Performance.]*(https://blogs.nlmatics.com/2020/08/06/SQUAD-2.0-and-Google-Natural-Questions-A-Comparison-and-Investigation-into-Model-Performance.html).
+
+Technical Project, 2020. Advised Batya Stein & Nicholas Greenspan. [A Comprehensive Guide to Training a Machine Learning Model for Question Answering](https://blogs.nlmatics.com/2020/08/06/A-Comprehensive-Guide-to-Training-a-Machine-Learning-Model-for-Question-Answering_.html).
+
+Technical Project, 2020. Advised Connie Xu. *[Speed up requests: Asyncio for Requests in Python]*(https://blogs.nlmatics.com/requests/speedup/asyncio/python/2020/08/07/Speed-up-requests-Asyncio-for-Requests-in-Python.html).
+
+
+### Undergraduate work (computational neuroscience)
 
 Courswork, 2019, Advised by Dr. Uri Hasson. *“Neural Encoding Models with Word Embeddings of Semantic Representation in the Human Cortex."* Thesis written on accurate and interpretable neural encoding models for semantic representation of auditory data in the human cortex, using machine learning and natural language processing models such as GloVe, on a large ECoG dataset of subjects listening to a podcast.
 
