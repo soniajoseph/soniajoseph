@@ -22,7 +22,7 @@ This website contains literature reviews, essays, projects, and coding experimen
 
 ## Sample past work
 
-### Work Supervised at [NLMatics](https://www.nlmatics.com/) 
+### Work supervised at [NLMatics](https://www.nlmatics.com/) 
 
 Research Project, 2020. Advised Batya Stein. *[Optimizing Transformer Q&A Models for Naturalistic Search](https://blogs.nlmatics.com/2020/08/25/Optimizing-Transformer-Q&A-Models-for-Naturalistic-Search.html)*.
 
@@ -39,7 +39,7 @@ Courswork, 2019, Advised by Dr. Uri Hasson. *“Neural Encoding Models with Word
 
 Coursework, 2018, Advised by Dr. David Tank. *“Refining Goal-Driven Models through Behavioral Signatures to Understand the Sensory Cortex.”* Proposal to compare the behavioral signatures of state-of-the-art neural networks (RNNs, HCNNs, ConvRNNs, ResNets) with the behavioral signature of human performance on an image recognition task with the CIFAR10 dataset to assess the biological plausibility of artificial neural nets.
 
-Independent Work, 2018, Advised by Dr. Jonathan Pillow. *“Using Goal-Driven Convolutional Neural Networks to Understand the Ventrolateral Prefrontal Cortex During Object Categorization.”* Proposal to apply goal-driven CNNs in predicting neural response of object recognition in the ventrolateral prefrontal cortex of macaques on the CIFAR10 dataset.
+Independent Work, 2018, Advised by Dr. Jonathan Pillow. *[“Using Goal-Driven Convolutional Neural Networks to Understand the Ventrolateral Prefrontal Cortex During Object Categorization.”](https://soniajoseph.github.io/computational%20neuroscience/deep-learning-models-prefrontal-cortex/)* Proposal to apply goal-driven CNNs in predicting neural response of object recognition in the ventrolateral prefrontal cortex of macaques on the CIFAR10 dataset.
 
 Coursework, 2018, Advised by Dr. Jonathan Pillow. *“Comparing the Performance of Generalized Linear Models (GLMs) and Neural Nets as Single-Neuron Encoding Models.”* Compares highly interpretable generalized linear models (GLMs) with other, less interpretable machine learning models including vanilla CNNs, ResNets, and autoencoders on a dataset of a single neuron response’s to light.
 
