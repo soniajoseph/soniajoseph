@@ -4,7 +4,6 @@ excerpt: "Sonia Joseph's about page."
 permalink: /about/
 classes: wide
 ---
-
 ## Intro
 
 I am interested in intelligence from both artificial and biological perspectives. In looking for fundamental principles of information processing, I draw inspiration from the brain, our proof-of-concept for general intelligence.
