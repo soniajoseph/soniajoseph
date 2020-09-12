@@ -17,7 +17,7 @@ I studied computer science, computational neuroscience, and literature at Prince
 
 ## About this website
 
-This website contains literature reviews, essays, projects, and coding experiments. Not all the work on here is polished, but I would rather my website be a living laboratory that reflects my latest thoughts, instead of something that is overly sterile, polished, and dated. Some representative posts include my [introduction to Hopfield networks](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/) and [novel coding experiments into the semantic similarity of phrases](https://soniajoseph.github.io/machine%20learning/semantic-similarity-search-phrases/).
+This website contains literature reviews, essays, projects, and coding experiments. Not all the work on here is polished, but I would rather my website be a living laboratory that reflects my latest thoughts, instead of something that is overly sterile and dated. Some representative posts include my [introduction to Hopfield networks](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/) and [novel coding experiments into the semantic similarity of phrases](https://soniajoseph.github.io/machine%20learning/semantic-similarity-search-phrases/).
 
 ## Sample past work
 
