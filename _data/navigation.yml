@@ -8,8 +8,8 @@ main:
     url: /projects/
   - title: "Computational Neuroscience"
     url: /computational-neuroscience/
-  - title: "Blog"
-    url: /blog/
+  # - title: "Blog"
+  #   url: /blog/
   - title: "Tags"
     url: /tags/
 
