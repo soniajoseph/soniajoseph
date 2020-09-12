@@ -32,7 +32,7 @@ Technical Project, 2020. Advised Batya Stein & Nicholas Greenspan. *[A Comprehen
 Technical Project, 2020. Advised Connie Xu. *[Speed up requests: Asyncio for Requests in Python](https://blogs.nlmatics.com/requests/speedup/asyncio/python/2020/08/07/Speed-up-requests-Asyncio-for-Requests-in-Python.html).*
 
 
-### Undergraduate work at PNI
+### Undergraduate work at [PNI](https://pni.princeton.edu/)
 
 Courswork, 2019, Advised by Dr. Uri Hasson. *“Neural Encoding Models with Word Embeddings of Semantic Representation in the Human Cortex."* Thesis written on accurate and interpretable neural encoding models for semantic representation of auditory data in the human cortex, using machine learning and natural language processing models such as GloVe, on a large ECoG dataset of subjects listening to a podcast.
 
