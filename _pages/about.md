@@ -22,20 +22,18 @@ This website contains literature reviews, essays, projects, and coding experimen
 
 ## Sample past work
 
-### [NLMatics](https://www.nlmatics.com/) (NLP + IR)
-
-#### *Supervised*
+### Work Supervised at [NLMatics](https://www.nlmatics.com/) 
 
 Research Project, 2020. Advised Batya Stein. *[Optimizing Transformer Q&A Models for Naturalistic Search](https://blogs.nlmatics.com/2020/08/25/Optimizing-Transformer-Q&A-Models-for-Naturalistic-Search.html)*.
 
-Research Project, 2020. Advised Nicholas Greenspan. *[SQuAD 2.0 and Google Natural Questions: A Comparison and Investigation into Model Performance.]*(https://blogs.nlmatics.com/2020/08/06/SQUAD-2.0-and-Google-Natural-Questions-A-Comparison-and-Investigation-into-Model-Performance.html).
+Research Project, 2020. Advised Nicholas Greenspan. *[SQuAD 2.0 and Google Natural Questions: A Comparison and Investigation into Model Performance.](https://blogs.nlmatics.com/2020/08/06/SQUAD-2.0-and-Google-Natural-Questions-A-Comparison-and-Investigation-into-Model-Performance.html).*
 
-Technical Project, 2020. Advised Batya Stein & Nicholas Greenspan. [A Comprehensive Guide to Training a Machine Learning Model for Question Answering](https://blogs.nlmatics.com/2020/08/06/A-Comprehensive-Guide-to-Training-a-Machine-Learning-Model-for-Question-Answering_.html).
+Technical Project, 2020. Advised Batya Stein & Nicholas Greenspan. *[A Comprehensive Guide to Training a Machine Learning Model for Question Answering](https://blogs.nlmatics.com/2020/08/06/A-Comprehensive-Guide-to-Training-a-Machine-Learning-Model-for-Question-Answering_.html).*
 
-Technical Project, 2020. Advised Connie Xu. *[Speed up requests: Asyncio for Requests in Python]*(https://blogs.nlmatics.com/requests/speedup/asyncio/python/2020/08/07/Speed-up-requests-Asyncio-for-Requests-in-Python.html).
+Technical Project, 2020. Advised Connie Xu. *[Speed up requests: Asyncio for Requests in Python](https://blogs.nlmatics.com/requests/speedup/asyncio/python/2020/08/07/Speed-up-requests-Asyncio-for-Requests-in-Python.html).*
 
 
-### Undergraduate work (computational neuroscience)
+### Undergraduate work at PNI
 
 Courswork, 2019, Advised by Dr. Uri Hasson. *“Neural Encoding Models with Word Embeddings of Semantic Representation in the Human Cortex."* Thesis written on accurate and interpretable neural encoding models for semantic representation of auditory data in the human cortex, using machine learning and natural language processing models such as GloVe, on a large ECoG dataset of subjects listening to a podcast.
 
