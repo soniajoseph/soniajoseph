@@ -5,11 +5,14 @@ excerpt: "On accounting for billions+ of parameters and nonlinearities"
 categories: [blog]
 header:
   teaser: assets/images/posts/deepdream.png
-toc: false
+toc: true
 mathjax: "true"
 comments: true
 collection: posts
 ---
+
+# Goal-Driven Technique
+
 One technique for modeling the brain that I find particularly incisive is the "goal-driven", or "normative" deep learning method. Instead of fitting your deep learning model directly to neural data, you train the model on task that the neural substrate performs. Then, you compare the internal representations between the artificial model with the neural data. If the internal representations correlate throughout the model, then your model may be biologically plausible.
 
 For example, if I wanted to understand the visual stream, I could train a deep CNN to recognize images. Then, I could compare the representations throughout the layers of that artificial neural net to neuron responses in the hierarchy of a macaque visual stream. Because the same problem only has so many solutions, certain artificial neural nets will find a solution that is mathematically analogous to that of the biological visual stream. 
@@ -22,6 +25,7 @@ Of course, we must also exercise caution-- neural nets and the brain are complex
 
 Below I've compiled a list of potential research directions in which to take the goal-driven method.
 
+# Research Directions
 
 ## Sparsity
 
@@ -68,11 +72,11 @@ Thus it is not surprising that the top-performing neural nets on image classific
 
 Long used as [models for associative memory](https://bi.snu.ac.kr/Courses/g-ai09-2/hopfield82.pdf), Energy-based models like Boltzmann machines and Hopfield networks are [slowly making a comeback in modern deep learning](https://arxiv.org/abs/2008.02217). It would be interesting to examine hybrids between deep learning models and energy-based models as biologically plausible candidates.
 
-# Some more resources
+# More resources
 
 Some good overviews of the goal-driven paradigm are [this original 2014 paper by Yamins & DiCarlo](https://www.nature.com/articles/nn.4244), and [this 2019 overview by Kietzmann, McClure, and Kriegeskorte](https://oxfordre.com/neuroscience/view/10.1093/acrefore/9780190264086.001.0001/acrefore-9780190264086-e-46).
 
-The technique is taking flourish across computational neuroscience labs across the world, so I will be missing many labs if I merely listed the ones I knew.
+The technique is flourishing cross computational neuroscience labs across the world, so I will be missing many labs if I merely listed the ones I knew.
 
 If you're looking for a more detailed, hands-on introduction to goal-driven neural nets, Carsen Stringer's [Jupyter notebook](https://github.com/NeuromatchAcademy/course-content/blob/master/tutorials/W3D4_DeepLearning1/W3D4_Tutorial3.ipynb) under Neuromatch Academy is an unrivaled resource. Other notebooks in the series also include detailed tutorials on the basics of machine learning and PyTorch.
 
