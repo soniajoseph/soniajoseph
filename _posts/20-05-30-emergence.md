@@ -4,6 +4,7 @@ excerpt: A library of Hopfield networks and undirected neural nets.
 categories: [machine learning]
 tags: [deep learning, machine learning, neural nets, neuroscience, computational neuroscience, projects]
 header:
+  teaser: assets/images/posts/hopfield.png
 mathjax: "true"
 comments: true
 classes: wide
