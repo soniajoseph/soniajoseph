@@ -11,7 +11,7 @@ comments: true
 collection: posts
 ---
 
-# Goal-Driven Technique
+# The Goal-Driven Technique
 
 One technique for modeling the brain that I find particularly incisive is the "goal-driven", or "normative" deep learning method. Instead of fitting your deep learning model directly to neural data, you train the model on task that the neural substrate performs. Then, you compare the internal representations between the artificial model with the neural data. If the internal representations correlate throughout the model, then your model may be biologically plausible.
 
@@ -25,7 +25,7 @@ Of course, we must also exercise caution-- neural nets and the brain are complex
 
 Below I've compiled a list of potential research directions in which to take the goal-driven method.
 
-# Research Directions
+# Potential Research Directions
 
 ## Sparsity
 
@@ -72,7 +72,7 @@ Thus it is not surprising that the top-performing neural nets on image classific
 
 Long used as [models for associative memory](https://bi.snu.ac.kr/Courses/g-ai09-2/hopfield82.pdf), energy-based models like Boltzmann machines and Hopfield networks are [slowly making a comeback in modern deep learning](https://arxiv.org/abs/2008.02217). It would be interesting to examine hybrids between deep learning models and energy-based models as biologically plausible candidates.
 
-# More resources
+# More Resources
 
 Some good overviews of the goal-driven paradigm are [this original 2014 paper](https://www.nature.com/articles/nn.4244), and [this 2019 overview](https://oxfordre.com/neuroscience/view/10.1093/acrefore/9780190264086.001.0001/acrefore-9780190264086-e-46).
 
