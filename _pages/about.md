@@ -19,7 +19,7 @@ I live in Palo Alto, CA, near Stanford's campus. My favorite hobbies are dog tra
 
 ## About this website
 
-This website contains literature reviews, essays, projects, and coding experiments. Not all the work on here is polished, but I would rather my website be a living laboratory that reflects my latest thoughts, instead of something that is overly sterile and dated. Some representative posts include my [introduction to Hopfield networks](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/) and [novel coding experiments into the semantic similarity of phrases](https://soniajoseph.github.io/machine%20learning/semantic-similarity-search-phrases/).
+This website contains literature reviews, essays, projects, and coding experiments. Not all the work on here is polished, but I would rather my website be a living laboratory that reflects my latest thoughts. Some representative posts include my [introduction to Hopfield networks](https://soniajoseph.github.io/computational%20neuroscience/neural-dynamics-primer/) and [novel coding experiments into the semantic similarity of phrases](https://soniajoseph.github.io/machine%20learning/semantic-similarity-search-phrases/).
 
 ## Sample past work
 
@@ -30,8 +30,6 @@ Research Project, 2020. Advised Batya Stein. *[Optimizing Transformer Q&A Models
 Research Project, 2020. Advised Nicholas Greenspan. *[SQuAD 2.0 and Google Natural Questions: A Comparison and Investigation into Model Performance.](https://blogs.nlmatics.com/2020/08/06/SQUAD-2.0-and-Google-Natural-Questions-A-Comparison-and-Investigation-into-Model-Performance.html).*
 
 Technical Project, 2020. Advised Batya Stein & Nicholas Greenspan. *[A Comprehensive Guide to Training a Machine Learning Model for Question Answering](https://blogs.nlmatics.com/2020/08/06/A-Comprehensive-Guide-to-Training-a-Machine-Learning-Model-for-Question-Answering_.html).*
-
-Technical Project, 2020. Advised Connie Xu. *[Speed up requests: Asyncio for Requests in Python](https://blogs.nlmatics.com/requests/speedup/asyncio/python/2020/08/07/Speed-up-requests-Asyncio-for-Requests-in-Python.html).*
 
 
 ### Undergraduate work at [PNI](https://pni.princeton.edu/)
