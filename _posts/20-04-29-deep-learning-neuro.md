@@ -17,7 +17,7 @@ One technique for modeling the brain that I find particularly incisive is the "g
 
 For example, if I wanted to understand the visual stream, I could train a deep CNN to recognize images. Then, I could compare the representations throughout the layers of that artificial neural net to neuron responses in the hierarchy of a macaque visual stream. Because the same problem only has so many solutions, certain artificial neural nets will find a solution that is mathematically analogous to that of the biological visual stream. 
 
-This approach has a major advantage over past methods in that the researcher does not have to manually set the parameters of the model. Rather, the parameters emerge organically after optimizing the model to perform a given task. And perhaps most importantly, not only do the outputs of the model correlate with its biological counterpart; the internal representations of the model also match the biology, without any explicit training on neural data. The model is not a black-box: it is interpretable, in that layers of the CNN [map onto layers of the biological visual stream in terms of predictivity]().
+This approach has a major advantage over past methods in that the researcher does not have to manually set the parameters of the model. Rather, the parameters emerge organically after optimizing the model to perform a given task. And perhaps most importantly, not only do the outputs of the model correlate with its biological counterpart; the internal representations of the model also match the biology, without any explicit training on neural data. The model is not a black-box: it is interpretable, in that layers of the CNN [map onto layers of the biological visual stream in terms of predictivity](https://www.pnas.org/content/111/23/8619).
 
 We can examine these task-optimized artificial neural nets further. Perhaps they are similar to the brain in ways that are hard to study in a wet lab, and so they can act as inexpensive models for "virtual" lesion and electrophysiology studies.
 
@@ -52,7 +52,7 @@ The role of the PFC in object recognition is poorly understood, but the area is 
 
 One idea is measuring neural response in the vlPFC to an artificial neural net trained on images. We can then manipulate the stimuli to measure activations in the vlPFC. If our goal-driven model is predictive of responses, we can check whether the intermediate layers are also predictive of IT, V4, V2, and V1, in line with the [original findings for the IT](https://www.pnas.org/content/111/23/8619).
 
-*Read more about using goal-driven neural nets on the prefonrtal cortex [here](https://soniajoseph.github.io/computational%20neuroscience/deep-learning-models-prefrontal-cortex/)*.
+*Read more about using goal-driven neural nets on the prefrontal cortex [here](https://soniajoseph.github.io/computational%20neuroscience/deep-learning-models-prefrontal-cortex/)*.
 
 ## Mapping Out Architecture Space: CapsuleNets
 
@@ -70,11 +70,11 @@ Thus it is not surprising that the top-performing neural nets on image classific
 
 ## Integration with Energy-Based Models
 
-Long used as [models for associative memory](https://bi.snu.ac.kr/Courses/g-ai09-2/hopfield82.pdf), Energy-based models like Boltzmann machines and Hopfield networks are [slowly making a comeback in modern deep learning](https://arxiv.org/abs/2008.02217). It would be interesting to examine hybrids between deep learning models and energy-based models as biologically plausible candidates.
+Long used as [models for associative memory](https://bi.snu.ac.kr/Courses/g-ai09-2/hopfield82.pdf), energy-based models like Boltzmann machines and Hopfield networks are [slowly making a comeback in modern deep learning](https://arxiv.org/abs/2008.02217). It would be interesting to examine hybrids between deep learning models and energy-based models as biologically plausible candidates.
 
 # More resources
 
-Some good overviews of the goal-driven paradigm are [this original 2014 paper by Yamins & DiCarlo](https://www.nature.com/articles/nn.4244), and [this 2019 overview by Kietzmann, McClure, and Kriegeskorte](https://oxfordre.com/neuroscience/view/10.1093/acrefore/9780190264086.001.0001/acrefore-9780190264086-e-46).
+Some good overviews of the goal-driven paradigm are [this original 2014 paper](https://www.nature.com/articles/nn.4244), and [this 2019 overview](https://oxfordre.com/neuroscience/view/10.1093/acrefore/9780190264086.001.0001/acrefore-9780190264086-e-46).
 
 The technique is flourishing cross computational neuroscience labs across the world, so I will be missing many labs if I merely listed the ones I knew.
 
