@@ -2,7 +2,7 @@
 title: "Emergence: A Library of Hopfield Networks"
 excerpt: A library of Hopfield networks and undirected neural nets.
 categories: [machine learning]
-tags: [deep learning, machine learning, neural nets, neuroscience, computational neuroscience]
+tags: [deep learning, machine learning, neural nets, neuroscience, computational neuroscience, projects]
 header:
 mathjax: "true"
 comments: true

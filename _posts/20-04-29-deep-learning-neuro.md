@@ -1,6 +1,6 @@
 ---
 title: "Ideas for the deep learning framework in neuroscience" 
-tags: [machine learning, deep learning, computational neuroscience]
+tags: [machine learning, deep learning, computational neuroscience, neuroscience]
 excerpt: "On accounting for billions+ of parameters and nonlinearities"
 categories: [blog]
 header:
