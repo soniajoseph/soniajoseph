@@ -15,7 +15,7 @@ Broadly speaking, computational neuroscience can be divided into two camps: mode
 
 # The Goal-Driven Technique
 
-One technique that falls into this latter camp is the "goal-driven", or "normative" deep learning method. Instead of fitting your deep learning model directly to neural data, you train the model on task that the neural substrate performs. Then, you compare the internal representations between the artificial model with the neural data. If the internal representations correlate throughout the model, then your model may be biologically plausible.
+One technique that falls into this latter camp is the "goal-driven", or "normative" deep learning method. Instead of fitting your deep learning model directly to neural data, you train the model on a task that the neural substrate performs. Then, you compare the internal representations between the artificial model with the neural data. If the internal representations correlate throughout the model, then your model may be biologically plausible.
 
 For example, if I wanted to understand the visual stream, I could train a deep CNN to recognize images. Then, I could compare the representations throughout the layers of that artificial neural net to neuron responses in the hierarchy of a macaque visual stream. Because the same problem only has so many solutions, certain artificial neural nets will find a solution that is mathematically analogous to that of the biological visual stream. 
 
