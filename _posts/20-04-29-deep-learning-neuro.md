@@ -11,7 +11,7 @@ comments: true
 collection: posts
 ---
 
-Speaking generally, computational neuroscience can be divided into two camps: models that analyze neural data, and models whose structure mathematically imitates that of the brain. The latter fascinates me, acting as a proof-of-concept for various facets of intelligence. And so it is unsuprising that my encounter with neural nets in college sent me away from molecular neuroscience and deep into foundational AI. 
+Broadly speaking, computational neuroscience can be divided into two camps: models that analyze neural data, and models whose structure mathematically imitates that of the brain. The latter fascinates me, acting as a proof-of-concept for various facets of intelligence. And so it is unsuprising that my encounter with neural nets in college sent me away from molecular neuroscience and deep into foundational AI. 
 
 # The Goal-Driven Technique
 
