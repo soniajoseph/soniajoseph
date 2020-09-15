@@ -78,7 +78,7 @@ Long used as [models for associative memory](https://bi.snu.ac.kr/Courses/g-ai09
 
 Some good overviews of the goal-driven paradigm are [this original 2014 paper](https://www.nature.com/articles/nn.4244), and [this 2019 overview](https://oxfordre.com/neuroscience/view/10.1093/acrefore/9780190264086.001.0001/acrefore-9780190264086-e-46).
 
-The technique is flourishing cross computational neuroscience labs across the world, so I will be missing many labs if I merely listed the ones I knew.
+The technique is flourishing in computational neuroscience labs across the world, so I will be missing many labs if I merely listed the ones I knew.
 
 If you're looking for a more detailed, hands-on introduction to goal-driven neural nets, Carsen Stringer's [Jupyter notebook](https://github.com/NeuromatchAcademy/course-content/blob/master/tutorials/W3D4_DeepLearning1/W3D4_Tutorial3.ipynb) under Neuromatch Academy is an unrivaled resource. Other notebooks in the series also include detailed tutorials on the basics of machine learning and PyTorch.
 
