@@ -2,7 +2,7 @@
 title: Optic Flow and PWC-NET
 tags: [neuroscience, machine learning, deep learning, artificial intelligence, resources, presentation, computational neuroscience]
 header: 
-  teaser: assets/images/posts/neuralnet.jpg
+  teaser: assets/images/posts/caropticflow.png
 excerpt: Lab presentation for Janelia.
 categories: [deep learning, neuroscience]
 toc: true
