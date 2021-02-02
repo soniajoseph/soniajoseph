@@ -5,7 +5,7 @@ header:
   teaser: assets/images/posts/caropticflow.png
 excerpt: Presentation on optic flow, PWC-Net, and a possible application to birds and mice for Janelia
 categories: [deep learning, neuroscience]
-toc: true
+toc: false
 mathjax: "true"
 comments: true
 collection: posts
