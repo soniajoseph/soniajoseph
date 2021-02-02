@@ -13,7 +13,7 @@ comments: true
 classes: wide
 ---
 
-*In progress. If you have any paper recommendations, feel free to comment below.*
+*In progress, and incomplete. If you have any paper recommendations, feel free to comment below.*
 
 ## Criteria 
 
