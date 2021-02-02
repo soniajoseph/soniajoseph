@@ -1,5 +1,5 @@
 ---
-title: Optic Flow and PWC-NET
+title: Optic Flow and PWC-Net
 tags: [neuroscience, machine learning, deep learning, artificial intelligence, resources, presentation, computational neuroscience]
 header: 
   teaser: assets/images/posts/caropticflow.png
