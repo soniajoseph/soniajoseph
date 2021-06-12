@@ -17,13 +17,6 @@ classes: wide
 
 # Radical Meta-Learning Paper Group
 
-Created: Jan 1, 2021 7:26 PM
-Event Leaders: Sonia Joseph
-
-# Radical Meta-learning
-
-Reading Group Winter 2021
-
 ## FAQ
 
 ***What is the purpose of this reading group?***
@@ -44,22 +37,7 @@ Shoot a quick email to Sonia Joseph at smjoseph@alumni.princeton.edu
 
 One person will sign up to present a paper, which everyone will read. We'll collectively take notes on a Google doc before and during the presentation. The presenter will go through the paper, and we'll liberally discuss along the way. Some of the papers are long, so please feel free to come anyway even if you haven't finished it.
 
-## Phase 2
-
-### Reading list  [AI-GA related]
-
-1. *Generative teaching networks: learning to teach by generating synthetic training data.* [Link](https://arxiv.org/abs/1912.07768)
-2. *Differentiable plasticity: training plastic neural networks with backpropagation.* [Link](https://arxiv.org/abs/1804.02464) 
-3. *Paired open-ended trailblazer (poet): Endlessly generating increasingly complex and diverse learning environments and their solutions.* [Link](https://arxiv.org/abs/1901.01753)
-
-### Schedule [tentative]
-
-1. **Seminar 1. April 11th, 6:00 pm GMT**
-    1. POET by Anushan.
-2. **Seminar 2. April 25th, 6:00 pm GMT**
-    1. Differentiable Plasticity by Harsha
-
-## Phase 1:
+### Phase 1:
 
 ### Sample reading list [please put your name next to what you would like to present]
 
@@ -96,6 +74,20 @@ One person will sign up to present a paper, which everyone will read. We'll coll
     2. **Presenter**: Rob.
     3. **Notes**: Checkout this fantastic [blog post](https://roberttlange.github.io/posts/2020/12/meta-policy-gradients/) 👨‍🔧
 
+## Phase 2
+
+### Reading list  [AI-GA related]
+
+1. *Generative teaching networks: learning to teach by generating synthetic training data.* [Link](https://arxiv.org/abs/1912.07768)
+2. *Differentiable plasticity: training plastic neural networks with backpropagation.* [Link](https://arxiv.org/abs/1804.02464) 
+3. *Paired open-ended trailblazer (poet): Endlessly generating increasingly complex and diverse learning environments and their solutions.* [Link](https://arxiv.org/abs/1901.01753)
+
+### Schedule [tentative]
+
+1. **Seminar 1. April 11th, 6:00 pm GMT**
+    1. POET by Anushan.
+2. **Seminar 2. April 25th, 6:00 pm GMT**
+    1. Differentiable Plasticity by Harsha
 
 ## Research Papers by Concept
 
@@ -113,32 +105,4 @@ One person will sign up to present a paper, which everyone will read. We'll coll
 ### Generative Models
 * [AI-GAs: AI-generating algorithms, an alternate paradigm for producing general artificial intelligence](https://arxiv.org/pdf/1905.10985.pdf) (2020)
 
-## Literature Reviews
 
-## Courses
-
-
-## Research Papers by Institution
-
-
-### Berkeley
-
-
-### DeepMind
-1. [Meta-Gradient Reinforcement Learning with an Online Objective Discovered Online](https://arxiv.org/pdf/2007.08433.pdf) (2020)
-
-
-### IDSIA
-1. Jurgen Schmidhuber
-	1. [Evolutionary Principles in Self-Referential Learning](http://people.idsia.ch/~juergen/diploma.html) (1987)
-	2. [Ultimate Cognition a la Godel](http://people.idsia.ch/~juergen/ultimatecognition.pdf)(2009)
-2. Louis Kirsch
-	1. [Improving Generalization in Meta Reinforcement Learning using Learned Objectives](https://arxiv.org/abs/1910.04098) (2019)
-
-### MILA
-
-### Stanford
-1. Chelsea Finn [from Berkeley]
-
-
-### University of Oxford
