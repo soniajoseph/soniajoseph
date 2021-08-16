@@ -25,6 +25,12 @@ This website contains literature reviews, essays, projects, and coding experimen
 
 ## Sample past work
 
+### Janelia Research Campus
+
+Du F, Joseph S, Pachitariu M, Stringer C. (2020). Invariant Texture Recognition in the Mouse Visual Cortex. Cosyne 2021.
+
+[Open-Source Receptive Field Explorer](https://mobile.twitter.com/soniajoseph_/status/1408517222893461504), 2020. Advised by Carsen Stringer.
+
 ### Work supervised at [NLMatics](https://www.nlmatics.com/) 
 
 Research Project, 2020. Advised Batya Stein. *[Optimizing Transformer Q&A Models for Naturalistic Search](https://blogs.nlmatics.com/2020/08/25/Optimizing-Transformer-Q&A-Models-for-Naturalistic-Search.html)*.
@@ -32,7 +38,6 @@ Research Project, 2020. Advised Batya Stein. *[Optimizing Transformer Q&A Models
 Research Project, 2020. Advised Nicholas Greenspan. *[SQuAD 2.0 and Google Natural Questions: A Comparison and Investigation into Model Performance.](https://blogs.nlmatics.com/2020/08/06/SQUAD-2.0-and-Google-Natural-Questions-A-Comparison-and-Investigation-into-Model-Performance.html).*
 
 Technical Project, 2020. Advised Batya Stein & Nicholas Greenspan. *[A Comprehensive Guide to Training a Machine Learning Model for Question Answering](https://blogs.nlmatics.com/2020/08/06/A-Comprehensive-Guide-to-Training-a-Machine-Learning-Model-for-Question-Answering_.html).*
-
 
 ### Undergraduate work at [PNI](https://pni.princeton.edu/)
 
