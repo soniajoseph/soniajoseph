@@ -11,7 +11,7 @@ comments: true
 classes: wide
 ---
 
-## I'm experimenting with publically blogging about my decision-making
+## I'm experimenting with publicly blogging about my decision-making
 
 I've decided to be more public about my decision processes and brainstorming at this stage in life, opposed to operating in stealth.
 
