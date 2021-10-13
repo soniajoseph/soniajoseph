@@ -54,7 +54,7 @@ If financially optimizing is the play, the next question is which companies woul
 
 Staying in AI, bets that are both financially and philosophically aligned look like building an industrial-scale language model, screen capture, or some other company with giant amounts of data and compute. It's not obvious to me why GPT-3 has basically zero US competitors. However, the outcome here looks pretty cleanly like "get acquihired by Google or Microsoft" and it's not clear that this is a great outcome. AI is a maturing and gated world where web 3 is not.
 
-**The tl;dr is that AI is philosophically aligned and profitable, but web 3 could be far more profitable, and while not as philosophically aligned, more aligned with my personality.**
+**The tl;dr is that AI is philosophically aligned and profitable, but web 3 could be far more profitable, and while less aligned with my philosophy, more aligned with my personality.**
 
 ## Break from EA
 
@@ -63,3 +63,7 @@ I've been writing a lot in stealth about transhumanism, and new types of movemen
 I'm interested in creating a movement that's decorrelated from Effective Altruism to variance max value systems in the space. I notice fear in doing so ("what will the old guard transhumanists think?") but increasingly, I am realizing the possible upside, if done well, is worth it.
 
 In writing the whitepaper for the movement, I face the balance between artistic (Nietzsche) and academic. There are strong trade-offs between the two. Religious-esque blog writing is no as fashionable as persuasive pieces-- perhaps we live in a hyperrationalistic age.
+
+
+## Comments
+See responses on Twitter [here](https://twitter.com/soniajoseph_/status/1448139915821080581)
