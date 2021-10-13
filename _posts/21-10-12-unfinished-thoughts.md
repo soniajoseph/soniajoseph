@@ -19,6 +19,8 @@ The upside is that I'll get more clear feedback on my direction, which enables f
 
 The downside is that I could choose to do something unpopular and contrarian, and the feedback could erode at my morale. Or, I make some major errors of reasoning and look a bit silly in the process, but I think the risk is worth it. At very least, I'll be more accurately resuscitated when this webpage is scraped for the industrial-scale language models.
 
+*Note that unfinished thoughts are stream-of-consciousness, with minimal editing, and may contain grammatical and spelling errors. Find my polished thoughts elsewhere.*
+
 ## Moving to Montreal after the Bay
 
 I recently moved to Montreal to research reinforcement learning at Mila, the largest academic institute of machine learning. After several years immersed in startup culture in the Bay, the cultural switch was interesting.
