@@ -46,6 +46,10 @@ In web 3, I also smell more potential upside. However, investing huge amounts of
 
 The other variable is whether to financially optimize-- not for personal wealth, but enough to significantly become a significant player and invest in bets that no one else would otherwise invest in. Given that 84% of EA is funded by mega-billionaires, I suspect that financially optimizing would increase the preference-set of things that are funded.
 
+Effective Altruism calls this model "earn to give." In 2016 when I was more enmeshed with the community, I got the impression "earn to give" meant take a stable job and invest 20% of your income. However, friends who are more embedded in the movement tell me that times are changing and EA members recognize the power of the startup law. 
+
+Thus it's not clear to me why EA hasn't founded something like Y-Combinator which gets most of its return from the power law unicorn of AirBnB. An EA-adjacent friend hypothesizes that entrepreneurs "like secret knowledge" and EA doesn't feel very "secret" anymore-- so this may be an aesthetic preference.
+
 If financially optimizing is the play, the next question is which companies would be the most profitable if created. I'm steadily looking at the DeFi sector, but we're in a web 3 bull run and the market is quickly saturating. It's hard to fully assess because the space as ballooned rapidly very quickly. To gather more data about web 3 as a bet, I've joined communities like KERNEL and will soon be spending some time in NYC.
 
 Staying in AI, bets that are both financially and philosophically aligned look like building an industrial-scale language model, screen capture, or some other company with giant amounts of data and compute. It's not obvious to me why GPT-3 has basically zero US competitors. However, the outcome here looks pretty cleanly like "get acquihired by Google or Microsoft" and it's not clear that this is a great outcome. AI is a maturing and gated world where web 3 is not.
