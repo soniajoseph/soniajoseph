@@ -30,7 +30,7 @@ I recently moved to Montreal to research reinforcement learning at Mila, the lar
 * **Why Bay Area culture makes the place conducive for startups.** There are several cultural assumptions in the Bay Area that make starting a company easier: in many communities, you're simply expected to do it eventually. Networks are incredibly dense: within your graph clique, you feel like everyone really does know everyone. Your friends are a jumble of founders, VCs, engineers, and researchers. Risk tolerance and friendliness are both high, which leads to both companies and cults.
 * **Government vs billionaire funding.** Billionaire funding is seen as very bizarre by many Canadians, who actually seem to trust their government. Some researchers want more profitable companies to arise from their labs so that the government pours more funding into AI. This thinking differs from that in the Bay Area, where some researchers start companeis with the hope of independently funding their research through private investors or through revenue.
 * I've found the startup community here to be very welcoming and open-minded. I have not raised funding in Montreal though I hear that valuations are far lower than those in the US.
-* The government subsidizes a huge slew of programs to hire interns at a lower rate. 
+* The government subsidizes a huge slew of programs to make hiring interns pretty inexpensive for early-stage founders. 
 
 ## What to found next: stay in AI, enter web 3 frontier, or something else? 
 
