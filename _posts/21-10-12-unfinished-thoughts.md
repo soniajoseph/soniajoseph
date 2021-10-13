@@ -54,7 +54,7 @@ If financially optimizing is the play, the next question is which companies woul
 
 Staying in AI, bets that are both financially and philosophically aligned look like building an industrial-scale language model, screen capture, or some other company with giant amounts of data and compute. It's not obvious to me why GPT-3 has basically zero US competitors. However, the outcome here looks pretty cleanly like "get acquihired by Google or Microsoft" and it's not clear that this is a great outcome. AI is a maturing and gated world where web 3 is not.
 
-** The tl;dr is that AI is philosophically aligned and profitable, but web 3 could be far more profitable, and while not as philosophically aligned, more aligned with my personality.**
+**The tl;dr is that AI is philosophically aligned and profitable, but web 3 could be far more profitable, and while not as philosophically aligned, more aligned with my personality.**
 
 ## Break from EA
 
