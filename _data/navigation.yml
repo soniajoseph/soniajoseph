@@ -8,12 +8,10 @@ main:
     url: /projects/
   - title: "Computational Neuroscience"
     url: /computational-neuroscience/
-  # - title: "Blog"
-  #   url: /blog/
-  - title: "Tags"
-    url: /tags/
   - title: "Unfinished Thoughts"
     url: /unfinished-thoughts/
+  - title: "Tags"
+    url: /tags/
 
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
