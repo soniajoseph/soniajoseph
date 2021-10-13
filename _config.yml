@@ -35,8 +35,8 @@ comments:
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
-    # appid                : 1240984746423399
-    # num_posts            : 5
+    appid                : 1240984746423399
+    num_posts            : 5
     colorscheme          : # "light" (default), "dark"
 utterances:
   theme                : # "github-light" (default), "github-dark"
