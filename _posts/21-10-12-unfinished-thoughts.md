@@ -62,4 +62,4 @@ I've been writing a lot in stealth about transhumanism, and new types of movemen
 
 I'm interested in creating a movement that's decorrelated from Effective Altruism to variance max value systems in the space. I notice fear in doing so ("what will the old guard transhumanists think?") but increasingly, I am realizing the possible upside, if done well, is worth it.
 
-In writing the whitepaper for the movement, I face the balance between artistic (Nietzsche) and academic. There are strong trade-offs between the two. Religious-esque blog writing is no longer fashionable in incurring the masses, so it seems.
+In writing the whitepaper for the movement, I face the balance between artistic (Nietzsche) and academic. There are strong trade-offs between the two. Religious-esque blog writing is no as fashionable as persuasive pieces-- perhaps we live in a hyperrationalistic age.
