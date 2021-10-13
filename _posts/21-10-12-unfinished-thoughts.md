@@ -34,19 +34,17 @@ I recently moved to Montreal to research reinforcement learning at Mila, the lar
 
 I'm exploring the startup space as to what to fund next.
 
-I'm torn between staying in my field (AI) and making a bit in web 3.
+I'm torn between staying in my field (AI) and making a bid in web 3.
 
-I am philosophically aligned with AI companies and exploring the nature of intelligence as a fundamentally important metaphysical question. However, AI is maturing as a sector. 
+I am philosophically aligned with AI companies and exploring the nature of intelligence as a fundamentally important metaphysical question. However, AI is maturing as a sector. My personality loves emerging sectors. I love the questioning of all fundamental assumptions and rederiving structures that exist in the world. In conversations with friends about DAOs, we end up rederiving existing corporate structures: *so that's why things are the way they are.* 
 
-My personality loves emerging sectors. I love the questioning of all fundamental assumptions and rederiving structures that exist in the world. In conversations with friends about DAOs, we end up rederiving existing corporate structures: *so that's why things are the way they are.* 
+In web 3, I smell more potential upside. However, investing huge amounts of time into web 3 is more aligned with philosophically questioning the nature of government, incentives, mechanism design. All good stuff, except my aesthetic preferences lean toward the nature of intelligence. 
 
-In web 3, I smell more potential upside. However, investing huge amounts of time into web 3 is more aligned with philosophically quesitoning the nature of government, incentives, mechanism design. All good stuff, except my aesthetic preferences lean toward the nature of intelligence. 
-
-### To financially optimize
+### To financially optimize? 
 
 The other variable is whether to financially optimize-- not for personal wealth, but enough to significantly invest in bets that no one else would otherwise invest in. Given that 84% of EA is funded by mega-billionaires, I suspect that financially optimizing would increase the preference-set of things that are funded.
 
-If financially optimizing is the play, the next question is which companies would be the most profitable. I'm steadily looking at the DeFi sector but we're in a web 3 bull run and the market seems saturated. It's hard to fully access because the space as ballooned rapidly very quickly.
+If financially optimizing is the play, the next question is which companies would be the most profitable. I'm steadily looking at the DeFi sector but we're in a web 3 bull run and the market seems saturated. It's hard to fully assess because the space as ballooned rapidly very quickly.
 
 Other bets look like staying in AI and building an industrial-scale language model, screen capture, or some other company with giant amounts of data and compute.
 
