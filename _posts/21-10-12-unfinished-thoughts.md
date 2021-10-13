@@ -34,9 +34,7 @@ I recently moved to Montreal to research reinforcement learning at Mila, the lar
 
 ## What to found next: stay in AI, enter web 3 frontier, or something else? 
 
-I'm exploring the startup space as to what to fund next.
-
-I'm torn between staying in my field (AI) and making a bid in web 3.
+I'm exploring the startup space as to what to fund next. I'm torn between staying in my field (AI) and making a bid in web 3.
 
 Philosophically, I am aligned with creating AI companies to explore the nature of intelligence as a fundamentally important metaphysical question that is dear to my heart. My research and engineering background sit at the intersection of computational neuroscience and artificial intelligence: I've worked for neuro labs and search companies.
 
@@ -46,7 +44,7 @@ In web 3, I also smell more potential upside. However, investing huge amounts of
 
 ### To financially optimize? 
 
-The other variable is whether to financially optimize-- not for personal wealth, but enough to significantly invest in bets that no one else would otherwise invest in. Given that 84% of EA is funded by mega-billionaires, I suspect that financially optimizing would increase the preference-set of things that are funded.
+The other variable is whether to financially optimize-- not for personal wealth, but enough to significantly become a significant player and invest in bets that no one else would otherwise invest in. Given that 84% of EA is funded by mega-billionaires, I suspect that financially optimizing would increase the preference-set of things that are funded.
 
 If financially optimizing is the play, the next question is which companies would be the most profitable if created. I'm steadily looking at the DeFi sector, but we're in a web 3 bull run and the market is quickly saturating. It's hard to fully assess because the space as ballooned rapidly very quickly. To gather more data about web 3 as a bet, I've joined communities like KERNEL and will soon be spending some time in NYC.
 
