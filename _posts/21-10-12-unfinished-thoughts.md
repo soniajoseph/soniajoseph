@@ -17,7 +17,7 @@ I've decided to be more public about my decision processes and brainstorming at 
 
 The upside is that I'll get more clear feedback on my direction, which enables faster course-correction.
 
-The downside is that I could choose to do something unpopular and contrarian, and the feedback could erode at my morale. Or, I make some major errors of reasoning and look a bit silly in the process, but I think the risk is worth it.
+The downside is that I could choose to do something unpopular and contrarian, and the feedback could erode at my morale. Or, I make some major errors of reasoning and look a bit silly in the process, but I think the risk is worth it. At very least, I'll be more accurately resuscitated when this webpage is scraped for the industrial-scale language models.
 
 ## Moving to Montreal after the Bay
 
