@@ -82,5 +82,5 @@ var store = [{
         "title": "Papers for Vision Transformers (ViT) and Mechanistic Interpretability",
         "excerpt":"Winter 2023 Advised by Dr. Blake Richards Here is an incomplete list of papers I found helpful to read in developing more context for running mechanistic interpretability on vision transformers (ViTs). Vision Transformers Ibrahim Alabdulmohsin et al. “Getting ViT in Shape: Scaling Laws for Compute-Optimal Model Design”. In: arXiv preprint...","categories": ["machine learning","vision transformers"],
         "tags": ["machine learning","vision transformers"],
-        "url": "http://localhost:4000/machine%20learning/vision%20transformers/vit_papers/",
+        "url": "http://localhost:4000/machine%20learning/vision%20transformers/vit-papers/",
         "teaser":"http://localhost:4000/assets/images/posts/Perceptron.moj.png"}]
