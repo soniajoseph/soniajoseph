@@ -1,0 +1,988 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Semantic Similarity Search for Phrases - sonia joseph</title>
+<meta name="description" content="Matching similar phrases given two corpuses">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="sonia joseph">
+<meta property="og:title" content="Semantic Similarity Search for Phrases">
+<meta property="og:url" content="http://localhost:4000/machine%20learning/semantic-similarity-search-phrases/">
+
+
+  <meta property="og:description" content="Matching similar phrases given two corpuses">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/word2vec.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-26T00:00:00-08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/machine%20learning/semantic-similarity-search-phrases/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "sonia joseph",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="uJD9m5W7ULL26YeAM52w_INCl_vPQZsy7nheejxsi3w" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sonia joseph Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- matjax -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">sonia joseph</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/index" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/" >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/computational-neuroscience/" >Computational Neuroscience</a>
+            </li><li class="masthead__menu-item">
+              <a href="/unfinished-thoughts/" >Unfinished Thoughts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+  <div id="main" role="main">
+    <div style="background-color: #ffffff; text-align: center; padding: 10px; border-bottom: 2px solid red;">
+      <strong>Notice:</strong> This website is mostly outdated as of 2024. A new website is coming soon. Proceed with caution regarding earlier posts.
+    </div>
+
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        computer science<br>computational neuroscience<br>& machine learning
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Princeton, NJ</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://soniajoseph.github.io/about/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> About</a></li>
+          
+        
+          
+            <li><a href="https://medium.com/@soniamollyjoseph" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Medium</a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/soniamjoseph/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/soniajoseph" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:soniamollyjoseph@gmail.com">
+            <meta itemprop="email" content="soniamollyjoseph@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Semantic Similarity Search for Phrases">
+    <meta itemprop="description" content="Matching similar phrases given two corpuses">
+    <meta itemprop="datePublished" content="January 26, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+
+          <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+          <h1 id="page-title" class="page__title" itemprop="headline">Semantic Similarity Search for Phrases
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Word vector averaging is a way to find semantically similar sentences. The idea is simple: find the word embedding for each word using an algorithm like word2vec or GloVe, average the embeddings together to get a sentence vector, and match sentences with the most similar sentence vectors based off Euclidean distance or cosine similarity.</p>
+
+<p>I recently became interested in extending the idea to the phrase level. If we have two sentences, can we co-locate all the semantically similar phrases from each sentence?</p>
+
+<p>For example, if I have the following two sentences:</p>
+
+<blockquote>
+  <p>Sentence A:  Yucaipa owned Dominick’s before selling the chain to Safeway in 1998 for $2.5 billion.</p>
+
+  <p>Sentence B:  Yucaipa bought Dominick’s in 1995 for $693 million and sold it to Safeway for $1.8 billion in 1998.</p>
+</blockquote>
+
+<p>I want my algorithm to return similar phrases:</p>
+
+<blockquote>
+  <p>“Yucaipa owned Dominick’s” / “Yucapia bought Dominick’s”</p>
+
+  <p>“selling the chain to Safeway” / “sold it to Safeway”</p>
+
+  <p>“in 1998 for $2.5 billion” / “for $1.8 billion in 1998”</p>
+</blockquote>
+
+<p>To accomplish this, I wrote an algorithm with the following steps:</p>
+
+<p>1) Parse the sentence into phrases using a statistical dependency parser.</p>
+
+<p>2) Create a word vector average for each phrase using word2vec embeddings.</p>
+
+<p>3) Match the most similar phrases based off closest Euclidean distance between word vector averages.</p>
+
+<p>I’ve explained the steps with code in the blog post below, and you can find a Jupyter notebook <a href="https://github.com/soniajoseph/phrase-similarity">here</a>.</p>
+
+<h2 id="load-the-data">Load the data</h2>
+
+<p>Let’s test our algorithm on the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=52398">Microsoft Research Paraphrase Corpus</a>, which contains pairs of paraphrased sentences extracted from news articles. We’ll create a list of paraphrase lists:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+  <span class="s">'''
+  Function to get spacy model with medium neural net with the constituency parsing extension
+  described in "Constituency Parsing with a Self-Attentive Encoder" (2018)
+
+  Args:
+      n (int): Number of paraphrase pairs to load.
+
+  Returns:
+      new_list: A nested list of n paraphrase pairs.
+  '''</span>
+  <span class="n">target_url</span> <span class="o">=</span> <span class="s">'https://raw.githubusercontent.com/wasiahmad/paraphrase_identification/master/dataset/msr-paraphrase-corpus/msr_paraphrase_data.txt'</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">target_url</span><span class="p">):</span>
+      <span class="c1"># skip first sentence
+</span>      <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="k">continue</span>
+      <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="p">.</span><span class="n">decode</span><span class="p">()</span>
+      <span class="n">sentence</span> <span class="o">=</span>  <span class="n">re</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s">'\t+'</span><span class="p">,</span> <span class="n">sentence</span><span class="p">)</span>
+      <span class="n">data</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+      <span class="c1"># increment counter for number of data
+</span>      <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="p">:</span> <span class="k">break</span> 
+    <span class="c1"># turn into nested list
+</span>  <span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">new_list</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]])</span>
+
+  <span class="k">print</span><span class="p">(</span><span class="s">"Data loaded"</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">new_list</span>
+</code></pre></div></div>
+
+<p>We’ll also load a medium <a href="https://spacy.io/models">spaCy model</a> pretrained on English text:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_model</span><span class="p">():</span>
+  <span class="s">'''
+  Function to get spacy model with medium neural net.
+
+  Args:
+      None
+
+  Returns:
+      nlp: A loaded model with constituency parsing functionality.
+  '''</span>
+  <span class="n">nlp</span> <span class="o">=</span> <span class="n">en_core_web_md</span><span class="p">.</span><span class="n">load</span><span class="p">()</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"Model loaded"</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">nlp</span> 
+</code></pre></div></div>
+
+<h2 id="load-phrase-parser">Load phrase parser</h2>
+<p>The first step in solving this problem is parsing the sentences into phrases. We can use the Stanford Statistical Parser, which we can download <a href="https://nlp.stanford.edu/software/lex-parser.shtml">here</a> to create a dependency parser that turns our sentences into phrases based off pre-trained probabilistic dependencies.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">load_parser</span><span class="p">():</span>
+  <span class="s">'''
+  Function to load Stanford parser,
+
+  Args:
+      None
+
+  Returns:
+      parser: return parser object
+  '''</span>
+  <span class="n">path_exists</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">'/content/stanford-parser-full-2018-10-17'</span><span class="p">)</span> <span class="c1">## put your path to the downloaded parser here
+</span>  <span class="k">if</span> <span class="n">path_exists</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Load and configure StanfordParser"</span><span class="p">)</span>
+    <span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nlp</span><span class="p">.</span><span class="n">stanford</span><span class="p">.</span><span class="n">edu</span><span class="o">/</span><span class="n">software</span><span class="o">/</span><span class="n">stanford</span><span class="o">-</span><span class="n">parser</span><span class="o">-</span><span class="n">full</span><span class="o">-</span><span class="mi">2018</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mf">17.</span><span class="nb">zip</span>
+    <span class="err">!</span><span class="n">unzip</span> <span class="n">stanford</span><span class="o">-</span><span class="n">parser</span><span class="o">-</span><span class="n">full</span><span class="o">-</span><span class="mi">2018</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mf">17.</span><span class="nb">zip</span>
+
+  <span class="n">stanford_parser_dir</span> <span class="o">=</span> <span class="s">'/content/stanford-parser-full-2018-10-17'</span>
+  <span class="n">path_to_models</span> <span class="o">=</span> <span class="n">stanford_parser_dir</span>  <span class="o">+</span> <span class="s">"/stanford-parser-3.9.2-models.jar"</span>
+  <span class="n">path_to_jar</span> <span class="o">=</span> <span class="n">stanford_parser_dir</span>  <span class="o">+</span> <span class="s">"/stanford-parser.jar"</span>
+  <span class="n">parser</span><span class="o">=</span><span class="n">StanfordParser</span><span class="p">(</span><span class="n">path_to_models</span><span class="p">,</span> <span class="n">path_to_jar</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">parser</span>
+</code></pre></div></div>
+
+<p>Using the parser, we can create a tree traversal object so that we can load the sentences into the parser and then traverse the  tree to extract relevant phrases. The traversal object gathers both noun and prepositional phrases.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Traverse</span><span class="p">():</span>
+  <span class="s">'''
+  Traverse object to create trees to find noun phrases.
+  To use, call traverse_tree() with input from the StanfordParser
+  Then call the phrase_strings() function with self.phrases to get the noun phrases of
+  the input sentence.
+  '''</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">phrases</span> <span class="o">=</span> <span class="p">[]</span>
+    
+  <span class="k">def</span> <span class="nf">traverse_phrase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">,</span> <span class="n">phrases</span><span class="p">):</span> 
+      <span class="k">for</span> <span class="n">subtree</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
+          <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">subtree</span><span class="p">)</span> <span class="o">==</span> <span class="n">nltk</span><span class="p">.</span><span class="n">tree</span><span class="p">.</span><span class="n">Tree</span><span class="p">:</span>
+              <span class="bp">self</span><span class="p">.</span><span class="n">traverse_phrase</span><span class="p">(</span><span class="n">subtree</span><span class="p">,</span> <span class="n">phrases</span><span class="p">)</span>
+          <span class="k">else</span><span class="p">:</span>
+              <span class="n">phrases</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">subtree</span><span class="p">)</span>
+
+  <span class="c1"># traverse the tree to gather noun phrases and prepositional phrases
+</span>  <span class="k">def</span> <span class="nf">traverse_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+      <span class="k">for</span> <span class="n">subtree</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
+          <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">subtree</span><span class="p">)</span> <span class="o">==</span> <span class="n">nltk</span><span class="p">.</span><span class="n">tree</span><span class="p">.</span><span class="n">Tree</span><span class="p">:</span>
+              <span class="k">if</span> <span class="n">subtree</span><span class="p">.</span><span class="n">label</span><span class="p">()</span> <span class="o">==</span> <span class="s">'NP'</span> <span class="ow">or</span> <span class="n">subtree</span><span class="p">.</span><span class="n">label</span><span class="p">()</span> <span class="o">==</span> <span class="s">'PP'</span><span class="p">:</span>
+                  <span class="bp">self</span><span class="p">.</span><span class="n">traverse_phrase</span><span class="p">(</span><span class="n">subtree</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">phrases</span><span class="p">)</span>
+                  <span class="bp">self</span><span class="p">.</span><span class="n">phrases</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+              <span class="k">else</span> <span class="p">:</span>
+                  <span class="bp">self</span><span class="p">.</span><span class="n">traverse_tree</span><span class="p">(</span><span class="n">subtree</span><span class="p">)</span>
+
+  <span class="c1"># put noun phrases in list
+</span>  <span class="k">def</span> <span class="nf">phrase_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phrase_list</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s">" "</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">phrase_list</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<h2 id="lets-write-a-function-to-calculate-a-semantic-measure-for-the-phrase">Let’s write a function to calculate a semantic measure for the phrase.</h2>
+
+<p>Now we need a metric to calculate the semantic measure of each phrase. I calculate the word vector of each word of the phrase and then average the words together. Notably, I did not normalize the word vectors before averaging because the different lengths give rise to a weighted average, which <a href="https://arxiv.org/pdf/1805.09209.pdf">Arefyev et al suggests is more accurate</a>.</p>
+
+<p>While research regarding weighted vs unweighted word vector averages is scarce, one theory is that infrequent words are correlated with longer word vectors. Infrequent words may be more poorly represented by the embedding, which is based off distributional frequency, and so having a larger value in the total average may make the overall phrase vector more accurate.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">wva</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="s">'''
+    Finds document vector through an average of each word's vector.
+
+    Args: 
+      string (str): Input sentence
+
+    Returns:
+      array: Word vector average
+    '''</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="n">wvs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="n">doc</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vector</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">doc</span><span class="p">))])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">wvs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<p>Now we will calculate the phrases with the greatest semantic similarity. The most common measures of semantic similarity are cosine similarity and Euclidean distance. Perhaps unconventionally, I chose the latter in order to capture the information in the word average lengths, which Arefyez et al. suggest is significant in representing word frequency.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">match_wv_pair</span><span class="p">(</span><span class="n">phrasesA</span><span class="p">,</span> <span class="n">phrasesB</span><span class="p">):</span>
+  <span class="s">'''
+  Takes two lists of phrases from one sentence each and finds the smallest Euclidean distance for each pair's word vector (non-exclusive).
+
+  Args:
+  phraseA (list of str): List of parsed phrases from or sentence A
+  phraseB (list of str): List of parsed phrases from sentence B to compare with sentence A 
+
+  Returns:
+  matches (list of str): Returns list of matches between the two phrase (surjectively, i.e. multiple phrases can have the same match).
+
+  '''</span>
+  <span class="c1"># get word vectors
+</span>  <span class="n">wva_a</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">wva_b</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">phrasesA</span><span class="p">:</span>
+    <span class="n">wva_a</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">wva</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">phrasesB</span><span class="p">:</span>
+    <span class="n">wva_b</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">wva</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+
+  <span class="c1"># swap so that shortest is on the outer for loop
+</span>  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">wva_a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">wva_b</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">wva_a</span>
+    <span class="n">wva_a</span> <span class="o">=</span> <span class="n">wva_b</span>
+    <span class="n">wva_b</span> <span class="o">=</span> <span class="n">temp</span>
+
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">phrasesA</span>
+    <span class="n">phrasesA</span> <span class="o">=</span> <span class="n">phrasesB</span>
+    <span class="n">phrasesB</span> <span class="o">=</span> <span class="n">temp</span>
+
+  <span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wva_a</span><span class="p">)):</span>
+    <span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wva_b</span><span class="p">)):</span>
+      <span class="n">distances</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">wva_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">wva_b</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+      <span class="c1"># indices_total.append(np.argsort(distances)[0])
+</span>    <span class="n">matches</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"Sentence A: "</span> <span class="o">+</span> <span class="n">phrasesA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s"> Sentence B:"</span> <span class="o">+</span> <span class="n">phrasesB</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">distances</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s"> Euclidean Distance:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">distances</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">matches</span>
+</code></pre></div></div>
+
+<h2 id="run-the-final-function">Run the final function</h2>
+
+<p>Finally, I wrote a function that runs the functions above: take in our data and parser, parse the sentences into phrases, turn the phrases into word vector averages, then match word vector averages based on Euclidean distance. The function prints out semantically similar phrases for each paraphrase-pair of the original dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">find_similar_phrases</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
+  <span class="s">'''
+  Uses Traverse object to create phrase trees of each sentence, then recurses through tree to collect noun phrases.
+
+  Args: 
+  string (list of strings): List of string lists in the format [[a,b],[c,d]] to find similarity between each pair.
+
+  Returns:
+  Nothing (prints out original sentences, a phrases, b phrases, matching phrases, and their Euclidean distance)
+  '''</span>
+  <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Original sentences:"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Sentence A: "</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Sentence B: "</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">()</span>
+
+    <span class="n">ta</span> <span class="o">=</span> <span class="n">Traverse</span><span class="p">()</span>
+    <span class="n">phrasesA</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">raw_parse</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">ta</span><span class="p">.</span><span class="n">traverse_tree</span><span class="p">(</span><span class="n">phrasesA</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">ta</span><span class="p">.</span><span class="n">phrases</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">ta</span><span class="p">.</span><span class="n">phrase_strings</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="n">tb</span> <span class="o">=</span> <span class="n">Traverse</span><span class="p">()</span>
+    <span class="n">phrasesB</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">raw_parse</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">tb</span><span class="p">.</span><span class="n">traverse_tree</span><span class="p">(</span><span class="n">phrasesB</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">tb</span><span class="p">.</span><span class="n">phrases</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">tb</span><span class="p">.</span><span class="n">phrase_strings</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="s">"A phrases:"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"B phrases:"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">()</span>
+
+    <span class="n">matches</span> <span class="o">=</span> <span class="n">match_wv_pair</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Similar phrases:"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The function returns:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">Original</span> <span class="n">sentences</span><span class="p">:</span>
+<span class="n">Sentence</span> <span class="n">A</span><span class="p">:</span>  <span class="n">Yucaipa</span> <span class="n">owned</span> <span class="n">Dominick</span><span class="s">'s before selling the chain to Safeway in 1998 for $2.5 billion.
+Sentence B:  Yucaipa bought Dominick'</span><span class="n">s</span> <span class="ow">in</span> <span class="mi">1995</span> <span class="k">for</span> <span class="err">$</span><span class="mi">693</span> <span class="n">million</span> <span class="ow">and</span> <span class="n">sold</span> <span class="n">it</span> <span class="n">to</span> <span class="n">Safeway</span> <span class="k">for</span> <span class="err">$</span><span class="mf">1.8</span> <span class="n">billion</span> <span class="ow">in</span> <span class="mf">1998.</span>
+
+<span class="n">A</span> <span class="n">phrases</span><span class="p">:</span> <span class="p">[</span><span class="s">'Yucaipa'</span><span class="p">,</span> <span class="s">'Dominick'</span><span class="p">,</span> <span class="s">'before selling the chain to Safeway in 1998 for $ 2.5 billion'</span><span class="p">]</span>
+<span class="n">B</span> <span class="n">phrases</span><span class="p">:</span> <span class="p">[</span><span class="s">'Yucaipa'</span><span class="p">,</span> <span class="s">"Dominick 's in 1995"</span><span class="p">,</span> <span class="s">'for $ 693 million'</span><span class="p">,</span> <span class="s">'it'</span><span class="p">,</span> <span class="s">'to Safeway'</span><span class="p">,</span> <span class="s">'for $ 1.8 billion in 1998'</span><span class="p">]</span>
+
+<span class="n">Similar</span> <span class="n">phrases</span><span class="p">:</span>
+<span class="n">Sentence</span> <span class="n">A</span><span class="p">:</span> <span class="n">Yucaipa</span>
+<span class="n">Sentence</span> <span class="n">B</span><span class="p">:</span><span class="n">Yucaipa</span>
+<span class="n">Euclidean</span> <span class="n">Distance</span><span class="p">:</span><span class="mf">0.0</span>
+
+<span class="n">Sentence</span> <span class="n">A</span><span class="p">:</span> <span class="n">Dominick</span>
+<span class="n">Sentence</span> <span class="n">B</span><span class="p">:</span> <span class="n">Dominick</span> <span class="s">'s in 1995
+Euclidean Distance:5.5339174
+
+Sentence A: before selling the chain to Safeway in 1998 for $ 2.5 billion
+Sentence B: for $ 1.8 billion in 1998
+Euclidean Distance: 2.0490212
+
+
+Original sentences:
+Sentence A:  They had published an advertisement on the Internet on June 10, offering the cargo for sale, he added.
+Sentence B:  On June 10, the ship'</span><span class="n">s</span> <span class="n">owners</span> <span class="n">had</span> <span class="n">published</span> <span class="n">an</span> <span class="n">advertisement</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Internet</span><span class="p">,</span> <span class="n">offering</span> <span class="n">the</span> <span class="n">explosives</span> <span class="k">for</span> <span class="n">sale</span><span class="p">.</span>
+
+<span class="n">A</span> <span class="n">phrases</span><span class="p">:</span> <span class="p">[</span><span class="s">'They'</span><span class="p">,</span> <span class="s">'an advertisement on the Internet on June 10'</span><span class="p">,</span> <span class="s">'the cargo for sale'</span><span class="p">,</span> <span class="s">'he'</span><span class="p">]</span>
+<span class="n">B</span> <span class="n">phrases</span><span class="p">:</span> <span class="p">[</span><span class="s">'On June 10'</span><span class="p">,</span> <span class="s">"the ship 's owners"</span><span class="p">,</span> <span class="s">'an advertisement on the Internet'</span><span class="p">,</span> <span class="s">'the explosives'</span><span class="p">,</span> <span class="s">'for sale'</span><span class="p">]</span>
+
+<span class="n">Similar</span> <span class="n">phrases</span><span class="p">:</span>
+<span class="n">Sentence</span> <span class="n">A</span><span class="p">:</span> <span class="n">They</span>
+<span class="n">Sentence</span> <span class="n">B</span><span class="p">:</span> <span class="n">the</span> <span class="n">ship</span> <span class="s">'s owners
+Euclidean Distance: 4.217091
+
+Sentence A: an advertisement on the Internet on June 10
+Sentence B: an advertisement on the Internet
+Euclidean Distance: 1.383867
+
+Sentence A: the cargo for sale
+Sentence B: for sale
+Euclidean Distance: 2.6837785
+
+Sentence A: he
+Sentence B: the ship '</span><span class="n">s</span> <span class="n">owners</span>
+<span class="n">Euclidean</span> <span class="n">Distance</span><span class="p">:</span><span class="mf">5.162956</span>
+</code></pre></div></div>
+
+<p>To improve the function, we could train a dependency parser on the corpus to extract better phrases. We could also experiment with other ways of traversing the existing tree and trying other similarity measures, including cosine similarity, Mahalanobis distance, and relaxed word mover’s distance.</p>
+
+<p>I am also interested in experimenting with accuracy in normalized vs. unnormalized word vector averages and the relationship between vector length and word frequency.</p>
+
+<p>I hope this tutorial was helpful to you! The full code for this post is available on Github <a href="https://github.com/soniajoseph/phrase-similarity">here</a>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#natural-language-processing" class="page__taxonomy-item" rel="tag">natural language processing</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#projects" class="page__taxonomy-item" rel="tag">projects</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-26T00:00:00-08:00">January 26, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Semantic+Similarity+Search+for+Phrases%20http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fsemantic-similarity-search-phrases%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fsemantic-similarity-search-phrases%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fsemantic-similarity-search-phrases%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/pruning/" class="pagination--pager" title="Experiments in Pruning
+">Previous</a>
+    
+    
+      <a href="/blog/deep-learning-neuro/" class="pagination--pager" title="Ideas for the deep learning framework in neuroscience
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/vision%20transformers/prisma/" rel="permalink">Papers for Vision Transformers (ViT) and Mechanistic Interpretability
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> March 11, 2024 <br> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Papers that give context when exploring mechanistic interpretability on vision transformers.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/unfinished-thoughts/unfinished-thoughts/" rel="permalink">Update 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> October 12, 2021 <br> 
+
+
+
+
+  6 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Thoughts on Montreal after the Bay Area
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/caropticflow.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/deep%20learning/neuroscience/optic-flow-pwc-net/" rel="permalink">Optic Flow and PWC-Net
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> January 10, 2021 <br> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Presentation on optic flow, PWC-Net, and a possible application to birds and mice for Janelia
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/neuralnet.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/meta-learning-research-overview/" rel="permalink">Meta-learning Research Overview and Paper Group
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> December 01, 2020 <br> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Research overview of meta-learning by researcher and institution.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 sonia joseph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/machine%20learning/semantic-similarity-search-phrases/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/machine%20learning/semantic-similarity-search-phrases"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sonia-joseph.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

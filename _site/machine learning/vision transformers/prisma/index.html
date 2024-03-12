@@ -1,0 +1,721 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Papers for Vision Transformers (ViT) and Mechanistic Interpretability - sonia joseph</title>
+<meta name="description" content="Papers that give context when exploring mechanistic interpretability on vision transformers.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="sonia joseph">
+<meta property="og:title" content="Papers for Vision Transformers (ViT) and Mechanistic Interpretability">
+<meta property="og:url" content="http://localhost:4000/machine%20learning/vision%20transformers/prisma/">
+
+
+  <meta property="og:description" content="Papers that give context when exploring mechanistic interpretability on vision transformers.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/Perceptron.moj.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-03-11T00:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/machine%20learning/vision%20transformers/prisma/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "sonia joseph",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="uJD9m5W7ULL26YeAM52w_INCl_vPQZsy7nheejxsi3w" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sonia joseph Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- matjax -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">sonia joseph</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/index" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/" >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/computational-neuroscience/" >Computational Neuroscience</a>
+            </li><li class="masthead__menu-item">
+              <a href="/unfinished-thoughts/" >Unfinished Thoughts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+  <div id="main" role="main">
+    <div style="background-color: #ffffff; text-align: center; padding: 10px; border-bottom: 2px solid red;">
+      <strong>Notice:</strong> This website is mostly outdated as of 2024. A new website is coming soon. Proceed with caution regarding earlier posts.
+    </div>
+
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        computer science<br>computational neuroscience<br>& machine learning
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Princeton, NJ</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://soniajoseph.github.io/about/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> About</a></li>
+          
+        
+          
+            <li><a href="https://medium.com/@soniamollyjoseph" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Medium</a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/soniamjoseph/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/soniajoseph" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:soniamollyjoseph@gmail.com">
+            <meta itemprop="email" content="soniamollyjoseph@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Papers for Vision Transformers (ViT) and Mechanistic Interpretability">
+    <meta itemprop="description" content="Papers that give context when exploring mechanistic interpretability on vision transformers.">
+    <meta itemprop="datePublished" content="March 11, 2024">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+
+          <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+          <h1 id="page-title" class="page__title" itemprop="headline">Papers for Vision Transformers (ViT) and Mechanistic Interpretability
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Winter 2023<br />
+Advised by Dr. Blake Richards</p>
+
+<p>Here is an incomplete list of papers I found helpful to read in developing more context for running mechanistic interpretability on vision transformers (ViTs).</p>
+
+<h2 id="vision-transformers">Vision Transformers</h2>
+
+<ol>
+  <li>Ibrahim Alabdulmohsin et al. <a href="https://arxiv.org/pdf/2305.13035.pdf">“Getting ViT in Shape: Scaling Laws for Compute-Optimal Model Design”</a>. In: <em>arXiv preprint arXiv:2305.13035</em> (2023).</li>
+  <li>Timothée Darcet et al. <a href="https://arxiv.org/pdf/2309.16588.pdf">“Vision transformers need registers”</a>. In: <em>arXiv preprint arXiv:2309.16588</em> (2023).</li>
+  <li>Alexey Dosovitskiy et al. <a href="https://openreview.net/pdf?id=YicbFdNTTy">“An image is worth 16x16 words: Transformers for image recognition at scale”</a>. In: <em>arXiv preprint arXiv:2010.11929</em> (2020).</li>
+  <li>Salman Khan et al. <a href="https://arxiv.org/pdf/2101.01169.pdf">“Transformers in vision: A survey”</a>. In: <em>ACM computing surveys (CSUR)</em> 54.10s (2022), pp. 1–41.</li>
+  <li>Muhammad Muzammal Naseer et al. <a href="https://openreview.net/pdf?id=o2mbl-Hmfgd">“Intriguing properties of vision transformers”</a>. In: <em>Advances in Neural Information Processing Systems</em> 34 (2021), pp. 23296–23308.</li>
+  <li>Maithra Raghu et al. <a href="https://arxiv.org/pdf/2108.08810.pdf">“Do vision transformers see like convolutional neural networks?”</a>. In: <em>Advances in Neural Information Processing Systems</em> 34 (2021), pp. 12116–12128.</li>
+  <li>Daquan Zhou et al. <a href="https://proceedings.mlr.press/v162/zhou22m/zhou22m.pdf">“Understanding the robustness in vision transformers”</a>. In: <em>International Conference on Machine Learning. PMLR.</em> 2022, pp. 27378–27394.</li>
+</ol>
+
+<h2 id="feature-visualization-and-interpretability">Feature Visualization and Interpretability</h2>
+
+<ol>
+  <li>Shan Carter et al. <a href="https://distill.pub/2019/activation-atlas/">“Exploring neural networks with activation atlases”</a>. In: <em>Distill.</em> (2019).</li>
+  <li>Haozhe Chen et al. <a href="https://arxiv.org/pdf/2310.10591.pdf">“Interpreting and Controlling Vision Foundation Models via Text Explanations”</a>. In: <em>arXiv preprint arXiv:2310.10591</em> (2023).</li>
+  <li>Yossi Gandelsman, Alexei A Efros, and Jacob Steinhardt. <a href="https://arxiv.org/pdf/2310.05916.pdf">“Interpreting CLIP’s Image Representation via Text-Based Decomposition”</a>. In: <em>arXiv preprint arXiv:2310.05916</em> (2023).</li>
+  <li>Robert Geirhos et al. <a href="https://arxiv.org/pdf/2306.04719.pdf">“Don’t trust your eyes: on the (un) reliability of feature visualizations”</a>. In: <em>arXiv preprint arXiv:2306.04719</em> (2023).</li>
+</ol>
+
+<h2 id="mechanistic-interpretability">Mechanistic Interpretability</h2>
+
+<ol>
+  <li>Kumar K Agrawal et al. <a href="https://arxiv.org/pdf/2304.14997.pdf">“α-ReQ: Assessing Representation Quality in Self-Supervised Learning by measuring eigenspectrum decay”</a>. In: <em>Advances in Neural Information Processing Systems</em> 35 (2022), pp. 17626–17638.</li>
+  <li>Trenton Bricken et al. <a href="https://transformer-circuits.pub/2023/monosemantic-features/index.html">“Towards monosemanticity: Decomposing language models with dictionary learning”</a>. Transformer Circuits Thread, 2023.</li>
+  <li>Arthur Conmy et al. <a href="https://arxiv.org/pdf/2209.10652.pdf">“Towards automated circuit discovery for mechanistic interpretability”</a>. In: <em>arXiv preprint arXiv:2304.14997</em> (2023).</li>
+  <li>Nelson Elhage et al. <a href="https://transformer-circuits.pub/2021/framework/index.html">“A mathematical framework for transformer circuits”</a>. In: Transformer Circuits Thread 1 (2021).</li>
+  <li>Nelson Elhage et al. <a href="https://arxiv.org/ftp/arxiv/papers/2209/2209.10652.pdf">“Toy models of superposition”</a>. In: <em>arXiv preprint arXiv :2209.10652</em> (2022).</li>
+  <li>Kevin Wang et al. <a href="https://openreview.net/pdf?id=NpsVSN6o4ul">“Interpretability in the wild: a circuit for indirect object identification in gpt-2 small”</a>. In: <em>arXiv preprint arXiv:2211.00593</em> (2022).</li>
+</ol>
+
+<h2 id="training-dynamics-and-phase-transitions">Training Dynamics and Phase Transitions</h2>
+
+<ol>
+  <li>Eric J Michaud et al. <a href="https://arxiv.org/pdf/2303.13506.pdf">“The quantization model of neural scaling”</a>. In: <em>arXiv preprint arXiv:2303.13506</em> (2023).</li>
+  <li>Neel Nanda et al. <a href="https://arxiv.org/pdf/2301.05217.pdf">“Progress measures for grokking via mechanistic interpretability”</a>. In: <em>arXiv preprint arXiv:2301.05217</em> (2023).</li>
+  <li>Catherine Olsson et al. <a href="https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html">“In-context learning and induction heads”</a>. In: <em>arXiv preprint arXiv:2209.11895</em> (2022).</li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#vision-transformers" class="page__taxonomy-item" rel="tag">vision transformers</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#vision-transformers" class="page__taxonomy-item" rel="tag">vision transformers</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-03-11T00:00:00-07:00">March 11, 2024</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Papers+for+Vision+Transformers+%28ViT%29+and+Mechanistic+Interpretability%20http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fvision%2520transformers%2Fprisma%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fvision%2520transformers%2Fprisma%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmachine%2520learning%2Fvision%2520transformers%2Fprisma%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/unfinished-thoughts/unfinished-thoughts/" class="pagination--pager" title="Update 1
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/unfinished-thoughts/unfinished-thoughts/" rel="permalink">Update 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> October 12, 2021 <br> 
+
+
+
+
+  6 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Thoughts on Montreal after the Bay Area
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/caropticflow.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/deep%20learning/neuroscience/optic-flow-pwc-net/" rel="permalink">Optic Flow and PWC-Net
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> January 10, 2021 <br> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Presentation on optic flow, PWC-Net, and a possible application to birds and mice for Janelia
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/neuralnet.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/meta-learning-research-overview/" rel="permalink">Meta-learning Research Overview and Paper Group
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> December 01, 2020 <br> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Research overview of meta-learning by researcher and institution.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/rl.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/projects/nlp-journal-club/" rel="permalink">Fall 2020 NLP Journal Club: Apply to Join!
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> August 15, 2020 <br> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Founding a Deep NLP journal club for women in AI.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 sonia joseph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/machine%20learning/vision%20transformers/prisma/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/machine%20learning/vision%20transformers/prisma"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sonia-joseph.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

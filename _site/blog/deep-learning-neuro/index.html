@@ -1,0 +1,777 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Ideas for the deep learning framework in neuroscience - sonia joseph</title>
+<meta name="description" content="On accounting for billions+ of parameters and nonlinearities">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="sonia joseph">
+<meta property="og:title" content="Ideas for the deep learning framework in neuroscience">
+<meta property="og:url" content="http://localhost:4000/blog/deep-learning-neuro/">
+
+
+  <meta property="og:description" content="On accounting for billions+ of parameters and nonlinearities">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/deepdream.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-04-29T00:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/blog/deep-learning-neuro/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "sonia joseph",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="uJD9m5W7ULL26YeAM52w_INCl_vPQZsy7nheejxsi3w" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sonia joseph Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- matjax -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">sonia joseph</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/index" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/" >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/computational-neuroscience/" >Computational Neuroscience</a>
+            </li><li class="masthead__menu-item">
+              <a href="/unfinished-thoughts/" >Unfinished Thoughts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+  <div id="main" role="main">
+    <div style="background-color: #ffffff; text-align: center; padding: 10px; border-bottom: 2px solid red;">
+      <strong>Notice:</strong> This website is mostly outdated as of 2024. A new website is coming soon. Proceed with caution regarding earlier posts.
+    </div>
+
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        computer science<br>computational neuroscience<br>& machine learning
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Princeton, NJ</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://soniajoseph.github.io/about/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> About</a></li>
+          
+        
+          
+            <li><a href="https://medium.com/@soniamollyjoseph" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Medium</a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/soniamjoseph/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/soniajoseph" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:soniamollyjoseph@gmail.com">
+            <meta itemprop="email" content="soniamollyjoseph@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Ideas for the deep learning framework in neuroscience">
+    <meta itemprop="description" content="On accounting for billions+ of parameters and nonlinearities">
+    <meta itemprop="datePublished" content="April 29, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+
+          <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+          <h1 id="page-title" class="page__title" itemprop="headline">Ideas for the deep learning framework in neuroscience
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#the-goal-driven-technique">The Goal-Driven Technique</a></li>
+  <li><a href="#potential-research-directions">Potential Research Directions</a>
+    <ul>
+      <li><a href="#sparsity">Sparsity</a></li>
+      <li><a href="#movies-environments-and-naturalistic-vision">Movies, Environments, and Naturalistic Vision</a></li>
+      <li><a href="#intermediate-gabor-patches">Intermediate “Gabor Patches”</a></li>
+      <li><a href="#ventrolateral-pfc-in-object-recognition">Ventrolateral PFC in Object Recognition</a></li>
+      <li><a href="#mapping-out-architecture-space-capsulenets">Mapping Out Architecture Space: CapsuleNets</a></li>
+      <li><a href="#performance-and-predictiveness-the-upside-down-u-shape">Performance and Predictiveness: the Upside-Down U-shape</a></li>
+      <li><a href="#integration-with-energy-based-models">Integration with Energy-Based Models</a></li>
+    </ul>
+  </li>
+  <li><a href="#more-resources">More Resources</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>Broadly speaking, computational neuroscience can be divided into two camps: models that analyze neural data, and models whose structure mathematically imitates that of the brain. The latter fascinates me, acting as a proof-of-concept for various facets of intelligence. And so it is unsuprising that my encounter with neural nets in college sent me away from molecular neuroscience and deep into foundational AI.</p>
+
+<h1 id="the-goal-driven-technique">The Goal-Driven Technique</h1>
+
+<p>One technique that falls into this latter camp is the “goal-driven”, or “normative” deep learning method. Instead of fitting your deep learning model directly to neural data, you train the model on a task that the neural substrate performs. Then, you compare the internal representations between the artificial model with the neural data. If the internal representations correlate throughout the model, then your model may be biologically plausible.</p>
+
+<p>For example, if I wanted to understand the visual stream, I could train a deep CNN to recognize images. Then, I could compare the representations throughout the layers of that artificial neural net to neuron responses in the hierarchy of a macaque visual stream. Because the same problem only has so many solutions, certain artificial neural nets will find a solution that is mathematically analogous to that of the biological visual stream.</p>
+
+<p>This approach has a major advantage over past methods in that the researcher does not have to manually set the parameters of the model. Rather, the parameters emerge organically after optimizing the model to perform a given task. And perhaps most importantly, not only do the outputs of the model correlate with its biological counterpart; the internal representations of the model also match the biology, without any explicit training on neural data. The model is not a black-box: it is interpretable, in that layers of the CNN <a href="https://www.pnas.org/content/111/23/8619">map onto layers of the biological visual stream in terms of predictivity</a>.</p>
+
+<p>We can examine these task-optimized artificial neural nets further. Perhaps they are similar to the brain in ways that are hard to study in a wet lab, and so they can act as inexpensive models for “virtual” lesion and electrophysiology studies.</p>
+
+<p>Of course, we must also exercise caution– neural nets and the brain are complex systems, so vastly different internal configurations can lead to the same final outcome. However, with the correct interpretation, this method will lead to rapid advances in our understanding of the brain.</p>
+
+<p>Below I’ve compiled a list of potential research directions in which to take the goal-driven method.</p>
+
+<h1 id="potential-research-directions">Potential Research Directions</h1>
+
+<h2 id="sparsity">Sparsity</h2>
+
+<p>It is well-known that representations in the brain are highly <a href="https://pubmed.ncbi.nlm.nih.gov/22579264/">sparse</a>. The <a href="https://arxiv.org/pdf/1803.03635.pdf">Lottery Ticket Hypothesis</a>, written more about <a href="https://soniajoseph.github.io/pruning/">here</a>, shows that neural nets can retain most of their accuracy depite losing 99% of their weights. Thus fascinating questions arise whether neural pruning mechanisms like <a href="https://pubmed.ncbi.nlm.nih.gov/21778362/">microglia</a> can be modeled by sparsifying artificial neural nets.</p>
+
+<h2 id="movies-environments-and-naturalistic-vision">Movies, Environments, and Naturalistic Vision</h2>
+
+<p>Image datasets are limited in that they do not approximate naturalistic vision, which operates in a 3D environment through time. To give rise to maximally biologically-plausible architectures, it is likely that the model will have to be optimized to recognize objects in a 3D environment that it can interact with. Recent research shows that <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhuang_Unsupervised_Learning_From_Video_With_Deep_Neural_Embeddings_CVPR_2020_paper.pdf">unsupervised learning on video is a promising approach</a>.</p>
+
+<p>More broadly, I suspect that unsupervised methods like <a href="https://arxiv.org/abs/2002.05709">SimCLR</a> will become default when using the goal-driven method. Unsupervised methods do not need langauage, as organisms do not necessarily need language to learn categories.</p>
+
+<h2 id="intermediate-gabor-patches">Intermediate “Gabor Patches”</h2>
+
+<figure>
+  <img src="/assets/images/posts/deepdream.png" />
+  <figcaption>[Source](https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html).</figcaption>
+</figure>
+
+<p>Applying gradient descent (<a href="https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html">“DeepDream”</a>) on the original image is one method to visualize the stimulus that maximally activates a given neuron of an artificial neural net. Just as Gabor patches drive neural activity in the early layers of the biological visual stream, can visualizations like the one above drive neural activity in intermediate layers of the model’s biological counterpart?</p>
+
+<h2 id="ventrolateral-pfc-in-object-recognition">Ventrolateral PFC in Object Recognition</h2>
+
+<p>The role of the PFC in object recognition is poorly understood, but the area is suspected to encode <a href="https://www.researchgate.net/publication/12122406_Freedman_DJ_Riesenhuber_M_Poggio_T_Miller_EK_Categorical_representation_of_visual_stimuli_in_the_primate_prefrontal_cortex_Science_291_312-316">behaviorally relevant information about the object</a>. Some evidence suggests that the ventrolateral prefrontal cortex (vlPFC) is involved in top-down processes that <a href="https://pubmed.ncbi.nlm.nih.gov/17071109/">aid object recognition</a> and contain <a href="https://psycnet.apa.org/record/1999-03885-004">small populations of domain-specific neurons sensitive to eyes, faces, and words</a>.</p>
+
+<p>One idea is measuring neural response in the vlPFC to an artificial neural net trained on images. We can then manipulate the stimuli to measure activations in the vlPFC. If our goal-driven model is predictive of responses, we can check whether the intermediate layers are also predictive of IT, V4, V2, and V1, in line with the <a href="https://www.pnas.org/content/111/23/8619">original findings for the IT</a>.</p>
+
+<p><em>Read more about using goal-driven neural nets on the prefrontal cortex <a href="https://soniajoseph.github.io/computational%20neuroscience/deep-learning-models-prefrontal-cortex/">here</a></em>.</p>
+
+<h2 id="mapping-out-architecture-space-capsulenets">Mapping Out Architecture Space: CapsuleNets</h2>
+
+<p>Which neural net architectures have the highest predictivity of neural response? Is the architecture biologically plausible?</p>
+
+<p>One interesting candidate is CapsuleNets. <a href="https://www.pnas.org/content/111/23/8619">Previous studies</a> focus on comparing the internal representation of CNNs to that of the visual stream. However, in failing to encode the spatial relationships between features, CNNs lose biological plausibility. Hinton et al created <a href="https://arxiv.org/abs/1710.09829">CapsuleNets</a> as one candidate for a more biologically plausible model.</p>
+
+<p>It’s possible that the activity vectors and dynamic routing of CapsuleNets provide a more biologically plausible mechanism than the normalization, pooling, thresholding, and convolutions of CNNs. One promising avenue is using the goal-driven method to compare the the similarity between task-optimized CapsuleNets and CNNs to biological neural responses. If CapsuleNets are more predictive of neural response, that may speak favorably for their biological plausibility.</p>
+
+<h2 id="performance-and-predictiveness-the-upside-down-u-shape">Performance and Predictiveness: the Upside-Down U-shape</h2>
+
+<p>Artificial neural nets do not necessarily face the same biological constraints as brains. One example may be an architecture like ResNets, which improves image classification performance but may not be biologically plausible with its long skip-connections.</p>
+
+<p>Thus it is not surprising that the top-performing neural nets on image classification <a href="https://paperswithcode.com/sota/image-classification-on-imagenet">surpass human-level performance</a>. One hypothesis is that the relationship between performance on image classification and predictivity of neural activity follows an upside-down U-shape. Neural nets that are better at image classification will correlate more strongly with IT response– until an inflection point, when the neural net will surpass biological limitations. From thereon I expect that the correlation to IT response will decrease.</p>
+
+<h2 id="integration-with-energy-based-models">Integration with Energy-Based Models</h2>
+
+<p>Long used as <a href="https://bi.snu.ac.kr/Courses/g-ai09-2/hopfield82.pdf">models for associative memory</a>, energy-based models like Boltzmann machines and Hopfield networks are <a href="https://arxiv.org/abs/2008.02217">slowly making a comeback in modern deep learning</a>. It would be interesting to examine hybrids between deep learning models and energy-based models as biologically plausible candidates.</p>
+
+<h1 id="more-resources">More Resources</h1>
+
+<p>Some good overviews of the goal-driven paradigm are <a href="https://www.nature.com/articles/nn.4244">this original 2014 paper</a>, and <a href="https://oxfordre.com/neuroscience/view/10.1093/acrefore/9780190264086.001.0001/acrefore-9780190264086-e-46">this 2019 overview</a>.</p>
+
+<p>The technique is flourishing in computational neuroscience labs across the world, so I will be missing many labs if I merely listed the ones I knew.</p>
+
+<p>If you’re looking for a more detailed, hands-on introduction to goal-driven neural nets, Carsen Stringer’s <a href="https://github.com/NeuromatchAcademy/course-content/blob/master/tutorials/W3D4_DeepLearning1/W3D4_Tutorial3.ipynb">Jupyter notebook</a> under Neuromatch Academy is an unrivaled resource. Other notebooks in the series also include detailed tutorials on the basics of machine learning and PyTorch.</p>
+
+<p>Please message me if you would like to chat or collaborate in the future on any of these ideas (or none!).</p>
+
+<p><em>Note: Citations updated on July 2020.</em></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#computational-neuroscience" class="page__taxonomy-item" rel="tag">computational neuroscience</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#deep-learning" class="page__taxonomy-item" rel="tag">deep learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#neuroscience" class="page__taxonomy-item" rel="tag">neuroscience</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-04-29T00:00:00-07:00">April 29, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Ideas+for+the+deep+learning+framework+in+neuroscience%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fdeep-learning-neuro%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fdeep-learning-neuro%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fdeep-learning-neuro%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/machine%20learning/semantic-similarity-search-phrases/" class="pagination--pager" title="Semantic Similarity Search for Phrases
+">Previous</a>
+    
+    
+      <a href="/machine%20learning/emergence/" class="pagination--pager" title="Emergence: A Library of Hopfield Networks
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/vision%20transformers/prisma/" rel="permalink">Papers for Vision Transformers (ViT) and Mechanistic Interpretability
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> March 11, 2024 <br> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Papers that give context when exploring mechanistic interpretability on vision transformers.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/unfinished-thoughts/unfinished-thoughts/" rel="permalink">Update 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> October 12, 2021 <br> 
+
+
+
+
+  6 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Thoughts on Montreal after the Bay Area
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/caropticflow.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/deep%20learning/neuroscience/optic-flow-pwc-net/" rel="permalink">Optic Flow and PWC-Net
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> January 10, 2021 <br> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Presentation on optic flow, PWC-Net, and a possible application to birds and mice for Janelia
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/neuralnet.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/meta-learning-research-overview/" rel="permalink">Meta-learning Research Overview and Paper Group
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> December 01, 2020 <br> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Research overview of meta-learning by researcher and institution.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 sonia joseph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/blog/deep-learning-neuro/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/blog/deep-learning-neuro"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sonia-joseph.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

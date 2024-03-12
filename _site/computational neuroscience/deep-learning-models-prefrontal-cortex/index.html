@@ -1,0 +1,829 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Deep Learning Models for the Prefontal Cortex in Object Recognition - sonia joseph</title>
+<meta name="description" content="A hypothetical proposal to model object categorization in the prefrontal cortex with the goal-driven neural network paradigm.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="sonia joseph">
+<meta property="og:title" content="Deep Learning Models for the Prefontal Cortex in Object Recognition">
+<meta property="og:url" content="http://localhost:4000/computational%20neuroscience/deep-learning-models-prefrontal-cortex/">
+
+
+  <meta property="og:description" content="A hypothetical proposal to model object categorization in the prefrontal cortex with the goal-driven neural network paradigm.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/yamins-dicarlo.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2019-07-01T00:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/computational%20neuroscience/deep-learning-models-prefrontal-cortex/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "sonia joseph",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="uJD9m5W7ULL26YeAM52w_INCl_vPQZsy7nheejxsi3w" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sonia joseph Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- matjax -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">sonia joseph</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/index" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/" >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/computational-neuroscience/" >Computational Neuroscience</a>
+            </li><li class="masthead__menu-item">
+              <a href="/unfinished-thoughts/" >Unfinished Thoughts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+  <div id="main" role="main">
+    <div style="background-color: #ffffff; text-align: center; padding: 10px; border-bottom: 2px solid red;">
+      <strong>Notice:</strong> This website is mostly outdated as of 2024. A new website is coming soon. Proceed with caution regarding earlier posts.
+    </div>
+
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        computer science<br>computational neuroscience<br>& machine learning
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Princeton, NJ</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://soniajoseph.github.io/about/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> About</a></li>
+          
+        
+          
+            <li><a href="https://medium.com/@soniamollyjoseph" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Medium</a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/soniamjoseph/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/soniajoseph" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:soniamollyjoseph@gmail.com">
+            <meta itemprop="email" content="soniamollyjoseph@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Deep Learning Models for the Prefontal Cortex in Object Recognition">
+    <meta itemprop="description" content="A hypothetical proposal to model object categorization in the prefrontal cortex with the goal-driven neural network paradigm.">
+    <meta itemprop="datePublished" content="July 01, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+
+          <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+          <h1 id="page-title" class="page__title" itemprop="headline">Deep Learning Models for the Prefontal Cortex in Object Recognition
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  15 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#abstract">Abstract</a></li>
+  <li><a href="#background">Background</a>
+    <ul>
+      <li><a href="#object-categorization-and-the-ventral-stream">Object Categorization and the Ventral Stream</a></li>
+      <li><a href="#using-goal-driven-cnns-to-understand-the-ventral-stream">Using Goal-Driven CNNs to Understand the Ventral Stream</a></li>
+      <li><a href="#using-goal-driven-cnns-to-understand-role-of-pfc-in-ventral-stream">Using Goal-Driven CNNs to Understand Role of PFC in Ventral Stream</a></li>
+    </ul>
+  </li>
+  <li><a href="#specific-aims">Specific Aims</a></li>
+  <li><a href="#description-of-the-proposed-research">Description of the Proposed Research</a>
+    <ul>
+      <li><a href="#data-collection">Data Collection</a></li>
+      <li><a href="#correlation-between-object-recognition-and-vlpfc-neural-predictivity">Correlation between Object Recognition and vlPFC Neural Predictivity</a></li>
+      <li><a href="#vlpfc-as-neural-performance-target">vlPFC as Neural Performance Target</a></li>
+      <li><a href="#measure-vlpfc-predictivity-for-layers-of-high-performance-goal-driven-cnn-hmo-model">Measure vlPFC Predictivity for Layers of High-Performance Goal-Driven CNN (HMO Model)</a></li>
+      <li><a href="#calculate-vlpfc-population-representation-similarity">Calculate vlPFC Population Representation Similarity</a></li>
+    </ul>
+  </li>
+  <li><a href="#methods-in-sum">Methods in Sum</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p><em>A hypothetical proposal written in Spring 2018 for the neuroscience concentration, advised by Dr. Jonathan Pillow.</em></p>
+
+<h2 id="abstract">Abstract</h2>
+<p>The ventral stream underlies object recognition and categorization in human and non-human primates, but neural encoding in its highest region, the prefrontal cortex (PFC), remains poorly understood. With recent advances in deep learning, goal-optimized convolutional neural networks (CNNs) have been shown to be highly accurate for predicting neural responses in the highest ventral cortical area, the inferior temporal (IT) cortex, which has high category selectivity based off visual information. Furthermore, the model’s intermediate layers were highly accurate for predicting upstream ventral neural responses (in V4). We aim to apply goal-driven CNNs to predicting neural responses in the ventrolateral prefrontal cortex (vlPFC). Because research suggests that the vPFC incorporates behaviorally-related object information in object recognition, we hypothesize that goal-driven CNNs will underperform data-driven CNNs on vlPFC neural responses. We hope that our results will shed light on the role of the vlPFC in the ventral stream and the extent to which the region encodes for behaviorally-related object features.</p>
+
+<h2 id="background">Background</h2>
+<h3 id="object-categorization-and-the-ventral-stream">Object Categorization and the Ventral Stream</h3>
+<p>An important area in computational neuroscience is developing models for object recognition and categorization–  the ability to recognize and categorize an object despite variation in orientation, size, illumination, and other sources of noise (DiCarlo, Zoccolan, &amp; Rust, 2012). The ventral stream (the “what” pathway) supports object recognition and categorization in humans, with homologous areas in non-human primates (Mishkin, Ungerleider, &amp; Macko, 1983; Malach, Levy, &amp; Hasson, 2002; Kriegeskorte et al., 2008). Visual information travels from the retina, to the lateral geniculate nucleus of the thalamus (LGN), to V1, to V2, to V4, to the inferior temporal cortex (IT), and finally to the prefrontal cortex (PFC), which links object perception to memory and action (Felleman &amp; Van Essen, 1991; Serre, Oliva, &amp; Poggio, 2007). Past research suggests that the ventral stream operates hierarchically, encoding object identity and category more explicitly with each successive area (DiCarlo, Zoccolan, &amp; Rust, 2012). More specifically, object position and scale (Riesenhuber &amp; Poggio, 1999), invariance (Ullman, 1997), size of receptive field (Kobatake &amp; Tanaka, 1994), and complexity of optimal stimuli for the neuron (Kobatake &amp; Tanaka, 1994) increase downstream from V1 to IT.</p>
+
+<p>Two empirical observations about the ventral stream are relevant: first, it is composed of a series of anatomically distinguishable, connected areas, and second, initial neural activity cascades along these areas (Malach, Levy, &amp; Hasson, 2002). In each stage of the cascade, simple neural operations are performed, including a weighted linear sum of inputs and nonlinearities like activation thresholds and competitive normalizations (Carandini, 2005). When the stages are applied in series, complex nonlinear transformations can arise (Sharpee, Kouh, &amp; Reynolds, 2013).</p>
+
+<h3 id="using-goal-driven-cnns-to-understand-the-ventral-stream">Using Goal-Driven CNNs to Understand the Ventral Stream</h3>
+<p>Neural encoding models predict spike train responses given novel stimuli (Paninski, Pillow, &amp; Lewi, 2007). It has been proposed that conceptually compelling neural encoding models should have the following three characteristics: stimulus-computability, accepting random stimuli within area of interest; mappability, plausibly corresponding to a biological system; and predictivity, predicting stimulus responses for a randomly chosen neuron in the mapped area (Yamins &amp; Dicarlo, 2016). Given these three requirements, hierarchical convolutional neural networks (CNNs) lend themselves to be suitable models for neural encoding in the ventral stream. CNNs consist of many individual units stacked in layers and perform neuronally plausible operations, such as forming 2D convolutions over input, applying pooling, and adding non-linearities to upstream responses (Yamins &amp; DiCarlo, 2016). In meeting these characteristics, the CNN must have layers that map onto the biological system of interest. For example, a CNN modeling IT response during object recognition must also have intermediate layers that map onto areas of the ventral stream upstream of the IT (e.g. V1, V4), and accurately predict responses in these areas.</p>
+
+<p>Yamins and DiCarlo (2016) suggest that goal-driven CNNs, which are based off transfer learning and optimized for a behavioral task instead of for neural data, constrain the hidden layers of the network to behave like neurons in preceding areas. Indeed, in CNNs that achieve near-human-level performance on object categorization, the top hidden layers were shown to be the most quantitatively accurate model for neural encoding in the IT without being explicitly trained on neural data (Yamins et al., 2014). Furthermore, the same model’s intermediate layers were state-of-the-art predictors for V4 responses, outperforming previous models (Yau, Pasupathy, Brincat, &amp; Connor, 2012), and its lower layers were predictors for V1-V3 voxel data (Khaligh-Razavi &amp; Kriegeskorte, 2014; Guclu &amp; Gerven, 2015) In sum, the CNN’s top-down, goal-based constraint of object categorization modeled the visual stream from V1 to IT more effectively than past models, without any training on neural data.</p>
+
+<h3 id="using-goal-driven-cnns-to-understand-role-of-pfc-in-ventral-stream">Using Goal-Driven CNNs to Understand Role of PFC in Ventral Stream</h3>
+<p>Neither goal-driven nor data-driven CNNs have been used to model neural response in the PFC during object categorization. The role of the PFC in object categorization is little understood (Freedman, Riesenhuber, Poggio, &amp; Miller, 2003), but the area is suspected to encode behaviorally relevant information about an object, such as attributes related to response-selection, more strongly than the IT (Freedman, Riesenhuber, Poggio, &amp; Miller, 2003). Other research suggests that the ventrolateral prefrontal cortex (vlPFC) is involved in top-down processes aiding object categorization, including long-term memory retrieval, working memory, and covert attention (Ganis, Schendan, &amp; Kosslyn, 2007), and contains small populations of domain-specific neurons sensitive to eyes, faces, and words (Scalaidhe, 1999). Levy &amp; Wagner (2011) found that the right vlPFC is heterogeneous in function, but the area is largely not understood.</p>
+
+<p>In this paper, we propose extending the work of Yamins et al. (2014) to assess biologically plausible, human-level performance, goal-driven CNNs against measured neural response data in the vlPFC of a non-human primate. We wonder if there is a strong correlation between object categorization task performance and prediction of vlPFC neural responses, similar to the correlation between performance and prediction of IT neural responses. If our goal-driven CNN model is predictive of vlPFC neural responses, we wonder if its intermediate layers are also predictive of IT, V4, V2, and V1, in line with the work of Yamins et al. (2016).</p>
+
+<p>We see reason why a goal-driven CNN may not be as predictive of vlPFC neural responses as of IT neural responses during object categorization. As past research suggests, the vlPFC may be more responsible than the IT for encoding behaviorally-related information from working memory, long-term memory, and attention. For example, in recognizing and categorizing a tool, a primate may not use just visual information, but also contextual information, such as past memories of a tool or a tool’s ability to be picked up. Therefore, while a goal-driven CNN may have near-human-level performance for object categorization, we hypothesize that the model will predict neural responses in the vlPFC less accurately than data-driven CNNs for the same area, and less accurately than goal-driven CNNs for the IT and upstream ventral areas.</p>
+
+<h2 id="specific-aims">Specific Aims</h2>
+<p>We hypothesize that because the vlPFC shows functional heterogeneity and uses contextual information beyond visual features to categorize objects, a goal-driven CNN will underperform a data-driven CNN in predicting vlPFC neural responses. We further suspect that the goal-driven CNN will predict vlPFC neural responses less accurately than IT neural responses. We hope that the results of our tests will shed light on category selectivity in the vlPFC and the role of the vlPFC in object categorization.</p>
+
+<p>We aim to record vlPFC and IT neurons in anesthetized macaque monkeys in response to natural images using multiple electrode arrays. Then, we aim to correlate the performance of CNN models trained on the same images with their vlPFC neural predictivity. We will obtain neural reference points on categorization performance by training linear classifiers on vlPFC and IT neural activity. We will use hierarchical modular optimization (HMO) to create a goal-driven CNN model and measure its vlPFC predictivity at various layers. Lastly, to understand vlPFC and IT activity at the population level, we use a representation dissimilarity matrix (RDM).</p>
+
+<h2 id="description-of-the-proposed-research">Description of the Proposed Research</h2>
+<h3 id="data-collection">Data Collection</h3>
+<p>We propose collecting neural data from the IT and vlPFC of two awake, behaving rhesus macaques using parallel multielectrode array electrophysiology recording systems under appropriate animal care guidelines in a procedure adapted from Yamins et al. (2014) and Safavi et al. (2018). Around 100 neurons in each area will be selected as visually driven with a separate image set. Animals will be presented with an image set that exposes key characteristics of visual representations with levels of variation in object scale, pose, and illumination (Tiny ImageNet, 2017). We will contort the images for three variation levels using parameters chosen uniformly at random. Objects will have low variance, with constant scale and fixed pose; medium variance, 30% bigger or smaller and rotated less than 45 degrees; and high variance, 60% bigger and smaller rotated less than 90 degrees.</p>
+
+<p>Images will be presented in pseudorandom order for 100 ms each, a duration comparable to natural fixation (DiCarlo &amp; Maunsell, 2000). Images will be presented one at time on a screen followed by a 100 ms blank period. A video tracking system will monitor the macaque’s eye movements, and a juice reward will be given when fixation is maintained for six successive image fixations. Firing rates will be obtained for each image and electrode by averaging spike counts 70-170 ms after stimulus presentation (Majaj, Hong, Solomon, &amp; DiCarlo, 2012). Background firing rate, which is the mean firing rate during blank intervals, will be subtracted from this calculation. Neuron output responses will be obtained from each site by averaging over image repetitions.</p>
+
+<h3 id="correlation-between-object-recognition-and-vlpfc-neural-predictivity">Correlation between Object Recognition and vlPFC Neural Predictivity</h3>
+<p>We will draw several thousand randomly sampled models from parameter space N. For each model, we will compute linear classifiers for performance and linear regressors for vlPFC and IT predictivity. Using a metaparameter optimization algorithm like Hyperopt (Wistuba, Schilling, &amp; Schmidt-Thieme, 2015), we will optimize models for goal-performance, vlPFC performance, and IT performance and examine the correlation explained for vlPFC and IT neural response variation. We expect that the correlation between goal-performance and vlPFC predictivity will be lower than between goal-performance and IT predictivity, which could suggest that goal-driven models are less accurate for the vlPFC due to the area having greater heterogeneity and access to object behavioral attributes. We also expect that the best-performing data-optimized models will predict vlPFC neural output equivalently or better than goal-optimized models, while the reverse does not hold. This would be the inverse result of the IT neural response prediction accuracy found by Yamins et al. (2014).</p>
+
+<p>The result should shed light on category selectivity in the vlPFC, which so far remains unclear. If, counter to our hypothesis, goal-optimized models perform the same as or better than data-optimized models, but the reverse does not hold, our result could suggest that the vlPFC also exhibits category selectivity similar to the IT.</p>
+
+<h3 id="vlpfc-as-neural-performance-target">vlPFC as Neural Performance Target</h3>
+<p>We will obtain neural benchmarks on categorization performance at different levels of object variation so that we can understand a key axis of recognition difficulty. We will train linear classifiers on vlPFC and IT data for low, medium, and high variation images. Linear regressor results will be computed with a 10-fold cross-validation with 50/50 training/test splits. A partial least squares (PLS) regression procedure will narrow down the number of weights. In controlling for lower-level confounds, we will also fit other computational models of the ventral stream, including SIFT (a baseline in computer version) (Lowe, 2004), V1 (Pinto, Cox, &amp; Dicarlo, 2008), and HMAX (Mutch &amp; Lowe, 2008). We expect that the performance of all models will decrease as variation increases, while the performance of the IT and vlPFC models will decrease less rapidly, given that they model downstream visual processing, which has high variation tolerance.</p>
+
+<h3 id="measure-vlpfc-predictivity-for-layers-of-high-performance-goal-driven-cnn-hmo-model">Measure vlPFC Predictivity for Layers of High-Performance Goal-Driven CNN (HMO Model)</h3>
+<p>We will use hierarchical modular optimization (HMO) to obtain a high-performing goal-driven CNN (Yamins et al., 2014). The HMO is analogous to an adaptive boosting procedure interwoven with hyperparameter optimization. With the same classifier test criteria described in the preceding section, we will train and test the HMO model on the image set. We expect HMO model performance to perform well given large amounts of variation, which is comparable to human-level object categorization.
+Then, we will measure the predictivity of layers in the HMO for vlPFC and IT neural responses. We expect that each successive layer of the HMO model will predict neural responses in both regions increasingly well. However, we expect that prediction for IT will be more accurate than vlPFC, because we hypothesize that vlPFC neural responses include behaviorally-related features not available to the goal-driven HMO during training. Even if vlPFC prediction accuracy is worse than IT neural prediction accuracy, we will still see whether the top-performing layer of the HMO for the vlPFC will be the most accurate neural encoding model for vlPFC response during object categorization to date.</p>
+
+<h3 id="calculate-vlpfc-population-representation-similarity">Calculate vlPFC Population Representation Similarity</h3>
+<p>We will characterize vlPFC and IT neural activity at the population level. The result may provide insight into vlPFC categorization selectivity, which is currently unclear. We will use a representation dissimilarity matrix (RDM), which can compare two representations of a stimulus in a task-independent manner. Given neuron response vectors R = r1,…,  rkwhere rijis the response of the jth neuron to the ith stimulus, the RDM is defined as RDM(R)ij =1-  cov(ri, rj) var(ri) var(rj)</p>
+
+<p>The RDM, taken over all stimuli, characterizes the layout of images in the high-dimensional neural population space. In line with the results of Yamins et al. (2014), we expect that the RDM for the IT neural population will have a clear block-diagonal and off-diagonal structure when images are categorically ordered. This structure is associated with IT’s high category selectivity. We are unsure about RDM structure regarding the vlPFC neural population, but we suspect that the matrix will display less block-diagonal and off-diagonal structure than that of the IT due to less category selectivity in the vlPFC based off solely visual information.</p>
+
+<h2 id="methods-in-sum">Methods in Sum</h2>
+<p>Overall, we expect our results will suggest that the vlPFC incorporates behaviorally-related object features that cannot be derived from visual information. More specifically, we expect that data-optimized CNN models will outperform goal-optimized CNN models for vlPFC neural response during object recognition, because the vlPFC response reflects features that the goal-optimized CNN model does not capture. In line with previous work on hierarchical models of the ventral stream, we expect predictivity for vlPFC to increase with each layer of the goal-optimized CNN. However, we expect the layers of the goal-optimized CNN to better capture neural response in the IT than in the vlPFC due to the former’s high category selectivity based off visual information. We hope that our results will shed light on the role of the vlPFC in object categorization, and the extent that it encodes for behavioral features, which has previously been unclear.</p>
+
+<h2 id="references">References</h2>
+<p>Carandini, M. (2005). Do We Know What the Early Visual System Does? Journal of Neuroscience,25(46), 10577-10597. doi:10.1523/jneurosci.3726-05.2005</p>
+
+<p>DiCarlo, J., &amp; Maunsell, J. (2000). Inferotemporal representations underlying object recognition in the free viewing monkey. Society for Neuroscience.</p>
+
+<p>Dicarlo, J., Zoccolan, D., &amp; Rust, N. (2012). How Does the Brain Solve Visual Object Recognition? Neuron,73(3), 415-434. doi:10.1016/j.neuron.2012.01.010</p>
+
+<p>Felleman, D. J., &amp; Essen, D. C. (1991). Distributed Hierarchical Processing in the Primate Cerebral Cortex. Cerebral Cortex,1(1), 1-47. doi:10.1093/cercor/1.1.1</p>
+
+<p>Freedman, D. J., Riesenhuber, M., Poggio, T., &amp; Miller, E. K. (2003, June 15). A Comparison of Primate Prefrontal and Inferior Temporal Cortices during Visual Categorization. Retrieved from http://www.jneurosci.org/content/23/12/5235.long</p>
+
+<p>Ganis, G., Schendan, H. E., &amp; Kosslyn, S. M. (2007). Neuroimaging evidence for object model verification theory: Role of prefrontal control in visual object categorization. NeuroImage,34(1), 384-398. doi:10.1016/j.neuroimage.2006.09.008</p>
+
+<p>Guclu, U., &amp; Gerven, M. A. (2015). Deep Neural Networks Reveal a Gradient in the Complexity of Neural Representations across the Ventral Stream. Journal of Neuroscience,35(27), 10005-10014. doi:10.1523/jneurosci.5023-14.2015</p>
+
+<p>Khaligh-Razavi, S., &amp; Kriegeskorte, N. (2014). Deep Supervised, but Not Unsupervised, Models May Explain IT Cortical Representation. PLoS Computational Biology,10(11). doi:10.1371/journal.pcbi.1003915</p>
+
+<p>Kobatake, E., &amp; Tanaka, K. (1994). Neuronal selectivities to complex object features in the ventral visual pathway of the macaque cerebral cortex. Journal of Neurophysiology,71(3), 856-867. doi:10.1152/jn.1994.71.3.856</p>
+
+<p>Kriegeskorte, N., Mur, M., Ruff, D. A., Kiani, R., Bodurka, J., Esteky, H., . . . Bandettini, P. A. (2008). Matching Categorical Object Representations in Inferior Temporal Cortex of Man and Monkey. Neuron,60(6), 1126-1141. doi:10.1016/j.neuron.2008.10.043</p>
+
+<p>Levy, B. J., &amp; Wagner, A. D. (2011). Cognitive control and right ventrolateral prefrontal cortex: Reflexive reorienting, motor inhibition, and action updating. Annals of the New York Academy of Sciences,1224(1), 40-62. doi:10.1111/j.1749-6632.2011.05958.x</p>
+
+<p>Lowe, D. G. (2004). Distinctive Image Features from Scale-Invariant Keypoints. International Journal of Computer Vision,60(2), 91-110. doi:10.1023/b:visi.0000029664.99615.94</p>
+
+<p>Majaj, N., Hong, H., Solomon, E., &amp; DiCarlo, J. (2012). A unified neuronal population code fully explains human object recognition.</p>
+
+<p>Malach, R., Levy, I., &amp; Hasson, U. (2002). The topography of high-order human object areas. Trends in Cognitive Sciences,6(4), 176-184. doi:10.1016/s1364-6613(02)01870-3</p>
+
+<p>Mishkin, M., Ungerleider, L. G., &amp; Macko, K. A. (1983). Object vision and spatial vision: Two cortical pathways. Trends in Neurosciences,6, 414-417. doi:10.1016/0166-2236(83)90190-x</p>
+
+<p>Mutch, J., &amp; Lowe, D. G. (2008). Object Class Recognition and Localization Using Sparse Features with Limited Receptive Fields. International Journal of Computer Vision,80(1), 45-57. doi</p>
+
+<p>Paninski, L., Pillow, J., &amp; Lewi, J. (2007). Statistical models for neural encoding, decoding, and optimal stimulus design. Progress in Brain Research Computational Neuroscience: Theoretical Insights into Brain Function,493-507. doi:10.1016/s0079-6123(06)65031-0</p>
+
+<p>Pinto, N., Cox, D. D., &amp; Dicarlo, J. J. (2008). Why is Real-World Visual Object Recognition Hard? PLoS Computational Biology,4(1). doi:10.1371/journal.pcbi.0040027</p>
+
+<p>Riesenhuber, M., &amp; Poggio, T. (1999). Hierarchical models of object recognition in cortex. Nature Neuroscience,2(11), 1019-1025. doi:10.1038/14819</p>
+
+<p>Safavi, S., Dwarakanath, A., Kapoor, V., Werner, J., Hatsopoulos, N. G., Logothetis, N. K., &amp; Panagiotaropoulos, T. I. (2018). Nonmonotonic spatial structure of interneuronal correlations in prefrontal microcircuits. Proceedings of the National Academy of Sciences,115(15). doi:10.1073/pnas.1802356115</p>
+
+<p>Scalaidhe, S. P. (1999). Face-selective Neurons During Passive Viewing and Working Memory Performance of Rhesus Monkeys: Evidence for Intrinsic Specialization of Neuronal Coding. Cerebral Cortex,9(5), 459-475. doi:10.1093/cercor/9.5.459</p>
+
+<p>Serre, T., Oliva, A., &amp; Poggio, T. (2007). A feedforward architecture accounts for rapid categorization. Proceedings of the National Academy of Sciences,104(15), 6424-6429. doi:10.1073/pnas.0700622104</p>
+
+<p>Sharpee, T. O., Kouh, M., &amp; Reynolds, J. H. (2013, July 09). Trade-off between curvature tuning and position invariance in visual area V4. Retrieved from http://www.pnas.org/content/110/28/11618.short</p>
+
+<p>Tiny ImageNet. (2017). Retrieved from https://www.kaggle.com/c/tiny-imagenet
+Ullman, S. (1997). High-level vision: Object recognition and visual cognition. Cambridge, MA: The MIT Press.</p>
+
+<p>Wistuba, M., Schilling, N., &amp; Schmidt-Thieme, L. (2015). Hyperparameter Search Space Pruning – A New Component for Sequential Model-Based Hyperparameter Optimization. Machine Learning and Knowledge Discovery in Databases Lecture Notes in Computer Science,104-119. doi:10.1007/978-3-319-23525-7_7</p>
+
+<p>Yamins, D. L., Cadieu, C. F., Solomon, E. A., Seibert, D., &amp; DiCarlo, J. J. (2014, June 10). Performance-optimized hierarchical models predict neural responses in higher visual cortex. Retrieved from https://doi.org/10.1073/pnas.1403112111</p>
+
+<p>Yamins, D. L., &amp; Dicarlo, J. J. (2016). Using goal-driven deep learning models to understand sensory cortex. Nature Neuroscience,19(3), 356-365. doi:10.1038/nn.4244</p>
+
+<p>Yau, J. M., Pasupathy, A., Brincat, S. L., &amp; Connor, C. E. (2012). Curvature Processing Dynamics in Macaque Area V4. Cerebral Cortex,23(1), 198-209. doi:10.1093/cercor/bhs004</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#computational-neuroscience" class="page__taxonomy-item" rel="tag">computational neuroscience</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#deep-learning" class="page__taxonomy-item" rel="tag">deep learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#neural-dynamics" class="page__taxonomy-item" rel="tag">neural dynamics</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#neuroscience" class="page__taxonomy-item" rel="tag">neuroscience</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#notes" class="page__taxonomy-item" rel="tag">notes</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#resources" class="page__taxonomy-item" rel="tag">resources</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#computational-neuroscience" class="page__taxonomy-item" rel="tag">computational neuroscience</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-07-01T00:00:00-07:00">July 01, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Deep+Learning+Models+for+the+Prefontal+Cortex+in+Object+Recognition%20http%3A%2F%2Flocalhost%3A4000%2Fcomputational%2520neuroscience%2Fdeep-learning-models-prefrontal-cortex%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcomputational%2520neuroscience%2Fdeep-learning-models-prefrontal-cortex%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcomputational%2520neuroscience%2Fdeep-learning-models-prefrontal-cortex%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/computational%20neuroscience/neural-dynamics-primer/" class="pagination--pager" title="Neural Dynamics: A Primer (Hopfield Networks)
+">Previous</a>
+    
+    
+      <a href="/machine%20learning/collabrepresentationclassification/" class="pagination--pager" title="Facial Recognition with Collaborative Representation-Based Classification
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/vision%20transformers/prisma/" rel="permalink">Papers for Vision Transformers (ViT) and Mechanistic Interpretability
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> March 11, 2024 <br> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Papers that give context when exploring mechanistic interpretability on vision transformers.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/unfinished-thoughts/unfinished-thoughts/" rel="permalink">Update 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> October 12, 2021 <br> 
+
+
+
+
+  6 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Thoughts on Montreal after the Bay Area
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/caropticflow.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/deep%20learning/neuroscience/optic-flow-pwc-net/" rel="permalink">Optic Flow and PWC-Net
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> January 10, 2021 <br> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Presentation on optic flow, PWC-Net, and a possible application to birds and mice for Janelia
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/neuralnet.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/meta-learning-research-overview/" rel="permalink">Meta-learning Research Overview and Paper Group
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> December 01, 2020 <br> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Research overview of meta-learning by researcher and institution.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 sonia joseph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/computational%20neuroscience/deep-learning-models-prefrontal-cortex/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/computational%20neuroscience/deep-learning-models-prefrontal-cortex"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sonia-joseph.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

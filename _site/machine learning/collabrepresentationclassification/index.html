@@ -117,7 +117,7 @@
         
   </head>
 
-  <body class="layout--single">
+  <body class="layout--single wide">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -140,17 +140,17 @@
         
         <a class="site-title" href="/">sonia joseph</a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
               <a href="/index" >All Posts</a>
             </li><li class="masthead__menu-item">
               <a href="/projects/" >Projects</a>
             </li><li class="masthead__menu-item">
               <a href="/computational-neuroscience/" >Computational Neuroscience</a>
             </li><li class="masthead__menu-item">
-              <a href="/algorithms/" >Algorithms</a>
+              <a href="/unfinished-thoughts/" >Unfinished Thoughts</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
-            </li><li class="masthead__menu-item">
-              <a href="/about/" >About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -177,6 +177,12 @@
 
 
 <div id="main" role="main">
+
+  <div id="main" role="main">
+    <div style="background-color: #ffffff; text-align: center; padding: 10px; border-bottom: 2px solid red;">
+      <strong>Notice:</strong> This website is mostly outdated as of 2024. A new website is coming soon. Proceed with caution regarding earlier posts.
+    </div>
+
   
   <div class="sidebar sticky">
   
@@ -189,7 +195,7 @@
       
 
       
-        <img src="/assets/images/avatar.jpg" alt="" itemprop="image">
+        <img src="/assets/images/avatar.png" alt="" itemprop="image">
       
     </div>
   
@@ -200,7 +206,7 @@
     
     
       <p class="author__bio" itemprop="description">
-        computer science <br> & artificial intelligence
+        computer science<br>computational neuroscience<br>& machine learning
       </p>
     
   </div>
@@ -215,6 +221,10 @@
       
 
       
+        
+          
+            <li><a href="https://soniajoseph.github.io/about/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> About</a></li>
+          
         
           
             <li><a href="https://medium.com/@soniamollyjoseph" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Medium</a></li>
@@ -328,7 +338,7 @@
 
 
 
-  2 minute read
+  3 minute read
 </p>
           
         </header>
@@ -353,41 +363,41 @@
 
 <h2 id="lets-talk-about-faces">Let’s talk about faces…</h2>
 
-<p>Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing about this algorithm because it is elegant, but undertaught.<sup id="fnref:5"><a href="#fn:5" class="footnote">1</a></sup> I explain the theory and implement the algorithm from scratch below.</p>
+<p>Collaborative representation-based classification is a neat way to implement ordinary least squares regression (which has continuous output) in order to classify new data points discretely. I am writing about this algorithm because it is elegant, but undertaught.<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">1</a></sup> I explain the theory and implement the algorithm from scratch below.</p>
 
-<p>We’ll use the YALE face database, consisting of 15 subjects in 11 slightly different poses, for a total of 165 64x64 pixel images, which I downloaded <a href="http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html">here</a> <sup id="fnref:1"><a href="#fn:1" class="footnote">2</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote">3</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote">4</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote">5</a></sup>.</p>
+<p>We’ll use the YALE face database, consisting of 15 subjects in 11 slightly different poses, for a total of 165 64x64 pixel images, which I downloaded <a href="http://www.cad.zju.edu.cn/home/dengcai/Data/FaceData.html">here</a> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">3</a></sup><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">4</a></sup><sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">5</a></sup>.</p>
 <figure class="half">
     <a href="/assets/images/image-filename-2-large.jpg"><img src="/assets/images/posts/first_face_fifteen_subjects.png" /></a>
     <a href="/assets/images/image-filename-1-large.jpg"><img src="/assets/images/posts/total_images_one_face.png" /></a>
 </figure>
-<p>The data points <script type="math/tex">{x_0... x_n}</script> are arranged in the columns of matrix <script type="math/tex">X</script> (size 4096x165) so that the first 11 columns correspond to the 11 images for the first face, the next 11 columns to the second face, and so on.</p>
+<p>The data points \({x_0... x_n}\) are arranged in the columns of matrix \(X\) (size 4096x165) so that the first 11 columns correspond to the 11 images for the first face, the next 11 columns to the second face, and so on.</p>
 
 <h2 id="theory">Theory</h2>
 
-<p>We begin by implementing ordinary least squares regression on <script type="math/tex">X</script>, in which we find <script type="math/tex">w</script> to minimize the residual:</p>
+<p>We begin by implementing ordinary least squares regression on \(X\), in which we find \(w\) to minimize the residual:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
     w* = 
 \arg\min_{w} \lVert \mathbf{Xw - x} \rVert_2^2
 
-\end{equation}</script>
+\end{equation}\]
 
-<p>We solve the normal equation to get <script type="math/tex">\begin{equation} w* \end{equation}</script>:</p>
+<p>We solve the normal equation to get \(\begin{equation} w* \end{equation}\):</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
     w* = (X^TX)^{-1}X^Tx
 
-\end{equation}</script>
+\end{equation}\]
 
-<p>The first 11 elements of <script type="math/tex">w</script>, which we will call <script type="math/tex">w_0</script>, represent how much of each column of the first face we need to represent a new data point <script type="math/tex">x</script>; the next 11 elements <script type="math/tex">w_1</script> represent how much of each column of the second face we need to represent <script type="math/tex">x</script>; and so on.</p>
+<p>The first 11 elements of \(w\), which we will call \(w_0\), represent how much of each column of the first face we need to represent a new data point \(x\); the next 11 elements \(w_1\) represent how much of each column of the second face we need to represent \(x\); and so on.</p>
 
-<p>Likewise, <script type="math/tex">w_0</script> corresponds to the first 11 columns of <script type="math/tex">X</script>, which we will call <script type="math/tex">X_0</script>.</p>
+<p>Likewise, \(w_0\) corresponds to the first 11 columns of \(X\), which we will call \(X_0\).</p>
 
-<p>To predict the face for each data point <script type="math/tex">x</script>, we take the dot product <script type="math/tex">\hat{y_i}</script> of <script type="math/tex">X_i</script> and <script type="math/tex">w_i</script> for each face <script type="math/tex">i</script>. We calculate the Euclidean distance between <script type="math/tex">x</script> and <script type="math/tex">\hat{y_i}</script>. The face <script type="math/tex">j</script> out of <script type="math/tex">i</script> that yields the lowest distance will determine the label.</p>
+<p>To predict the face for each data point \(x\), we take the dot product \(\hat{y_i}\) of \(X_i\) and \(w_i\) for each face \(i\). We calculate the Euclidean distance between \(x\) and \(\hat{y_i}\). The face \(j\) out of \(i\) that yields the lowest distance will determine the label.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
     j = \arg\min_{} \lVert \mathbf{x - \hat{y_i}} \rVert_2
-\end{equation}</script>
+\end{equation}\]
 
 <h2 id="code">Code</h2>
 
@@ -395,35 +405,35 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">collab_rep</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">):</span>
     
-    <span class="n">num_test_samples</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_test_samples</span><span class="p">,))</span>
+    <span class="n">num_test_samples</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_test_samples</span><span class="p">,))</span>
     <span class="n">num_classifications</span> <span class="o">=</span> <span class="mi">15</span>
     
     <span class="c1"># OLS
-</span>    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-    <span class="n">proj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> 
+</span>    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">proj</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">T</span><span class="p">)</span> 
     
     <span class="c1"># for each new vector
 </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_test_samples</span><span class="p">):</span>
-        <span class="n">test_ex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="n">proj</span> <span class="o">*</span> <span class="n">test_ex</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">test_ex</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">proj</span> <span class="o">*</span> <span class="n">test_ex</span><span class="p">.</span><span class="n">T</span>
         
         <span class="c1"># compare the new vector to linear combinations of existing vectors by face
-</span>        <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_classifications</span><span class="p">,))</span>
-        <span class="n">num_in_training</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">num_classifications</span><span class="p">)</span>
+</span>        <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_classifications</span><span class="p">,))</span>
+        <span class="n">num_in_training</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">X_train</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">num_classifications</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_classifications</span><span class="p">):</span>
             <span class="n">X_subset</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[:,</span><span class="n">j</span><span class="o">*</span><span class="n">num_in_training</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">num_in_training</span><span class="p">]</span>
             <span class="n">w_subset</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="o">*</span><span class="n">num_in_training</span><span class="p">:(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">num_in_training</span><span class="p">]</span>
-            <span class="n">reconstructed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X_subset</span><span class="p">,</span> <span class="n">w_subset</span><span class="p">)</span>
-            <span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">reconstructed</span> <span class="o">-</span> <span class="n">test_ex</span><span class="p">)</span>
+            <span class="n">reconstructed</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X_subset</span><span class="p">,</span> <span class="n">w_subset</span><span class="p">)</span>
+            <span class="n">dist</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linalg</span><span class="p">.</span><span class="n">norm</span><span class="p">(</span><span class="n">reconstructed</span> <span class="o">-</span> <span class="n">test_ex</span><span class="p">)</span>
         
         <span class="c1"># classify new vector according to minimum distance between the vector and reconstructed 
-</span>        <span class="n">predicted_label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span>        <span class="n">predicted_label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
         
-    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">predicted_label</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">predicted_label</span> <span class="o">=</span> <span class="n">predicted_label</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
         
     <span class="c1"># calculate the accuracy
-</span>    <span class="n">test_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">predicted_label</span> <span class="o">-</span> <span class="n">Y_test</span><span class="p">)</span>
+</span>    <span class="n">test_err</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">predicted_label</span> <span class="o">-</span> <span class="n">Y_test</span><span class="p">)</span>
     <span class="n">test_acc</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">test_err</span><span class="o">/</span><span class="mf">100.0</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">test_acc</span>
@@ -440,22 +450,22 @@
 <p><em>Full code on Github <a href="https://github.com/soniajoseph/Collaborative-Representation-Based-Classification">here</a>.</em></p>
 
 <h2 id="references">References</h2>
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:5">
-      <p>You can read about collaborative representation-based classification in papers like <a href="https://arxiv.org/abs/1204.2358">this one</a>. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>You can read about collaborative representation-based classification in papers like <a href="https://arxiv.org/abs/1204.2358">this one</a>. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:1">
-      <p>Deng Cai, Xiaofei He, Yuxiao Hu, Jiawei Han and Thomas Huang, “Learning a Spatially Smooth Subspace for Face Recognition”, CVPR’07. Bibtex source <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Deng Cai, Xiaofei He, Yuxiao Hu, Jiawei Han and Thomas Huang, “Learning a Spatially Smooth Subspace for Face Recognition”, CVPR’07. Bibtex source <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>Deng Cai, Xiaofei He and Jiawei Han, “Spectral Regression for Efficient Regularized Subspace Learning”, ICCV’07.	Bibtex source <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>Deng Cai, Xiaofei He and Jiawei Han, “Spectral Regression for Efficient Regularized Subspace Learning”, ICCV’07.	Bibtex source <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>Deng Cai, Xiaofei He, Jiawei Han, and Hong-Jiang Zhang, “Orthogonal Laplacianfaces for Face Recognition”, IEEE TIP 2006. Bibtex source <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>Deng Cai, Xiaofei He, Jiawei Han, and Hong-Jiang Zhang, “Orthogonal Laplacianfaces for Face Recognition”, IEEE TIP 2006. Bibtex source <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Xiaofei He, Shuicheng Yan, Yuxiao Hu, Partha Niyogi, and Hong-Jiang Zhang, “Face Recognition Using Laplacianfaces”, IEEE TPAMI 2005. Bibtex source <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Xiaofei He, Shuicheng Yan, Yuxiao Hu, Partha Niyogi, and Hong-Jiang Zhang, “Face Recognition Using Laplacianfaces”, IEEE TPAMI 2005. Bibtex source <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -547,7 +557,7 @@
       
   <nav class="pagination">
     
-      <a href="/computational%20neuroscience/neural-dynamics-primer/" class="pagination--pager" title="Neural Dynamics: A Primer (Hopfield Networks)
+      <a href="/computational%20neuroscience/deep-learning-models-prefrontal-cortex/" class="pagination--pager" title="Deep Learning Models for the Prefontal Cortex in Object Recognition
 ">Previous</a>
     
     
@@ -577,27 +587,27 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/posts/goodreads.png"
+            "/assets/images/posts/Perceptron.moj.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/goodreads-scraper/" rel="permalink">Goodreads Quotes Scraper
+        <a href="/machine%20learning/vision%20transformers/prisma/" rel="permalink">Papers for Vision Transformers (ViT) and Mechanistic Interpretability
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> August 31, 2019 <br> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> March 11, 2024 <br> 
 
 
 
 
-  1 minute read
+  2 minute read
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">scraping quotes from goodreads and creating a database
+    <p class="archive__item-excerpt" itemprop="description">Papers that give context when exploring mechanistic interpretability on vision transformers.
 </p>
   </article>
 </div>
@@ -613,55 +623,19 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/posts/britney.png"
+            "/assets/images/posts/Perceptron.moj.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/text-generation/" rel="permalink">Text &amp; Lyric Generation with Markov Chains
+        <a href="/unfinished-thoughts/unfinished-thoughts/" rel="permalink">Update 1
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> August 24, 2019 <br> 
-
-
-
-
-  1 minute read
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Text and lyric generation with basic natural language processing.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src=
-          
-            "/assets/images/posts/Perceptron_moj.png"
-          
-          alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/computational%20neuroscience/neural-dynamics-primer/" rel="permalink">Neural Dynamics: A Primer (Hopfield Networks)
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> June 20, 2019 <br> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> October 12, 2021 <br> 
 
 
 
@@ -669,7 +643,7 @@
   6 minute read
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Basic concepts in neural dynamics explained with Hopfield networks.
+    <p class="archive__item-excerpt" itemprop="description">Thoughts on Montreal after the Bay Area
 </p>
   </article>
 </div>
@@ -685,19 +659,55 @@
       <div class="archive__item-teaser">
         <img src=
           
-            "/assets/images/posts/starlings2.jpg"
+            "/assets/images/posts/caropticflow.png"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/computational%20neuroscience/dynamics/" rel="permalink">Paper List for Neural Dynamics
+        <a href="/deep%20learning/neuroscience/optic-flow-pwc-net/" rel="permalink">Optic Flow and PWC-Net
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> June 19, 2019 <br> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> January 10, 2021 <br> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Presentation on optic flow, PWC-Net, and a possible application to birds and mice for Janelia
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/neuralnet.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/meta-learning-research-overview/" rel="permalink">Meta-learning Research Overview and Paper Group
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> December 01, 2020 <br> 
 
 
 
@@ -705,7 +715,7 @@
   3 minute read
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Resources for computational neuroscience
+    <p class="archive__item-excerpt" itemprop="description">Research overview of meta-learning by researcher and institution.
 </p>
   </article>
 </div>
@@ -758,7 +768,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 sonia joseph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 sonia joseph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -777,14 +787,22 @@
 
 
 
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/machine%20learning/collabrepresentationclassification/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/machine%20learning/collabrepresentationclassification"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sonia-joseph.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
   
 
 

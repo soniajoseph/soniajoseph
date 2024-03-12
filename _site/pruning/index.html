@@ -1,0 +1,998 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Experiments in Pruning - sonia joseph</title>
+<meta name="description" content="When pruning 80% of a neural net does not affect accuracy">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="sonia joseph">
+<meta property="og:title" content="Experiments in Pruning">
+<meta property="og:url" content="http://localhost:4000/pruning/">
+
+
+  <meta property="og:description" content="When pruning 80% of a neural net does not affect accuracy">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/posts/dropout.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-05T00:00:00-08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/pruning/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "sonia joseph",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="uJD9m5W7ULL26YeAM52w_INCl_vPQZsy7nheejxsi3w" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="sonia joseph Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- matjax -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">sonia joseph</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/index" >All Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/" >Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/computational-neuroscience/" >Computational Neuroscience</a>
+            </li><li class="masthead__menu-item">
+              <a href="/unfinished-thoughts/" >Unfinished Thoughts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+  <div id="main" role="main">
+    <div style="background-color: #ffffff; text-align: center; padding: 10px; border-bottom: 2px solid red;">
+      <strong>Notice:</strong> This website is mostly outdated as of 2024. A new website is coming soon. Proceed with caution regarding earlier posts.
+    </div>
+
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        computer science<br>computational neuroscience<br>& machine learning
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Princeton, NJ</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://soniajoseph.github.io/about/" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> About</a></li>
+          
+        
+          
+            <li><a href="https://medium.com/@soniamollyjoseph" rel="nofollow noopener noreferrer"><i class="fas fa-link" aria-hidden="true"></i> Medium</a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/soniamjoseph/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/soniajoseph" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:soniamollyjoseph@gmail.com">
+            <meta itemprop="email" content="soniamollyjoseph@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Experiments in Pruning">
+    <meta itemprop="description" content="When pruning 80% of a neural net does not affect accuracy">
+    <meta itemprop="datePublished" content="January 05, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+
+          <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+          <h1 id="page-title" class="page__title" itemprop="headline">Experiments in Pruning
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="the-unexpected-effects-of-pruning-neural-nets">The Unexpected Effects of Pruning Neural Nets</h2>
+
+<figure class="">
+  <img src="/assets/images/posts/dropout.png" alt="Neural net before and after dropout from Srivastava, Nitish, et al. 'Dropout: a simple way to prevent neural networks from overfitting', JMLR 2014" />
+  </figure>
+
+<p><em>This project was done as a challenge for <a href="for.ai">for.ai</a>, a multi-disciplinary distributed artificial intelligence research collaboration. I entered the challenge with minimal background in pruning neural nets and consulted the literature only post-experiment.</em></p>
+
+<p><em>The full code on GitHub is <a href="https://github.com/soniajoseph/Pruning">here</a>.</em></p>
+
+<p>Pruning is deleting connections in a neural net in order to improve generalization and reduce computational resources. Two kinds of pruning exist: weight-pruning, in which the largest weights by absolute value are set to zero; and unit-pruning, in which the smallest neurons are set to zero by a vector-wise metric like L2-norm.</p>
+
+<p>Here, I examine the relationship between pruning and accuracy on a vanilla neural net. Before running any experiments, I hypothesize that accuracy for the pruned neural net will slightly rise (due to the regularization), and then have a negative linear correlation with the amount pruned. I also hypothesize that unit-pruning, in deleting entire neurons instead of individual weights, will have a more dramatic negative effect than weight-pruning.</p>
+
+<h2 id="first-lets-load-normalize-and-visualize-the-mnist-dataset">First, let’s load, normalize, and visualize the MNIST dataset.</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="n">F</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> 
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">load_MNIST</span><span class="p">():</span>
+  <span class="s">"""Function to load and normalize MNIST data"""</span> 
+  <span class="n">train</span> <span class="o">=</span> <span class="n">torchvision</span><span class="p">.</span><span class="n">datasets</span><span class="p">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s">'./data'</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transforms</span><span class="p">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="p">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                <span class="n">transforms</span><span class="p">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,)),</span>
+                                <span class="p">]))</span>
+  <span class="n">test</span> <span class="o">=</span> <span class="n">torchvision</span><span class="p">.</span><span class="n">datasets</span><span class="p">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s">'./data'</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transforms</span><span class="p">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="p">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                <span class="n">transforms</span><span class="p">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,)),</span>
+                                <span class="p">]))</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"MNIST datset loaded and normalized."</span><span class="p">)</span>
+  <span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">train</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+  <span class="n">test_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">utils</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">test</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"PyTorch DataLoaders loaded."</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">test_loader</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">visualize_MNIST</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+  <span class="s">"""Function to visualize data given a DataLoader object"""</span>
+  <span class="n">dataiter</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+  <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">dataiter</span><span class="p">.</span><span class="nb">next</span><span class="p">()</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"image shape:"</span><span class="p">,</span> <span class="n">images</span><span class="p">.</span><span class="n">shape</span><span class="p">,</span> <span class="s">"</span><span class="se">\n</span><span class="s"> label shape:"</span><span class="p">,</span> <span class="n">labels</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+  <span class="c1"># visualize data
+</span>  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="p">.</span><span class="n">flatten</span><span class="p">()):</span>
+      <span class="n">im_idx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">labels</span> <span class="o">==</span> <span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">plottable_image</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="n">im_idx</span><span class="p">].</span><span class="n">squeeze</span><span class="p">()</span>
+      <span class="n">ax</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">plottable_image</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># load and visualize MNISt
+</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">test_loader</span> <span class="o">=</span> <span class="n">load_MNIST</span><span class="p">()</span>
+<span class="n">visualize_MNIST</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MNIST datset loaded and normalized.
+PyTorch DataLoaders loaded.
+image shape: torch.Size([100, 1, 28, 28]) 
+ label shape: torch.Size([100])
+</code></pre></div></div>
+
+<p><img src="Pruning_PyTorch_files/Pruning_PyTorch_5_1.png" alt="png" /></p>
+
+<h2 id="now-lets-build-a-vanilla-neural-net-with-four-hidden-layers-without-pruning">Now let’s build a vanilla neural net with four hidden layers without pruning.</h2>
+
+<p>We’ll keep things simple and leave out biases, convolutions, and pooling.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+  <span class="s">"""A non-sparse neural network with four hidden fully-connected layers"""</span>
+
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">Net</span><span class="p">,</span><span class="bp">self</span><span class="p">).</span><span class="n">__init__</span><span class="p">()</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">input_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">hidden1_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">hidden2_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">hidden3_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">hidden4_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">input_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">hidden1_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">hidden2_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">hidden3_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">hidden4_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output</span>
+</code></pre></div></div>
+
+<h2 id="lets-train-our-vanilla-neural-net">Let’s train our vanilla neural net.</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+  <span class="s">"""Function to train a neural net"""</span>
+
+  <span class="n">lossFunction</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+  <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
+  <span class="n">time0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+  <span class="n">total_samples</span> <span class="o">=</span> <span class="mi">0</span> 
+
+  <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Starting epoch"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">images</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+      <span class="n">images</span> <span class="o">=</span> <span class="n">images</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="n">images</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># flatten
+</span>      <span class="n">optimizer</span><span class="p">.</span><span class="n">zero_grad</span><span class="p">()</span> <span class="c1"># forward pass
+</span>      <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+      <span class="n">loss</span> <span class="o">=</span> <span class="n">lossFunction</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="n">labels</span><span class="p">)</span> <span class="c1"># calculate loss
+</span>      <span class="n">loss</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span> <span class="c1"># backpropagate
+</span>      <span class="n">optimizer</span><span class="p">.</span><span class="n">step</span><span class="p">()</span> <span class="c1"># update weights
+</span>
+      <span class="n">total_samples</span> <span class="o">+=</span> <span class="n">labels</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="p">.</span><span class="n">item</span><span class="p">()</span>
+
+      <span class="k">if</span> <span class="n">idx</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Running loss:"</span><span class="p">,</span> <span class="n">total_loss</span><span class="p">)</span>
+
+  <span class="n">final_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">time0</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span> 
+  <span class="k">print</span><span class="p">(</span><span class="s">"Model trained in "</span><span class="p">,</span> <span class="n">final_time</span><span class="p">,</span> <span class="s">"minutes on "</span><span class="p">,</span> <span class="n">total_samples</span><span class="p">,</span> <span class="s">"samples"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span>
+<span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Starting epoch 0
+Running loss: 2.3038742542266846
+Running loss: 77.4635388404131
+Running loss: 109.90784302353859
+Running loss: 134.65162767469883
+Running loss: 157.67301363497972
+Running loss: 180.47914689779282
+Starting epoch 1
+Running loss: 0.234319806098938
+Running loss: 16.288803346455097
+Running loss: 32.35535905882716
+Running loss: 47.42433784343302
+Running loss: 62.21571101620793
+Running loss: 76.50204934924841
+Starting epoch 2
+Running loss: 0.08530954271554947
+Running loss: 11.152649360708892
+Running loss: 22.78821618296206
+Running loss: 33.39046012144536
+Running loss: 45.17006475571543
+Running loss: 55.31901629595086
+Model trained in  2.392067523797353 minutes on  180000 samples
+</code></pre></div></div>
+
+<h2 id="now-well-test-our-vanilla-neural-net">Now we’ll test our vanilla neural net.</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">):</span>
+  <span class="s">"""Test neural net"""</span>
+
+  <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span> 
+
+  <span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">):</span>
+      <span class="n">images</span> <span class="o">=</span> <span class="n">images</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="n">images</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># flatten
+</span>      <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+      <span class="n">values</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="n">total</span> <span class="o">+=</span> <span class="n">labels</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">labels</span> <span class="o">==</span> <span class="n">indices</span><span class="p">).</span><span class="nb">sum</span><span class="p">().</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="n">acc</span> <span class="o">=</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="c1"># print("Accuracy: ", acc, "% for ", total, "training samples")
+</span>
+  <span class="k">return</span> <span class="n">acc</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">acc</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The accuracy of our vanilla NN is"</span><span class="p">,</span> <span class="n">acc</span><span class="p">,</span> <span class="s">"%"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The accuracy of our vanilla NN is 97.15 %
+</code></pre></div></div>
+
+<h2 id="a-97-accuracy-for-our-vanilla-nn-seems-reasonable-now-lets-do-some-weight-and-unit-pruning">A ~97% accuracy for our vanilla NN seems reasonable. Now let’s do some weight and unit pruning.</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">sparsify_by_weights</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+  <span class="s">"""Function that takes un-sparsified neural net and does weight-pruning
+  by k sparsity"""</span>
+
+  <span class="c1"># make copy of original neural net
+</span>  <span class="n">sparse_m</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+  <span class="k">with</span> <span class="n">torch</span><span class="p">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sparse_m</span><span class="p">.</span><span class="n">parameters</span><span class="p">()):</span> 
+      <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="c1"># skip last layer of 5-layer neural net
+</span>        <span class="k">break</span> 
+      <span class="c1"># change tensor to numpy format, then set appropriate number of smallest weights to zero
+</span>      <span class="n">layer_copy</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">layer_copy</span> <span class="o">=</span> <span class="n">layer_copy</span><span class="p">.</span><span class="n">detach</span><span class="p">().</span><span class="n">numpy</span><span class="p">()</span>
+      <span class="n">indices</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">layer_copy</span><span class="p">).</span><span class="n">argsort</span><span class="p">()</span> <span class="c1"># get indices of smallest weights by absolute value
+</span>      <span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="p">)]</span> <span class="c1"># get k fraction of smallest indices 
+</span>      <span class="n">layer_copy</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+
+      <span class="c1"># change weights of model
+</span>      <span class="n">i</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">layer_copy</span><span class="p">)</span>
+  
+  <span class="k">return</span> <span class="n">sparse_m</span>  
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">l2</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">([</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">]))</span>
+
+<span class="k">def</span> <span class="nf">sparsify_by_unit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+  <span class="s">"""Creates a k-sparsity model with unit-level pruning that sets columns with smallest L2 to zero."""</span>
+  
+  <span class="c1"># make copy of original neural net
+</span>  <span class="n">sparse_m</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sparse_m</span><span class="p">.</span><span class="n">parameters</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="c1"># skip last layer of 5-layer neural net
+</span>      <span class="k">break</span>
+    <span class="n">layer_copy</span> <span class="o">=</span> <span class="n">i</span><span class="p">.</span><span class="n">detach</span><span class="p">().</span><span class="n">numpy</span><span class="p">()</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argsort</span><span class="p">([</span><span class="n">l2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">layer_copy</span><span class="p">])</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="p">)]</span>
+    <span class="n">layer_copy</span><span class="p">[</span><span class="n">indices</span><span class="p">,:]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">layer_copy</span><span class="p">)</span>
+  
+  <span class="k">return</span> <span class="n">sparse_m</span> 
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_pruning_accuracies</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">prune_type</span><span class="p">):</span>
+  <span class="s">""" Takes a model and prune type ("weight" or "unit") and returns a DataFrame of pruning accuracies for given sparsities."""</span>
+
+  <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">"sparsity"</span><span class="p">:</span> <span class="p">[],</span> <span class="s">"accuracy"</span><span class="p">:</span> <span class="p">[]})</span>
+  <span class="n">sparsities</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">]</span>
+
+  <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sparsities</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">prune_type</span> <span class="o">==</span> <span class="s">"weight"</span><span class="p">:</span>
+      <span class="n">new_model</span> <span class="o">=</span> <span class="n">sparsify_by_weights</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">prune_type</span> <span class="o">==</span> <span class="s">"unit"</span><span class="p">:</span>
+      <span class="n">new_model</span> <span class="o">=</span> <span class="n">sparsify_by_unit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"Must specify prune-type."</span><span class="p">)</span>
+      <span class="k">return</span> 
+    <span class="n">acc</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">new_model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">append</span><span class="p">({</span><span class="s">"sparsity"</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s">"accuracy"</span><span class="p">:</span> <span class="n">acc</span><span class="p">},</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">df</span> 
+</code></pre></div></div>
+
+<h2 id="results">Results</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_weight</span> <span class="o">=</span> <span class="n">get_pruning_accuracies</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s">"weight"</span><span class="p">)</span>
+<span class="n">df_unit</span> <span class="o">=</span> <span class="n">get_pruning_accuracies</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s">"unit"</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Accuracies for Weight Pruning"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df_weight</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Accuracies for Unit Pruning"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df_unit</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accuracies for Weight Pruning
+   sparsity  accuracy
+0      0.00     97.15
+1      0.25     97.12
+2      0.50     97.00
+3      0.60     96.90
+4      0.70     96.77
+5      0.80     94.84
+6      0.90     82.43
+7      0.95     72.03
+8      0.97     64.28
+9      0.99     31.88
+
+Accuracies for Unit Pruning
+   sparsity  accuracy
+0      0.00     97.15
+1      0.25     97.14
+2      0.50     96.98
+3      0.60     96.76
+4      0.70     94.63
+5      0.80     72.66
+6      0.90     36.67
+7      0.95     19.29
+8      0.97     13.07
+9      0.99     10.12
+</code></pre></div></div>
+
+<h3 id="lets-plot-our-results">Let’s plot our results</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Accuracy vs Sparsity"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_unit</span><span class="p">[</span><span class="s">"sparsity"</span><span class="p">],</span> <span class="n">df_unit</span><span class="p">[</span><span class="s">"accuracy"</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s">"Unit-pruning"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_weight</span><span class="p">[</span><span class="s">"sparsity"</span><span class="p">],</span> <span class="n">df_weight</span><span class="p">[</span><span class="s">"accuracy"</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s">"Weight-pruning"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Sparsity (as fraction)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"% Accuracy"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+</code></pre></div></div>
+
+<figure class="">
+  <img src="/assets/images/posts/pruning_unit_vs_weight.png" alt="" />
+  </figure>
+
+<h2 id="discussion-pre-literature-review">Discussion (pre-literature review)</h2>
+
+<p>Clearly, my hypothesis that accuracy will rise and then negatively correlate in a roughly linear way with pruning was incorrect. The figure instead shows a dramatic nonlinear relationship between accuracy and pruning. Accuracy remains roughly constant until dropping off at about 75% sparsity for weight-pruning and until 70% sparsity for unit-pruning. My hypothesis that unit-pruning impacts accuracy more dramatically than weight-pruning held up.</p>
+
+<p>These results are fascinating: Less than 25% of the neural net represents important information about its function. The data also suggest that accuracy may slightly increase with a light amount of pruning (~30%), although I would run on more iterations with a larger dataset to be sure. It would make sense that keeping the net’s smaller weights reduces its generalization.</p>
+
+<h2 id="literature-review">Literature Review</h2>
+
+<p>Let’s turn to existing papers to get a better grasp on the pruning phenomenon.</p>
+
+<p>In <a href="https://arxiv.org/pdf/1803.03635.pdf">“The Lottery Ticket Hypothesis”</a>, the authors put forth the idea:</p>
+
+<blockquote>
+  <p>“A randomly-initialized, dense neural network contains a subnetwork that is initialized such that—when trained in isolation—it can match the test accuracy of the
+original network after training for at most the same number of iterations.”</p>
+
+</blockquote>
+
+<p>Pruning the network automatically finds the “winning ticket” subnetwork, whose accuracy is comparable to that of the fully trained net. The idea is similar to the one proposed in <a href="http://yann.lecun.com/exdb/publis/pdf/lecun-90b.pdf">“Optimal Brain Damage”</a> (which is very strangely named, given that dropout is more similar to synaptic pruning in healthy brains than conventional brain damage), in which the authors prune a network based on second-derivative information.</p>
+
+<h2 id="further-directions">Further Directions</h2>
+
+<p>Questions remain. The theory behind the pruning-accuracy relationship remains an ongoing area of research. Are there other ways of finding these “winning ticket” subnetworks besides pruning (e.g. directly from the objective function)? Why does one have to train a largely overparameterized network first in order for the winning ticket to arise? Can we find winning ticket subnetwork before training the full network (i.e. during training)?</p>
+
+<p>I am also curious if CNNs, RNNs, and ResNets show the same relationship between pruning and accuracy as the vanilla NN examined here. I am interested in the effect of pruning the weights by magnitude of the entire net (opposed to layer by layer), and using magnitude measures other than absolute value and L2-norm. And what about deleting the largest weights and neurons, opposed to the smallest?</p>
+
+<p>Lastly, I am interested in pruning artificial nets to computationally model <a href="https://en.wikipedia.org/wiki/Synaptic_pruning">synaptic pruning</a> with microglia in biological brains. Synaptic pruning may conserve biological resources, improve brain functioning, or both.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#projects" class="page__taxonomy-item" rel="tag">projects</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-05T00:00:00-08:00">January 05, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Experiments+in+Pruning%20http%3A%2F%2Flocalhost%3A4000%2Fpruning%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpruning%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpruning%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/computational%20neuroscience/research-overview/" class="pagination--pager" title="Computational Neuroscience and Artificial Intelligence Research Overview
+">Previous</a>
+    
+    
+      <a href="/machine%20learning/semantic-similarity-search-phrases/" class="pagination--pager" title="Semantic Similarity Search for Phrases
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/vision%20transformers/prisma/" rel="permalink">Papers for Vision Transformers (ViT) and Mechanistic Interpretability
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> March 11, 2024 <br> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Papers that give context when exploring mechanistic interpretability on vision transformers.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/Perceptron.moj.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/unfinished-thoughts/unfinished-thoughts/" rel="permalink">Update 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> October 12, 2021 <br> 
+
+
+
+
+  6 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Thoughts on Montreal after the Bay Area
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/caropticflow.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/deep%20learning/neuroscience/optic-flow-pwc-net/" rel="permalink">Optic Flow and PWC-Net
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> January 10, 2021 <br> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Presentation on optic flow, PWC-Net, and a possible application to birds and mice for Janelia
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/neuralnet.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/machine%20learning/meta-learning-research-overview/" rel="permalink">Meta-learning Research Overview and Paper Group
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> December 01, 2020 <br> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Research overview of meta-learning by researcher and institution.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 sonia joseph. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/pruning/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/pruning"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sonia-joseph.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

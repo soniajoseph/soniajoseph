@@ -5,7 +5,6 @@ permalink: /about/
 classes: wide
 ---
 
-*Note: This website and about page is extremely outdated as of 2024. A new about page is coming soon. Proceed with caution.*
 
 ## Intro
 
