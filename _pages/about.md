@@ -5,13 +5,13 @@ permalink: /about/
 classes: wide
 ---
 
-Note: This website is extremely outdated as of 2024. A new about page is coming soon.
+Note: This website and about page is extremely outdated as of 2024. A new about page is coming soon.
 
 ## Intro
 
 I am interested in intelligence from both artificial and biological perspectives. In looking for fundamental principles of information processing, I draw inspiration from the brain, our proof-of-concept for general intelligence.
 
-Currently, I am PhD student studying multimodal interpretability and alignment [Blake Richards' lab](https://www.mcgill.ca/neuro/blake-richards-phd) at [Mila Quebec](https://mila.quebec/en/).
+I am currently a PhD student researching multimodal interpretability and alignment [Blake Richards' lab](https://www.mcgill.ca/neuro/blake-richards-phd) at [Mila Quebec](https://mila.quebec/en/).
 
 Previously, I researched deep learning models on neural data at the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and sometimes collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group. I was also a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/), and consultant for various ML startups in the Bay Area.
 
