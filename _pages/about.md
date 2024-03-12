@@ -13,7 +13,7 @@ I am interested in intelligence from both artificial and biological perspectives
 
 I am currently a PhD student researching multimodal interpretability and alignment at [Blake Richards's lab](https://www.mcgill.ca/neuro/blake-richards-phd) at [Mila Quebec](https://mila.quebec/en/).
 
-Previously, I researched deep learning models on neural data at the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and sometimes collaborate with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group. I was also a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/), and consultant for various ML startups in the Bay Area.
+Previously, I researched deep learning models on neural data at the [Stringer Lab](https://www.janelia.org/lab/stringer-lab) at Janelia, and collaborated with [FOR.ai](https://for.ai/), a multi-disciplinary AI research group. I was also a ML/NLP research engineer at the search engine startup [NLMatics](https://blogs.nlmatics.com/), and consultant for various ML startups in the Bay Area.
 
 ## Background 
 
