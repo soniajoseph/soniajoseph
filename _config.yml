@@ -107,12 +107,14 @@ analytics:
 author:
   name             : ""
   avatar           : "assets/images/avatar.png"
-  bio              : "computer science<br>computational neuroscience<br>& machine learning"
+  bio : "computer science<br>computational neuroscience<br>& machine learning<br><br>twitter: @soniajoseph_"
   email            : "soniamollyjoseph@gmail.com"
   title_separator: "-"
   links:
     - label: "About"
       url: "https://soniajoseph.github.io/about/"
+    - label: "Twitter"
+      url: "https://twitter.com/soniajoseph_"
     - label: "Medium"
       url: "https://medium.com/@soniamollyjoseph"
     # - label: "Email"
